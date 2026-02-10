@@ -6,12 +6,15 @@ import About from "./pages/public/About";
 import TheViews from "./pages/public/TheViews";
 import SignIn from "./pages/public/SignIn";
 import SignUp from "./pages/public/SignUp";
+import Header from "./components/Header";
 
 export default function App() {
   return (
     // ReactRouter used to handle navigation
     <BrowserRouter>
       <div className="container-fluid p-0 m-0 App">
+        {/*-- Header */}
+        <Header />
         <Routes>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/" element={<Navigate replace to="/home" />}></Route>

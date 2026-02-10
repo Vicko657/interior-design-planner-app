@@ -1,0 +1,41 @@
+.header {
+  height: 700px;
+  padding-top: 50px;
+}
+
+.header.home {
+  background-image: url(/imgs/homebgimg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header.about {
+  background-color: #33101c;
+}
+
+.header.theviews {
+  background-image: url(/imgs/homebgimg.png);
+}
+
+.header.signup {
+  background-color: red;
+}
+
+.header-content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 0px;
+}
+
+@media (max-width: 525px) {
+  header {
+    padding-bottom: 20px;
+  }
+  img.logo {
+    width: 300px !important;
+  }
+}
