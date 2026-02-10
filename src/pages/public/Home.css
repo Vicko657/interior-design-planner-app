@@ -1,0 +1,80 @@
+div.card.home-header {
+  height: 700px;
+}
+
+.home-features {
+  padding-top: 150px !important;
+  background-color: #f3eee6;
+}
+
+.home-views {
+  padding-top: 50px !important;
+  background-color: #f3eee6;
+}
+
+.home-image {
+  background-image: url(/imgs/homeimg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.home-hero {
+  background-image: url(/imgs/homehero.png);
+  background-color: #33101c;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.home-quotes {
+  background-color: #d8cfb6;
+  height: 300px;
+}
+
+.outline {
+  border: 1px solid #33101c !important;
+  color: #33101c;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-style: normal;
+}
+
+.your-view {
+  background-image: url(/imgs/homeyourview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.their-view {
+  background-image: url(/imgs/hometheirview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.our-view {
+  background-image: url(/imgs/homeourview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.lead {
+  color: #d8cfb6;
+  font-size: 16px;
+}
+
+.quote {
+  color: #33101c;
+  font-size: 18px;
+  font-weight: 300;
+}
