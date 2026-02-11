@@ -30,9 +30,23 @@ export default function Header() {
               </div>
             </div>
           </>
-        ) : (
-          <h1>{location}</h1>
-        )}
+        ) : null}
+        {location === "about" ? (
+          <>
+            <div className="card about-header d-flex rows p-5">
+              <div className="card-body header">
+                <div className="header ps-0 p-lg-5 text-left">
+                  <h2>About View.</h2>
+                  <p className="pt-3">
+                    A smart digital workspace planner for <br />
+                    anyone redesigning, organising their <br />
+                    home or big interior projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : null}
       </div>
     </div>
   );

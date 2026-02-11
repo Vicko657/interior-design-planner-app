@@ -1,0 +1,162 @@
+.about-accordion {
+  background-color: #33101c;
+}
+
+.accordion-item {
+  border: none !important;
+}
+
+.accordion-button {
+  background-color: #33101c !important;
+  color: #d8cfb6 !important;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-top: 1px solid #d8cfb6;
+  border-bottom: 1px solid #d8cfb6;
+  padding-left: 0px;
+  padding: 30px 30px 30px 0px !important;
+}
+
+.accordion-button::after {
+  flex-shrink: 0;
+  width: var(--bs-accordion-btn-icon-width);
+  background-image: url(/imgs/arrow-white.svg);
+  background-repeat: no-repeat;
+}
+
+.about-planning {
+  background-color: #33101c;
+}
+
+.about-planning h3 p {
+  color: #d8cfb6;
+}
+
+.about-planning p {
+  font-size: 14px;
+}
+
+.about-hero {
+  background-image: url(/imgs/abouthero.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f3eee6;
+  height: 300px;
+}
+
+.about-hero h3 {
+  color: #33101c;
+}
+
+.create {
+  background: rgba(216, 207, 182, 0.2);
+  height: 300px;
+}
+
+.create h4 {
+  color: #d8cfb6;
+}
+
+.create p {
+  color: #d8cfb6;
+  font-weight: 200;
+}
+
+.upload {
+  background: rgba(216, 207, 182, 0.4);
+  height: 300px;
+}
+
+.upload h4 {
+  color: #d8cfb6;
+}
+
+.upload p {
+  color: #d8cfb6;
+  font-weight: 200;
+}
+.schedule {
+  background: rgba(216, 207, 182, 0.6);
+  height: 300px;
+}
+
+.schedule h4 {
+  color: #33101c;
+}
+
+.schedule p {
+  color: #33101c;
+  font-weight: 300;
+}
+
+.track {
+  background: rgba(216, 207, 182, 0.8);
+  height: 300px;
+  color: #33101c;
+}
+
+.track h4 {
+  color: #33101c;
+}
+
+.interiors {
+  background-image: url(/imgs/about-interiors.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  width: auto;
+}
+
+.managers {
+  background-image: url(/imgs/about-managers.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  width: auto;
+}
+
+.about-features {
+  background-color: #ffffff;
+}
+
+.about-features h3 {
+  color: #33101c !important;
+}
+
+.about-features p {
+  color: #33101c !important;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.list-group {
+  border-top: 1px solid #33101c;
+  border-bottom: 1px solid #33101c;
+}
+
+.list-group li {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  letter-spacing: 1px;
+  border: 1px solid #33101c;
+  color: #33101c;
+  padding: 30px 0px 30px 0px;
+}
+.about-faq {
+  background-image: url(/imgs/aboutfaq.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
+.about-faq h3 {
+  color: #f3eee6;
+}
+
+.arrow {
+  background-color: transparent;
+}

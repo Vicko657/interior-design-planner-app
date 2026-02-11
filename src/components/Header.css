@@ -1,5 +1,4 @@
 .header {
-  height: 700px;
   padding-top: 50px;
 }
 
@@ -8,10 +7,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 700px;
 }
 
 .header.about {
   background-color: #33101c;
+  height: 500px;
 }
 
 .header.theviews {
@@ -29,6 +30,14 @@
   width: 100%;
   margin: 0 auto;
   height: 0px;
+}
+
+.about-header h2 {
+  color: #d8cfb6 !important;
+}
+
+.about-header p {
+  color: #d8cfb6 !important;
 }
 
 @media (max-width: 525px) {
