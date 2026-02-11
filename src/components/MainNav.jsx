@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./MainNav.css";
 
 export default function MainNav() {
+  const path = useLocation().pathname;
+  const location = path.split("/")[1];
+
   return (
-    <nav className="navbar navbar-expand-sm p-2">
+    <nav
+      className={`${location === "theviews" || location === "signin" || location === "signup" ? "dark" : "light"} navbar navbar-expand-sm p-2`}
+    >
       <div className="container">
         <a className="navbar-brand logo" href="/">
           VIEW

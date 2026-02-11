@@ -1,7 +1,20 @@
 nav {
   width: 90%;
-  border: 1px solid #f3eee6;
   margin: 0 auto;
+}
+
+.light {
+  border: 1px solid #f3eee6;
+  color: #f3eee6;
+}
+
+.dark {
+  border: 1px solid #33101c;
+  color: #33101c !important;
+}
+
+.dark a {
+  color: #33101c !important;
 }
 
 .logo {
