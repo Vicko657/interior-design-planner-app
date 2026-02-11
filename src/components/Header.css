@@ -16,7 +16,8 @@
 }
 
 .header.theviews {
-  background-image: url(/imgs/homebgimg.png);
+  background-color: #f3eee6;
+  height: 500px;
 }
 
 .header.signup {
@@ -38,6 +39,15 @@
 
 .about-header p {
   color: #d8cfb6 !important;
+}
+
+.theviews-header h2 {
+  color: #33101c;
+}
+
+.theviews-header p {
+  color: #33101c;
+  font-weight: 300;
 }
 
 @media (max-width: 525px) {

@@ -47,6 +47,29 @@ export default function Header() {
             </div>
           </>
         ) : null}
+        {location === "theviews" ? (
+          <>
+            <div className="card theviews-header d-flex rows p-5">
+              <div className="card-body header">
+                <div className="header ps-0 p-lg-5 text-left">
+                  <div className="row">
+                    <h2>Managing the Views.</h2>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-6"></div>
+                    <div className="col-sm-4">
+                      <p className="pt-3">
+                        Your Vision. Your Space. Your Plan. The home of where
+                        your ideas live.
+                      </p>
+                    </div>
+                    <div className="col-sm-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : null}
       </div>
     </div>
   );

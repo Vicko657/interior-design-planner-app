@@ -1,0 +1,48 @@
+.view-textimage {
+  background-color: #f3eee6;
+}
+.view-textimage h3 {
+  color: #33101c;
+}
+
+.view-textimage p {
+  color: #33101c;
+  font-weight: 300;
+  width: 400px;
+  font-size: 16px;
+}
+.space {
+  background-color: #f3eee6;
+}
+
+.yours {
+  background-image: url(/imgs/views-yourview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  width: auto;
+}
+
+.theirs {
+  background-image: url(/imgs/views-theirview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  width: auto;
+}
+
+.ours {
+  background-image: url(/imgs/views-ourview.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  width: auto;
+}
+
+.views-hero {
+  background-color: #33101c;
+  height: 500px;
+}
