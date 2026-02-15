@@ -89,7 +89,9 @@ export default function Home() {
           <p className="lead p-3">
             Find out more ways you can Plan using the View.
           </p>
-          <button className="white-btn">ABOUT</button>
+          <button className="white-btn">
+            ABOUT <img className="ps-4" src="imgs/arrow-red.svg"></img>
+          </button>
         </div>
       </div>
       <div className="card home-quotes d-flex columns align-items-center justify-content-center">
