@@ -7,6 +7,7 @@ import TheViews from "./pages/public/TheViews";
 import SignIn from "./pages/public/SignIn";
 import SignUp from "./pages/public/SignUp";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/signup" element={<SignUp />}></Route>
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

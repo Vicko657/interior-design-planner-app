@@ -1,0 +1,72 @@
+.footer.home p {
+  color: #33101c;
+}
+
+p.title {
+  color: #33101c;
+  font-family: PPEditorial;
+  font-weight: 100;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+}
+
+.footer.home a {
+  color: #33101c;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+}
+
+.footer-logo h3 {
+  color: #33101c;
+  letter-spacing: -3px;
+}
+
+.subscribe {
+  border: none;
+  border-bottom: 1px solid #33101c;
+  width: 250px;
+  padding: 0px 0px 5px 0px;
+}
+
+.subscribe::placeholder {
+  font-size: 12px !important;
+}
+
+.subscribe-btn {
+  color: #33101c;
+  background: none;
+  padding: 0px;
+  border-bottom: 1px solid #33101c;
+  font-size: 12px !important;
+  font-weight: 400;
+}
+
+.footer-nav {
+  color: #33101c !important;
+  font-weight: 300 !important;
+}
+
+small {
+  font-size: 10px !important;
+}
+
+.copyright {
+  color: #33101c;
+  font-size: 14px;
+}
+
+.footer-content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 525px) {
+  header {
+    padding-bottom: 20px;
+  }
+  img.logo {
+    width: 300px !important;
+  }
+}
