@@ -7,7 +7,7 @@ export default function Home() {
       <div className="card home-features d-flex rows p-5">
         <div className="card-body ">
           <div className=" p-lg-5 text-center">
-            <h2>Plan smarter. Design better. Stress less.</h2>
+            <h3>Plan smarter. Design better. Stress less.</h3>
             <div className="row p-5">
               <div className="col-sm-2">
                 <div className="card outline">
