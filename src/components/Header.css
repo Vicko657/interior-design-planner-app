@@ -20,10 +20,6 @@
   height: 500px;
 }
 
-.header.signup {
-  background-color: red;
-}
-
 .header-content {
   background-repeat: no-repeat;
   background-size: cover;
