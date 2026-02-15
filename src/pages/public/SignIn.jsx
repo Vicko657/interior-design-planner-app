@@ -4,7 +4,7 @@ import "../public/SignIn.css";
 export default function SignIn() {
   return (
     <>
-      <div className="view-textimage d-flex rows pt-5">
+      <div className="view-textimage d-flex rows">
         <div className="col-lg-6 d-flex columns align-items-start justify-content-start">
           <div className="card m-5">
             <div className="card-body m-5">
