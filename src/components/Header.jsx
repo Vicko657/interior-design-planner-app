@@ -14,15 +14,15 @@ export default function Header() {
       <div className="header-content">
         {location === "home" ? (
           <>
-            <div className="card home-header d-flex rows p-5">
-              <div className="card-body header">
-                <div className="header ps-0 p-lg-5 text-left">
+            <div className="card home-header d-flex rows p-lg-5 p-md-4 p-sm- 3">
+              <div className="card-body p-lg-5">
+                <div className="p-lg-5 p-md-4 p-sm-3 text-left">
                   <h1>Your Perspective Makes A Difference.</h1>
-                  <p className="pt-5">
-                    From homeowners to professional teams who are <br />
-                    redesigning, organising or managing interior spaces.
+                  <p className="pt-lg-5 pt-md-4 pt-3">
+                    From homeowners to professional teams who are redesigning,
+                    organising or managing interior spaces.
                   </p>
-                  <div className="buttons p-5 d-flex justify-content-end">
+                  <div className="buttons p-lg-5 p-md-4 pt-3 d-flex justify-content-end ">
                     <button className="red-btn me-2">GET STARTED</button>
                     <button className="outline-btn">LEARN MORE</button>
                   </div>
@@ -35,7 +35,7 @@ export default function Header() {
           <>
             <div className="card about-header d-flex rows p-5">
               <div className="card-body header">
-                <div className="header ps-0 p-lg-5 text-left">
+                <div className=" ps-0 p-lg-5 text-left">
                   <h2>About View.</h2>
                   <p className="pt-3">
                     A smart digital workspace planner for <br />
