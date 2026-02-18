@@ -1,4 +1,4 @@
-body {
+:root {
   margin: 0;
   padding: 0;
   background-color: #f3eee6;
@@ -136,8 +136,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    background-color: #f3eee6;
   }
   a:hover {
     color: #747bff;
