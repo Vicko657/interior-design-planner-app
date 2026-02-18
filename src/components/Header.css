@@ -12,7 +12,6 @@
 
 .header.home p {
   width: 600px;
-  font-size: 18px;
 }
 
 .header.about {
@@ -51,10 +50,50 @@
   font-weight: 300;
 }
 
-@media (max-width: 525px) {
+@media (max-width: 1500px) {
+  .header.home h1 {
+    width: auto;
+  }
+
+  .header.home p {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header.home {
+    background-image: url(/imgs/homebgimg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+  }
+
+  .header.home h1 {
+    width: auto;
+  }
+
+  .header.home p {
+    width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
   header {
     padding-bottom: 20px;
   }
+  .header.home {
+    background-image: url(/imgs/homebgimg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+  }
+
+  .header.home p {
+    width: 330px;
+  }
+
   img.logo {
     width: 300px !important;
   }

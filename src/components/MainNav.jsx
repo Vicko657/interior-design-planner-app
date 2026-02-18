@@ -9,7 +9,7 @@ export default function MainNav() {
 
   return (
     <nav
-      className={`${location === "theviews" || location === "signin" || location === "signup" ? "dark" : "light"} navbar navbar-expand-sm p-2`}
+      className={`${location === "theviews" || location === "signin" || location === "signup" ? "dark" : "light"} navbar navbar-expand-lg p-2`}
     >
       <div className="container">
         <a className="navbar-brand logo" href="/">

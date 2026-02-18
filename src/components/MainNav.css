@@ -23,7 +23,7 @@ nav {
   letter-spacing: -2px;
 }
 
-@media (max-width: 525px) {
+@media (max-width: 600px) {
   header {
     padding-bottom: 20px;
   }

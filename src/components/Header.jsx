@@ -14,15 +14,15 @@ export default function Header() {
       <div className="header-content">
         {location === "home" ? (
           <>
-            <div className="card home-header d-flex rows p-lg-5 p-md-4 p-sm- 3">
-              <div className="card-body p-lg-5">
-                <div className="p-lg-5 p-md-4 p-sm-3 text-left">
+            <div className="card home-header d-flex rows p-lg-5 p-3">
+              <div className="card-body p-sm-5 p-4">
+                <div className="pt-5 text-left">
                   <h1>Your Perspective Makes A Difference.</h1>
-                  <p className="pt-lg-5 pt-md-4 pt-3">
+                  <p className="pt-4">
                     From homeowners to professional teams who are redesigning,
                     organising or managing interior spaces.
                   </p>
-                  <div className="buttons p-lg-5 p-md-4 pt-3 d-flex justify-content-end ">
+                  <div className="mobile-btn  pt-3 d-flex justify-content-end">
                     <button className="red-btn me-2">GET STARTED</button>
                     <button className="outline-btn">LEARN MORE</button>
                   </div>
