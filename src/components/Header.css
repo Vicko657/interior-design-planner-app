@@ -76,6 +76,9 @@
   .header.home p {
     width: 500px;
   }
+  .header.about {
+    height: 400px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -92,6 +95,9 @@
 
   .header.home p {
     width: 330px;
+  }
+  .header.about {
+    height: 350px;
   }
 
   img.logo {

@@ -53,6 +53,7 @@
 .create {
   background: rgba(216, 207, 182, 0.2);
   height: 300px;
+  align-items: center;
 }
 
 .create h4 {
@@ -67,6 +68,7 @@
 .upload {
   background: rgba(216, 207, 182, 0.4);
   height: 300px;
+  align-items: center;
 }
 
 .upload h4 {
@@ -80,6 +82,7 @@
 .schedule {
   background: rgba(216, 207, 182, 0.6);
   height: 300px;
+  align-items: center;
 }
 
 .schedule h4 {
@@ -95,6 +98,7 @@
   background: rgba(216, 207, 182, 0.8);
   height: 300px;
   color: #33101c;
+  align-items: center;
 }
 
 .track h4 {
@@ -159,4 +163,77 @@
 
 .arrow {
   background-color: transparent;
+}
+
+@media (max-width: 1200px) {
+  .create {
+    height: 260px;
+  }
+  .upload {
+    height: 260px;
+  }
+  .schedule {
+    height: 260px;
+  }
+  .track {
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .create {
+    height: 160px;
+  }
+  .upload {
+    height: 160px;
+  }
+  .schedule {
+    height: 160px;
+  }
+  .track {
+    height: 160px;
+  }
+  .about-hero {
+    height: 150px;
+  }
+  .about-image {
+    height: 200px;
+  }
+  .interiors {
+    background-position: bottom;
+  }
+  .managers {
+    background-position: bottom;
+  }
+  .accordion-button {
+    font-size: 14px;
+  }
+
+  .about-features p {
+    font-size: 12px;
+  }
+
+  .list-group {
+    border-top: none;
+    border-bottom: 1px solid #33101c;
+  }
+
+  .list-group li {
+    padding: 15px 0px 15px 0px;
+  }
+
+  .ft-border {
+    border-top: 1px solid #33101c;
+  }
+  .about-faq {
+    height: 150px;
+  }
+
+  .about-planning h4 {
+    font-size: 20px;
+  }
+
+  .about-planning p {
+    font-size: 10px;
+  }
 }
