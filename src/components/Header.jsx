@@ -15,8 +15,8 @@ export default function Header() {
         {location === "home" ? (
           <>
             <div className="card home-header d-flex rows p-5">
-              <div className="card-body header">
-                <div className="header ps-0 p-lg-5 text-left">
+              <div className="card-body">
+                <div className=" ps-0 p-lg-5 text-left">
                   <h1>Your Perspective Makes A Difference.</h1>
                   <p className="pt-5">
                     From homeowners to professional teams who are <br />
@@ -34,8 +34,8 @@ export default function Header() {
         {location === "about" ? (
           <>
             <div className="card about-header d-flex rows p-5">
-              <div className="card-body header">
-                <div className="header ps-0 p-lg-5 text-left">
+              <div className="card-body">
+                <div className=" ps-0 p-lg-5 text-left">
                   <h2>About View.</h2>
                   <p className="pt-3">
                     A smart digital workspace planner for <br />

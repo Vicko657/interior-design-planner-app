@@ -4,7 +4,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <>
-      <div className="card p-5">
+      <div className="card footer p-5">
         <div className="card-body footer p-0"></div>
         <div className="footer d-flex row columns align-items-center justify-content-center">
           <div className="footer-logo col-sm-2 text-start">

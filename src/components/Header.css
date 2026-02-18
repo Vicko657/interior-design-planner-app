@@ -1,5 +1,6 @@
 .header {
   padding-top: 50px;
+  background-color: #f3eee6;
 }
 
 .header.home {
@@ -7,11 +8,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: none !important;
   height: 700px;
 }
 
 .header.about {
-  background-color: #33101c;
+  background-color: #33101c !important;
   height: 500px;
 }
 
