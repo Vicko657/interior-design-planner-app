@@ -51,7 +51,7 @@ export default function Header() {
           <>
             <div className="card theviews-header d-flex rows p-5">
               <div className="card-body header">
-                <div className="header ps-0 p-lg-5 text-left">
+                <div className="ps-0 p-lg-5 text-left">
                   <div className="row">
                     <h2>Managing the Views.</h2>
                   </div>

@@ -79,6 +79,10 @@
   .header.about {
     height: 400px;
   }
+  .header.theviews {
+    background-color: #f3eee6;
+    height: 400px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -102,5 +106,9 @@
 
   img.logo {
     width: 300px !important;
+  }
+  .header.theviews {
+    background-color: #f3eee6;
+    height: 300px;
   }
 }

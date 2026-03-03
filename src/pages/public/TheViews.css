@@ -46,3 +46,48 @@
   background-color: #33101c;
   height: 500px;
 }
+
+@media (max-width: 1200px) {
+  .view-textimage p {
+    font-size: 14px;
+  }
+  .yours {
+    height: 480px;
+  }
+
+  .theirs {
+    height: 480px;
+  }
+
+  .ours {
+    height: 480px;
+  }
+
+  .views-hero {
+    height: 280px;
+  }
+  .view-textimage p {
+    width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .view-textimage p {
+    font-size: 12px;
+  }
+  .yours {
+    height: 300px;
+  }
+
+  .theirs {
+    height: 300px;
+  }
+
+  .ours {
+    height: 300px;
+  }
+
+  .views-hero {
+    height: 250px;
+  }
+}
