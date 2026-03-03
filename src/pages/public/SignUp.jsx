@@ -4,41 +4,41 @@ import "../public/SignUp.css";
 export default function SignUp() {
   return (
     <>
-      <div className="view-textimage d-flex rows">
-        <div className="col-lg-6 d-flex columns align-items-start justify-content-start">
-          <div className="card m-5">
+      <div className="signin-textimage d-flex col-12 row p-0 m-0">
+        <div className="col-lg-6 col-12 d-flex columns align-items-start justify-content-start">
+          <div className="card w-100 m-lg-5">
             <div className="card-body m-5">
-              <h2 className="pb-5">Register Your Account</h2>
+              <h2 className="pb-lg-5 pb-4 ">Create Your Account</h2>
               <form>
-                <div className="form-group">
+                <div className="mb-1">
                   <input
                     type="text"
-                    className="form-control"
+                    className="signup-form form-control"
                     id="exampleInputText1"
                     placeholder="FIRST NAME"
                   />
                 </div>
-                <div className="form-group pt-2">
+                <div className="mb-1 pt-2">
                   <input
                     type="text"
-                    className="form-control"
+                    className="signup-form form-control"
                     id="exampleInputText2"
                     placeholder="LAST NAME"
                   />
                 </div>
-                <div className="form-group pt-2">
+                <div className="mb-1 pt-2">
                   <input
                     type="email"
-                    className="form-control"
+                    className="signup-form form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="ENTER EMAIL"
                   />
                 </div>
-                <div className="form-group pt-2">
+                <div className="mb-1 pt-2">
                   <input
                     type="password"
-                    className="form-control"
+                    className="signup-form form-control"
                     id="exampleInputPassword1"
                     placeholder="PASSWORD"
                   />
@@ -54,22 +54,23 @@ export default function SignUp() {
                     Conditions and Privacy Policy
                   </label>
                 </div>
-
-                <button type="submit" className="red-btn login-btn">
-                  CREATE YOUR ACCOUNT
-                </button>
+                <div className="d-grid">
+                  <button type="submit" className="red-btn login-btn">
+                    LOG IN
+                  </button>
+                </div>
                 <hr></hr>
-                <button type="submit" className="outline-red-btn login-btn">
-                  LOG IN WITH GOOGLE
-                </button>
-
-                <a className="register">Register here for a account</a>
+                <div className="d-grid">
+                  <button type="submit" className="outline-red-btn login-btn">
+                    LOG IN WITH GOOGLE
+                  </button>
+                </div>
               </form>
             </div>
           </div>
         </div>
-        <div className="col-lg-6 p-5">
-          <div className="card signup-img p-5">
+        <div className="col-lg-6 col-12 pt-lg-5 p-5 pe-lg-5">
+          <div className="card signup-img p-4">
             <div className="card-body d-flex columns align-items-end"></div>
           </div>
         </div>
