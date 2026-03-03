@@ -81,3 +81,78 @@ div.card.home-header {
   font-size: 18px;
   font-weight: 300;
 }
+
+@media (max-width: 1200px) {
+  .home-views {
+    padding-top: 20px !important;
+  }
+
+  .your-view {
+    height: 300px;
+    background-position: bottom;
+  }
+
+  .their-view {
+    height: 300px;
+    background-position: bottom;
+  }
+
+  .our-view {
+    height: 300px;
+    background-position: bottom;
+  }
+
+  .home-image {
+    height: 200px;
+  }
+
+  .home-hero {
+    height: 400px;
+  }
+
+  .home-quotes {
+    height: 200px;
+  }
+  .quote {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-features {
+    padding-top: 70px !important;
+    background-color: #f3eee6;
+  }
+
+  .home-views {
+    padding-top: 20px !important;
+  }
+
+  .your-view {
+    height: 150px;
+    background-position: bottom;
+  }
+
+  .their-view {
+    height: 150px;
+    background-position: bottom;
+  }
+
+  .our-view {
+    height: 150px;
+    background-position: bottom;
+  }
+
+  .home-image {
+    height: 200px;
+  }
+
+  .home-hero {
+    background-position: right;
+    background-size: cover;
+    height: 400px;
+  }
+  .quote {
+    font-size: 14px;
+  }
+}

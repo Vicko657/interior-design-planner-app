@@ -27,7 +27,7 @@ p.title {
 .subscribe {
   border: none;
   border-bottom: 1px solid #33101c;
-  width: 250px;
+  width: 220px;
   padding: 0px 0px 5px 0px;
 }
 
@@ -42,6 +42,8 @@ p.title {
   border-bottom: 1px solid #33101c;
   font-size: 12px !important;
   font-weight: 400;
+  text-align: end;
+  width: 20px;
 }
 
 .footer-nav {
@@ -66,11 +68,11 @@ small {
   margin: 0 auto;
 }
 
-@media (max-width: 525px) {
+@media (max-width: 600px) {
   header {
     padding-bottom: 20px;
   }
-  img.logo {
-    width: 300px !important;
+  .footer-logo h3 {
+    font-size: 40px !important;
   }
 }

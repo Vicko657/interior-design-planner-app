@@ -14,15 +14,15 @@ export default function Header() {
       <div className="header-content">
         {location === "home" ? (
           <>
-            <div className="card home-header d-flex rows p-5">
-              <div className="card-body">
-                <div className=" ps-0 p-lg-5 text-left">
+            <div className="card home-header d-flex rows p-lg-5 p-3">
+              <div className="card-body p-sm-5 p-4">
+                <div className="pt-5 text-left">
                   <h1>Your Perspective Makes A Difference.</h1>
-                  <p className="pt-5">
-                    From homeowners to professional teams who are <br />
-                    redesigning, organising or managing interior spaces.
+                  <p className="pt-4">
+                    From homeowners to professional teams who are redesigning,
+                    organising or managing interior spaces.
                   </p>
-                  <div className="buttons p-5 d-flex justify-content-end">
+                  <div className="mobile-btn  pt-3 d-flex justify-content-end">
                     <button className="red-btn me-2">GET STARTED</button>
                     <button className="outline-btn">LEARN MORE</button>
                   </div>
@@ -34,7 +34,7 @@ export default function Header() {
         {location === "about" ? (
           <>
             <div className="card about-header d-flex rows p-5">
-              <div className="card-body">
+              <div className="card-body ">
                 <div className=" ps-0 p-lg-5 text-left">
                   <h2>About View.</h2>
                   <p className="pt-3">
@@ -50,8 +50,8 @@ export default function Header() {
         {location === "theviews" ? (
           <>
             <div className="card theviews-header d-flex rows p-5">
-              <div className="card-body header">
-                <div className="header ps-0 p-lg-5 text-left">
+              <div className="card-body ">
+                <div className="ps-0 p-lg-5 text-left">
                   <div className="row">
                     <h2>Managing the Views.</h2>
                   </div>
