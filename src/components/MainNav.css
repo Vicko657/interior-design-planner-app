@@ -18,16 +18,72 @@ nav {
   font-weight: 300 !important;
 }
 
-.logo {
+.dark .navline {
+  border-bottom: 1px solid #33101c;
+}
+
+.light .navline {
+  border-bottom: 1px solid #f3eee6;
+}
+
+.navlogo {
   font-size: 24px !important;
   letter-spacing: -2px;
+}
+
+button.navbar-toggler {
+  border: none !important;
+  box-shadow: none;
+}
+
+span.navbar-toggler-icon {
+  background-image: none;
+  box-shadow: none;
+  border: none;
+}
+
+.navbar :focus {
+  box-shadow: none;
+  border: none;
+}
+
+.navbar :active {
+  box-shadow: none;
+  border: none;
+}
+
+.dark .offcanvas {
+  background: #f3eee6;
+}
+
+.light .offcanvas {
+  background: #33101c;
+}
+
+.offcanvas li :hover {
+  text-decoration: underline;
+}
+
+.offcanvas-header {
+  padding: 50px;
+}
+
+.offcanvas-body {
+  padding: 50px;
+  align-content: end;
+}
+
+.offcanvas-title {
+  font-size: 38px !important;
+  letter-spacing: -2px;
+}
+
+.offcanvas-body li {
+  color: #f3eee6;
 }
 
 @media (max-width: 600px) {
   header {
     padding-bottom: 20px;
-  }
-  img.logo {
-    width: 300px !important;
   }
 }
