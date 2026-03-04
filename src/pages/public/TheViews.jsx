@@ -1,5 +1,6 @@
 import React from "react";
 import "../public/TheViews.css";
+import Button from "../../components/Button";
 
 export default function TheViews() {
   return (
@@ -21,10 +22,12 @@ export default function TheViews() {
                 TAKE CONTROL OF EVERY ASPECT OF YOUR PROJECT, FROM INSPIRATION
                 TO EXECUTION.
               </p>
-              <button className="red-btn">
-                START YOUR PROJECT{" "}
-                <img className="ps-4" src="imgs/arrow-white.svg"></img>
-              </button>
+              <Button
+                page="theviews"
+                colour="outline-red-btn"
+                text="START YOUR PROJECT"
+                arrow="true"
+              ></Button>
             </div>
           </div>
         </div>
@@ -53,10 +56,12 @@ export default function TheViews() {
                 BRING PEOPLE INTO YOUR PROJECT, YOUR PARTNER, FRIEND, CLIENT,
                 CONTRACTOR, BY COLLABORATING ON IDEAS AND PLANNING.
               </p>
-              <button className="red-btn">
-                INVITE COLLABORATORS{" "}
-                <img className="ps-4" src="imgs/arrow-white.svg"></img>
-              </button>
+              <Button
+                page="theviews"
+                colour="outline-red-btn"
+                text="INVITE COLLABORATORS"
+                arrow="true"
+              ></Button>
             </div>
           </div>
         </div>
@@ -79,10 +84,12 @@ export default function TheViews() {
                 MAKE SMARTER, MORE ORGANISED DESIGN CHOICES USING BUILT IN TOOLS
                 AND STRUCTURE.
               </p>
-              <button className="red-btn">
-                SEE FEATURES{" "}
-                <img className="ps-4" src="imgs/arrow-white.svg"></img>
-              </button>
+              <Button
+                page="theviews"
+                colour="outline-red-btn"
+                text="SEE FEATURES"
+                arrow="true"
+              ></Button>
             </div>
           </div>
         </div>
@@ -95,10 +102,12 @@ export default function TheViews() {
       <div className="jumbotron views-hero p-5 d-flex columns align-items-center justify-content-center">
         <div className="text-center">
           <h3 className="pb-4">Have Any Questions? We Are Here To Help.</h3>
-          <button className="white-btn">
-            FAQS
-            <img className="ps-4" src="imgs/arrow-red.svg"></img>
-          </button>
+          <Button
+            page="theviews"
+            colour="white-btn"
+            text="FAQS"
+            arrow="true"
+          ></Button>
         </div>
       </div>
     </>

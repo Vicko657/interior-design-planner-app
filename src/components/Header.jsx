@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Header.css";
 import { useLocation } from "react-router-dom";
 import MainNav from "./MainNav";
+import Button from "./Button";
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -23,8 +24,19 @@ export default function Header() {
                     organising or managing interior spaces.
                   </p>
                   <div className="mobile-btn  pt-3 d-flex justify-content-end">
-                    <button className="red-btn me-2">GET STARTED</button>
-                    <button className="outline-btn">LEARN MORE</button>
+                    <Button
+                      page="signup"
+                      colour="red-btn"
+                      cn="me-2"
+                      text="GET STARTED"
+                      arrow="true"
+                    ></Button>
+                    <Button
+                      page="theviews"
+                      colour="outline-btn"
+                      text="LEARN MORE"
+                      arrow="true"
+                    ></Button>
                   </div>
                 </div>
               </div>

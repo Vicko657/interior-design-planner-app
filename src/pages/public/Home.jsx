@@ -1,5 +1,6 @@
 import React from "react";
 import "../public/Home.css";
+import Button from "../../components/Button";
 
 export default function Home() {
   return (
@@ -52,7 +53,12 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4 d-lg-flex d-none columns align-items-center justify-content-end">
-              <button className="outline-red-btn">THE VIEWS</button>
+              <Button
+                page="theviews"
+                colour="outline-red-btn"
+                text="THE VIEWS"
+                arrow="true"
+              ></Button>
             </div>
           </div>
           <div className="row p-lg-5 pt-4">
@@ -78,7 +84,12 @@ export default function Home() {
               </div>
             </div>
             <div className="mobile-btn col-sm-4 d-lg-none d-flex pt-4">
-              <button className="outline-red-btn">THE VIEWS</button>
+              <Button
+                page="theviews"
+                colour="outline-red-btn"
+                text="THE VIEWS"
+                arrow="true"
+              ></Button>
             </div>
           </div>
         </div>
@@ -90,9 +101,12 @@ export default function Home() {
           <p className="p-sm-3 pt-2">
             Find out more ways you can Plan using the View.
           </p>
-          <button className="white-btn">
-            ABOUT <img className="ps-4" src="imgs/arrow-red.svg"></img>
-          </button>
+          <Button
+            page="about"
+            colour="white-btn"
+            text="ABOUT"
+            arrow="true"
+          ></Button>
         </div>
       </div>
       <div className="card home-quotes d-flex columns align-items-center justify-content-center">

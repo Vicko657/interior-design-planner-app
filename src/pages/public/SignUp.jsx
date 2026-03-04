@@ -1,5 +1,6 @@
 import React from "react";
 import "../public/SignUp.css";
+import Button from "../../components/Button";
 
 export default function SignUp() {
   return (
@@ -54,17 +55,17 @@ export default function SignUp() {
                     Conditions and Privacy Policy
                   </label>
                 </div>
-                <div className="d-grid">
-                  <button type="submit" className="red-btn login-btn">
-                    LOG IN
-                  </button>
-                </div>
+                <Button
+                  colour="red-btn login-btn"
+                  text="LOG IN"
+                  arrow="false"
+                ></Button>
                 <hr></hr>
-                <div className="d-grid">
-                  <button type="submit" className="outline-red-btn login-btn">
-                    LOG IN WITH GOOGLE
-                  </button>
-                </div>
+                <Button
+                  colour="outline-red-btn "
+                  text="LOG IN WITH GOOGLE"
+                  arrow="false"
+                ></Button>
               </form>
             </div>
           </div>

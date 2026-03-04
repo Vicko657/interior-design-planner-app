@@ -29,10 +29,6 @@ a.logo {
   font-family: PPEditorial, serif;
 }
 
-a:hover {
-  color: #535bf2;
-}
-
 ul {
   list-style: none;
 }
@@ -92,56 +88,6 @@ td {
   font-size: 14px;
 }
 
-button {
-  padding: 0.6em 1.6em;
-  border: none;
-  font-size: 14px;
-  font-weight: 300;
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: #f3eee6;
-  letter-spacing: 1.2px;
-}
-
-.red-btn {
-  background-color: #33101c;
-}
-
-.red-btn:hover {
-  background-color: #f3eee6;
-  color: #33101c;
-}
-
-.white-btn {
-  background-color: #d8cfb6;
-  color: #33101c;
-}
-
-.outline-btn {
-  border: 1px solid #f3eee6;
-  background-color: transparent;
-}
-
-.outline-btn:hover {
-  border: 1px solid #33101c;
-  color: #33101c;
-}
-
-.outline-red-btn {
-  border: 1px solid #33101c;
-  color: #33101c;
-  background-color: transparent;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 .form-control {
   width: 100%;
   padding: 10px;
@@ -180,18 +126,6 @@ hr {
 
 a.register {
   color: #33101c !important;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #f3eee6;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 @media (max-width: 1500px) {

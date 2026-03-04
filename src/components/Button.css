@@ -1,0 +1,97 @@
+button {
+  padding: 0.8em 1.5em;
+  border: none;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  letter-spacing: 1.2px;
+}
+
+svg {
+  height: 15px;
+}
+
+.red-btn {
+  color: #f3eee6;
+  background-color: #33101c;
+  border: 1px solid #33101c;
+}
+
+.red-btn:hover {
+  border: 1px solid #f3eee6;
+  background-color: transparent;
+}
+
+.red-btn svg {
+  fill: #f3eee6;
+}
+
+.red-btn:hover svg {
+  fill: #f3eee6;
+}
+
+.white-btn {
+  background-color: #d8cfb6;
+  color: #33101c;
+  border: 1px solid #d8cfb6;
+}
+
+.white-btn:hover {
+  color: #d8cfb6;
+  border: 1px solid #d8cfb6;
+  background-color: transparent;
+}
+
+.white-btn svg {
+  fill: #33101c;
+}
+
+.white-btn:hover svg {
+  fill: #d8cfb6;
+}
+
+.outline-btn {
+  color: #f3eee6;
+  border: 1px solid #f3eee6;
+  background-color: transparent;
+}
+
+.outline-btn:hover {
+  background-color: #f3eee6;
+  color: #33101c;
+}
+
+.outline-btn svg {
+  fill: #f3eee6;
+}
+
+.outline-btn:hover svg {
+  fill: #33101c;
+}
+
+.outline-red-btn {
+  border: 1px solid #33101c;
+  color: #33101c;
+  background-color: transparent;
+}
+
+.outline-red-btn:hover {
+  color: #f3eee6;
+  background-color: #33101c;
+}
+
+.outline-red-btn svg {
+  fill: #33101c;
+}
+
+.outline-red-btn:hover svg {
+  fill: #f3eee6;
+}
+
+.login-btn:hover {
+  border: 1px solid #33101c;
+  color: #33101c;
+  background-color: transparent;
+}
