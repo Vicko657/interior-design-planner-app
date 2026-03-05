@@ -9,7 +9,7 @@ export default function MainNav() {
 
   return (
     <nav
-      className={`${location === "theviews" || location === "signin" || location === "signup" ? "dark" : "light"} navbar navbar-expand-lg p-2`}
+      className={`${location === "theviews" || location === "signin" || location === "signup" ? "dark" : "light"} navbar navbar-expand-lg p-2 `}
     >
       <div className="container-fluid">
         <a className="navbar-brand navlogo logo" href="/">
@@ -51,27 +51,27 @@ export default function MainNav() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1">
               <li className="nav-item">
-                <NavLink className="nav-link active" to={"/"}>
+                <NavLink className="nav-link active" to="home">
                   HOME <span className="sr-only"></span>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to={"/about"}>
+                <NavLink className="nav-link" to="about">
                   ABOUT
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to={"/theviews"}>
+                <NavLink className="nav-link" to="theviews">
                   THE VIEWS
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to={"/signin"}>
+                <NavLink className="nav-link" to="signin">
                   SIGN IN
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to={"/signup"}>
+                <NavLink className="nav-link" to="/signup">
                   SIGN UP
                 </NavLink>
               </li>
