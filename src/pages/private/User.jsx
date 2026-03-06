@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./User.css";
 import SideNav from "./SideNav";
+import TopBar from "./components/TopBar";
 
 export default function User() {
   return (
@@ -9,7 +10,8 @@ export default function User() {
       {/*-- SideNav */}
       <SideNav />
 
-      <div className="flex-grow-1 p-4 overflow-auto">
+      <div className="flex-grow-1">
+        <TopBar />
         <Outlet />
       </div>
     </div>

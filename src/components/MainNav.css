@@ -42,12 +42,12 @@ span.navbar-toggler-icon {
   border: none;
 }
 
-.navbar :focus {
+.main-nav :focus {
   box-shadow: none;
   border: none;
 }
 
-.navbar :active {
+.main-nav :active {
   box-shadow: none;
   border: none;
 }

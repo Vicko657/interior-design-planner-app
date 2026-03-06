@@ -1,0 +1,17 @@
+.notification-btn {
+  background-image: url(/imgs/notification-img.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.notification-btn > span {
+  background: transparent !important;
+  font-family: PPEditorial;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.notification-btn:focus :active {
+  border: none;
+}
