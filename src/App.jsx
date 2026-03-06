@@ -6,8 +6,6 @@ import About from "./pages/public/About";
 import TheViews from "./pages/public/TheViews";
 import SignIn from "./pages/public/SignIn";
 import SignUp from "./pages/public/SignUp";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import User from "./pages/private/User";
 import Overview from "./pages/private/OverView";
 import Projects from "./pages/private/projects";
@@ -19,21 +17,25 @@ import Files from "./pages/private/Files";
 import Clients from "./pages/private/clients";
 import ShoppingList from "./pages/private/ShoppingList";
 import Inbox from "./pages/private/Inbox";
+import MainLayout from "./components/MainLayout";
 
 export default function App() {
   return (
     // ReactRouter used to handle navigation
     <BrowserRouter>
       <div className="container-fluid p-0 m-0 App">
-        {/*-- Header */}
-        <Header />
+        {/*-- ReactRouter logged out */}
         <Routes>
-          <Route path="home" element={<Home />}></Route>
-          <Route path="/" element={<Navigate replace to="home" />}></Route>
-          <Route path="about" element={<About />}></Route>
-          <Route path="theviews" element={<TheViews />}></Route>
-          <Route path="signin" element={<SignIn />}></Route>
-          <Route path="signup" element={<SignUp />}></Route>
+          <Route element={<MainLayout />}>
+            <Route path="home" element={<Home />}></Route>
+            <Route path="/" element={<Navigate replace to="home" />}></Route>
+            <Route path="about" element={<About />}></Route>
+            <Route path="theviews" element={<TheViews />}></Route>
+            <Route path="signin" element={<SignIn />}></Route>
+            <Route path="signup" element={<SignUp />}></Route>
+          </Route>
+
+          {/*-- ReactRouter logged in */}
           <Route path="user" element={<User />}>
             <Route path="overview" element={<Overview />}></Route>
             <Route path="projects" element={<Projects />}></Route>
@@ -47,7 +49,6 @@ export default function App() {
             <Route path="inbox" element={<Inbox />}></Route>
           </Route>
         </Routes>
-        <Footer />
       </div>
     </BrowserRouter>
   );
