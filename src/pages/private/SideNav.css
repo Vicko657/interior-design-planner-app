@@ -1,0 +1,64 @@
+.nav-sidebar {
+  width: 280px;
+  min-height: 100%;
+  background-color: #33101c;
+  top: 0;
+  left: 0;
+  color: #f3eee6;
+  border: 0.2px solid #f3eee6 !important;
+}
+
+.sidebar-header {
+  border-bottom: 0.2px solid #f3eee6 !important;
+}
+
+.sidebar-title {
+  font-size: 32px !important;
+  letter-spacing: -2px;
+  color: #f3eee6;
+}
+
+.sidebar-body {
+  padding: 30px;
+  align-content: end;
+  border-bottom: 0.2px solid #f3eee6 !important;
+}
+
+.sidebar-body small {
+  color: #f3eee6;
+  letter-spacing: 1px;
+  opacity: 0.3;
+}
+
+.sidebar-body .nav-link {
+  padding-left: 0px !important;
+}
+
+.side-link {
+  vertical-align: -125em;
+  color: rgba(243, 238, 230, 0.6) !important;
+}
+
+.sidebar-body svg {
+  height: 23px;
+}
+
+.sidebar-body a {
+  font-size: 13px !important;
+}
+
+.sidebar-footer .copyright {
+  text-align: center !important;
+  color: #f3eee6;
+  margin: 0 auto;
+}
+
+.nav-pills .nav-link.active {
+  color: #f3eee6 !important;
+  background: none !important;
+}
+
+.nav > li > a:focus,
+.nav > li > a:hover {
+  color: #f3eee6 !important;
+}

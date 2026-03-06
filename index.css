@@ -83,6 +83,10 @@ p {
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-style: normal;
 }
+small {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  letter-spacing: 1px;
+}
 
 td {
   font-size: 14px;
