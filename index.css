@@ -92,6 +92,49 @@ small {
   letter-spacing: 1px;
 }
 
+.card {
+  background: transparent;
+  border: none !important;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.card-header {
+  border: none;
+  background-color: transparent;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  letter-spacing: 1.2px;
+  font-size: 14px;
+}
+
+table {
+  margin-bottom: 0px !important;
+  --bs-border-color: #ada58f87;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+th {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-size: 11px;
+  font-weight: 300 !important;
+  color: #33101c;
+  padding: 10px !important;
+}
+
+.table-group-divider {
+  border-top: 0.5px solid #ada58f87 !important;
+}
+
+tbody tr {
+  border-bottom: 0.2px solid #ada58f87 !important;
+  color: #33101c !important;
+}
+
 td {
   font-size: 14px;
 }

@@ -10,7 +10,7 @@ export default function User() {
       {/*-- SideNav */}
       <SideNav />
 
-      <div className="flex-grow-1">
+      <div className="flex-grow-1 overflow-auto">
         <TopBar />
         <Outlet />
       </div>

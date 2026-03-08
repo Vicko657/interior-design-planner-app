@@ -1,0 +1,24 @@
+.user-daily-projects {
+  background: #d8cfb6 !important;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 200 !important;
+  font-style: normal;
+}
+
+.user-daily-projects .card-title {
+  color: #33101c;
+}
+
+.table-group-divider th {
+  font-weight: 400 !important;
+  font-size: 12px;
+}
+
+.status {
+  border: 1px solid #33101c;
+  background: #33101c;
+  color: #d8cfb6;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 300;
+}
