@@ -1,7 +1,7 @@
 import React from "react";
-import "../private/SideNav.css";
+import "./SideNav.css";
 import { NavLink } from "react-router-dom";
-import SVG from "../../components/SVG";
+import SVG from "../../../components/SVG";
 
 export default function SideNav() {
   return (
@@ -24,13 +24,13 @@ export default function SideNav() {
           <small className="pt-4 mb-1">PROJECTS</small>
           <li className="">
             <NavLink className="nav-link side-link" to="projects">
-              <SVG viewbox="0 0 20 20" path="all-icon" cn="me-3 bi" />
+              <SVG viewbox="0 0 20 20" path="rooms-icon" cn="me-3 bi" />
               ALL
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link side-link" to="rooms">
-              <SVG viewbox="0 0 20 20" path="rooms-icon" cn="me-3 bi" />
+              <SVG viewbox="0 0 20 20" path="all-icon" cn="me-3 bi" />
               ROOMS
             </NavLink>
           </li>
