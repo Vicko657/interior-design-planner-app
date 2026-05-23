@@ -41,7 +41,10 @@ export default function App() {
           <Route path="user" element={<User />}>
             <Route path="overview" element={<Overview />}></Route>
             <Route path="projects" element={<Projects />}></Route>
-            <Route path="projects/project" element={<ProjectDetails />}></Route>
+            <Route
+              path="projects/:projectId"
+              element={<ProjectDetails />}
+            ></Route>
             <Route path="rooms" element={<Rooms />}></Route>
             <Route path="archived" element={<Archived />}></Route>
             <Route path="calendar" element={<Calendar />}></Route>
