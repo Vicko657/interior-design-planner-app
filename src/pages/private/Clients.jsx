@@ -2,6 +2,7 @@ import React from "react";
 import ClientList from "./components/ClientList";
 import "./Clients.css";
 import Button from "../../components/Button";
+import clients from "../../data/clients.js";
 
 export default function Clients() {
   return (
@@ -34,7 +35,7 @@ export default function Clients() {
         </div>
         <div className="row g-2 row-cols-1 pt-4">
           <div className="col-12">
-            <ClientList />
+            <ClientList clients={clients} />
           </div>
           <div className="col-md-6"></div>
         </div>
