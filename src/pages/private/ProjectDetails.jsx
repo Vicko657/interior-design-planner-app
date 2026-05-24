@@ -5,6 +5,8 @@ import projects from "../../data/projects";
 import rooms from "../../data/rooms";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import TaskTab from "./TaskTab";
+import InventoryTab from "./InventoryTab";
 
 export default function ProjectDetails() {
   const params = useParams();
@@ -100,14 +102,14 @@ export default function ProjectDetails() {
         <Tabs
           defaultActiveKey="profile"
           id="fill-tab-example"
-          className="mb-3 p-0"
+          className="p-0"
           fill
         >
           <Tab eventKey="tasks" title="Tasks">
-            <p>Tasks</p>
+            <TaskTab tasks={room.checklist} />
           </Tab>
-          <Tab eventKey="inventory" title="Shopping List">
-            <p>Shopping List</p>
+          <Tab eventKey="inventory" title="Inventory">
+            <InventoryTab items={room.inventory} />
           </Tab>
           <Tab eventKey="meetings" title="Meetings" disabled>
             <p>Meetings</p>
