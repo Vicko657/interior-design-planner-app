@@ -1,0 +1,27 @@
+.users-rooms .page-title {
+  color: #33101c;
+}
+
+.room-categories .card {
+  background: #33101c !important;
+  color: #d3d3d3;
+  border: none !important;
+}
+
+.room-categories .card-title {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.room-categories .card-subtitle {
+  font-size: 80px;
+  font-family: PPEditorial;
+  font-weight: 300;
+  color: #d3d3d3;
+  opacity: 0.3;
+}
+
+.room-categories .card-link {
+  text-decoration: underline;
+}
