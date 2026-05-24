@@ -1,0 +1,36 @@
+const rooms = [
+  {
+    id: 0,
+    project: "Industrial Loft Redesign",
+    type: "Loft",
+    height: 4.0,
+    length: 10.5,
+    width: 7.2,
+    unit: "m",
+    inventory: null,
+    checklist: null,
+  },
+  {
+    id: 1,
+    project: "Luxury Master Bedroom",
+    type: "Bedroom",
+    height: 6.5,
+    length: 6.7,
+    width: 4.0,
+    unit: "m",
+    inventory: null,
+    checklist: null,
+  },
+  {
+    id: 2,
+    project: "Scandinavian Living Room",
+    type: "Living Room",
+    height: 5.4,
+    length: 6.0,
+    width: 7.5,
+    unit: "m",
+    inventory: null,
+    checklist: null,
+  },
+];
+export default rooms;
