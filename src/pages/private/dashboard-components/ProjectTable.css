@@ -31,3 +31,30 @@
   font-size: 10px;
   font-weight: 300;
 }
+
+.project-category {
+  border: 1px solid #d8cfb6;
+  background: #d8cfb6;
+  color: #33101c;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.completed {
+  border: 1px solid #10800a;
+  background: #10800a;
+  color: #d8cfb6;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.not-completed {
+  border: 1px solid #950818;
+  background: #950818;
+  color: #d8cfb6;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 300;
+}

@@ -8,7 +8,20 @@ const rooms = [
     width: 7.2,
     unit: "m",
     inventory: null,
-    checklist: null,
+    checklist: [
+      {
+        taskName: "Flooring",
+        task: "Remove floor tiles in the Kitchen",
+        date: "2026/03/10",
+        completed: "no",
+      },
+      {
+        taskName: "Order Tiles",
+        task: "Wall tiles from Wickes",
+        date: "2026/03/03",
+        completed: "yes",
+      },
+    ],
   },
   {
     id: 1,
@@ -19,7 +32,14 @@ const rooms = [
     width: 4.0,
     unit: "m",
     inventory: null,
-    checklist: null,
+    checklist: [
+      {
+        taskName: "Contractors",
+        task: "Call contractors before next meeting",
+        date: "2026/05/10",
+        completed: "yes",
+      },
+    ],
   },
   {
     id: 2,
@@ -30,7 +50,14 @@ const rooms = [
     width: 7.5,
     unit: "m",
     inventory: null,
-    checklist: null,
+    checklist: [
+      {
+        taskName: "Order Paints",
+        task: "Check the through the paints in the inventory with the client",
+        date: "2026/02/08",
+        completed: "yes",
+      },
+    ],
   },
 ];
 export default rooms;
