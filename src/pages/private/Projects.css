@@ -1,5 +1,10 @@
 .users-projects p {
   color: #33101c;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.users-projects .card-title {
+  font-size: 12px;
+  opacity: 0.4;
 }

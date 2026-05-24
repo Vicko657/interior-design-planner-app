@@ -180,6 +180,33 @@ a.register {
   color: #33101c !important;
 }
 
+.nav-tabs {
+  border: 0.2px solid #33101c !important;
+  text-transform: uppercase !important;
+  --bs-nav-tabs-border-radius: none;
+  --bs-nav-tabs-link-active-color: #33101c;
+  --bs-nav-tabs-link-active-bg: #d8cfb6;
+  --bs-nav-tabs-link-active-border-color: none;
+  outline: none;
+}
+
+.nav-tabs .nav-link {
+  text-transform: uppercase !important;
+  color: #33101c !important;
+  border: 0.2px solid #33101c !important;
+  font-size: 12px;
+  opacity: 0.5;
+}
+.nav-tabs .nav-link:hover {
+  opacity: 1;
+  border: 0.2px solid #33101c;
+  background: #d8cfb6;
+  color: #33101c !important;
+}
+.nav-tabs .nav-link.active {
+  opacity: 1 !important;
+}
+
 @media (max-width: 1500px) {
   h1 {
     font-size: 82px;
