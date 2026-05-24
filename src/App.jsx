@@ -15,7 +15,7 @@ import Calendar from "./pages/private/Calendar";
 import Tasks from "./pages/private/Tasks";
 import Files from "./pages/private/Files";
 import Clients from "./pages/private/clients";
-import ShoppingList from "./pages/private/ShoppingList";
+import Inventory from "./pages/private/Inventory";
 import Inbox from "./pages/private/Inbox";
 import MainLayout from "./components/MainLayout";
 import ProjectDetails from "./pages/private/ProjectDetails";
@@ -50,7 +50,7 @@ export default function App() {
             <Route path="calendar" element={<Calendar />}></Route>
             <Route path="tasks" element={<Tasks />}></Route>
             <Route path="upload" element={<Files />}></Route>
-            <Route path="list" element={<ShoppingList />}></Route>
+            <Route path="inventory" element={<Inventory />}></Route>
             <Route path="clients" element={<Clients />}></Route>
             <Route path="clients/:clientId" element={<ClientDetails />}></Route>
             <Route path="inbox" element={<Inbox />}></Route>

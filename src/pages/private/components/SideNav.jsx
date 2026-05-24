@@ -61,9 +61,9 @@ export default function SideNav() {
           </li>
           <small className="pt-4">BUDGET</small>
           <li className="nav-item">
-            <NavLink className="nav-link side-link" to="list">
+            <NavLink className="nav-link side-link" to="inventory">
               <SVG viewbox="0 0 20 20" path="shoppinglist-icon" cn="me-3 bi" />
-              SHOPPING LIST
+              INVENTORY
             </NavLink>
           </li>
           <small className="pt-4 mb-1">COLLABORATION</small>
