@@ -14,7 +14,7 @@ export default function ProjectItem({ project }) {
         <span className="status rounded-pill">{project.status}</span>
       </td>
       <td>
-        <span className="status rounded-pill">{project.type}</span>
+        <span className="room-type rounded-pill">{project.type}</span>
       </td>
       <td>{project.clientName}</td>
       <td>{project.startDate}</td>
