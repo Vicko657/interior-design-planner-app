@@ -1,3 +1,7 @@
 .users-clients .page-title {
   color: #33101c;
 }
+.users-clients p {
+  font-size: 12px;
+  font-weight: 400;
+}

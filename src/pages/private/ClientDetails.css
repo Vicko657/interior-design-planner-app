@@ -1,0 +1,79 @@
+.client-header {
+  background-color: #33101c;
+}
+
+.client-header h2 {
+  color: #f3eee6 !important;
+}
+
+.client-header p {
+  color: #f3eee6 !important;
+  opacity: 0.3;
+}
+
+.client-details {
+  opacity: 1 !important;
+  font-size: 18px !important;
+}
+
+.client-notes {
+  border: 0.2px solid #33101c !important;
+  color: #33101c;
+}
+
+.client-notes p {
+  color: #33101c !important;
+}
+
+.clients-projects {
+  background-color: #33101c;
+}
+
+.clients-projects h5 {
+  color: #f3eee6 !important;
+}
+.clients-projects h6 {
+  color: #f3eee6 !important;
+  font-size: 28px !important;
+}
+
+.description {
+  font-size: 18px !important;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.date {
+  font-size: 12px !important;
+}
+
+.dimensions p {
+  font-size: 12px !important;
+  color: #f3eee6 !important;
+}
+
+.client-budget {
+  background-color: #d8cfb6;
+}
+
+.client-budget p {
+  color: #33101c !important;
+}
+
+.client-budget h6 {
+  color: #33101c !important;
+  font-size: 38px !important;
+}
+
+.project-client {
+  border: 0.2px solid #d8cfb6 !important;
+}
+
+.project-client p {
+  color: #33101c !important;
+}
+
+.project-client h6 {
+  color: #33101c !important;
+  font-size: 28px !important;
+}
