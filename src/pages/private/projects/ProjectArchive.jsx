@@ -1,10 +1,10 @@
 import React from "react";
-import "./Archived.css";
-import ArchivedList from "./components/ArchivedList";
-import Button from "../../components/Button";
-import projects from "../../data/projects.js";
+import "./ProjectArchive.css";
+import ArchivedList from "./ProjectArchiveList";
+import Button from "../../../components/Button";
+import projects from "../../../data/projects.js";
 
-export default function Archived() {
+export default function ProjectArchive() {
   return (
     <>
       <div className="container-fluid users-archived w-100 p-4">

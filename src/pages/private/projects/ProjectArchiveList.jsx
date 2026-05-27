@@ -1,9 +1,9 @@
 import React from "react";
 import "../../../components/Table.css";
-import ArchivedRow from "./ArchivedRow";
+import ArchivedRow from "./ProjectArchiveRow";
 import Table from "../../../components/Table";
 
-export default function ArchivedList({ projects }) {
+export default function ProjectArchivedList({ projects }) {
   const headers = [
     "Project Name",
     "Status",

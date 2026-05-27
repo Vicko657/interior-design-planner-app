@@ -1,10 +1,10 @@
 import React from "react";
-import "../../components/Table.css";
-import "./inventory/Inventory.css";
-import Table from "../../components/Table";
+import "../../../components/Table.css";
+import "../inventory/Inventory.css";
+import Table from "../../../components/Table";
 import { useNavigate } from "react-router-dom";
 
-export default function InventoryTab({ items }) {
+export default function ProjectInventoryTab({ items }) {
   const navigate = useNavigate();
   const inventoryheaders = [
     "Item",

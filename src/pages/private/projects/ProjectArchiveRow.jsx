@@ -2,7 +2,7 @@ import React from "react";
 import "../../../components/Table.css";
 import { useNavigate } from "react-router-dom";
 
-export default function ArchivedRow({ project }) {
+export default function ProjectArchivedRow({ project }) {
   const navigate = useNavigate();
   return (
     <tr

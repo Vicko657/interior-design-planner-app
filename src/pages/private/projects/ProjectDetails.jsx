@@ -5,8 +5,8 @@ import projects from "../../../data/projects";
 import rooms from "../../../data/rooms";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import TaskTab from "../../private/TaskTab";
-import InventoryTab from "../InventoryTab";
+import TaskTab from "./ProjectTaskTab";
+import InventoryTab from "./ProjectInventoryTab";
 
 export default function ProjectDetails() {
   const params = useParams();

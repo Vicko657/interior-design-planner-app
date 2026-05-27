@@ -1,10 +1,10 @@
 import React from "react";
-import "../../components/Table.css";
-import "../private/tasks/Tasks.css";
-import Table from "../../components/Table";
+import "../../../components/Table.css";
+import "../../private/tasks/Tasks.css";
+import Table from "../../../components/Table";
 import { useNavigate } from "react-router-dom";
 
-export default function TaskTab({ tasks }) {
+export default function ProjectTaskTab({ tasks }) {
   const navigate = useNavigate();
   const taskheaders = ["Task", "Details", "Due Date", "Completed"];
   return (
