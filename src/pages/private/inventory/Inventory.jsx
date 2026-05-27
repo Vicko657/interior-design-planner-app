@@ -1,8 +1,8 @@
 import React from "react";
-import ItemList from "./components/ItemList";
+import ItemList from "./ItemList";
 import "./Inventory.css";
-import Button from "../../components/Button";
-import rooms from "../../data/rooms.js";
+import Button from "../../../components/Button";
+import rooms from "../../../data/rooms.js";
 
 export default function Inventory() {
   return (

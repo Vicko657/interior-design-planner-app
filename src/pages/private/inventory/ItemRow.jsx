@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../components/Table.css";
-import "../Inventory.css";
+import "./Inventory.css";
 import { useNavigate } from "react-router-dom";
 
 export default function ItemRow({ items }) {

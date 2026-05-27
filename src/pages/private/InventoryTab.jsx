@@ -1,6 +1,6 @@
 import React from "react";
 import "../../components/Table.css";
-import "./Inventory.css";
+import "./inventory/Inventory.css";
 import Table from "../../components/Table";
 import { useNavigate } from "react-router-dom";
 
