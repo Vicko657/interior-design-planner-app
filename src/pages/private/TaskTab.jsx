@@ -1,6 +1,6 @@
 import React from "react";
 import "../../components/Table.css";
-import "./Tasks.css";
+import "../private/tasks/Tasks.css";
 import Table from "../../components/Table";
 import { useNavigate } from "react-router-dom";
 
