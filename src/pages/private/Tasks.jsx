@@ -1,6 +1,5 @@
 import React from "react";
 import TaskList from "./components/TaskList";
-import "./Clients.css";
 import Button from "../../components/Button";
 import rooms from "../../data/rooms.js";
 
