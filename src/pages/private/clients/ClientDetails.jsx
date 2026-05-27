@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import "./ClientDetails.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import clients from "../../data/clients";
-import projects from "../../data/projects";
+import clients from "../../../data/clients";
+import projects from "../../../data/projects";
 
 export default function ClientDetails() {
   const params = useParams();
