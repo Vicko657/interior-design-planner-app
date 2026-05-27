@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import "./User.css";
-import SideNav from "./components/SideNav";
-import TopBar from "./components/TopBar";
+import "./PrivateLayout.css";
+import SideNav from "./private/SideNav";
+import TopBar from "./private/TopBar";
 
 export default function User() {
   return (

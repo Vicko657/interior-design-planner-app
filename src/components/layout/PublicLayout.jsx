@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import "./MainLayout.css";
-import Header from "./Header";
-import Footer from "./Footer";
+import "./PublicLayout.css";
+import Header from "./public/Header";
+import Footer from "./public/Footer";
 
-export default function MainLayout() {
+export default function PublicLayout() {
   return (
     <>
       {/*-- Header */}
