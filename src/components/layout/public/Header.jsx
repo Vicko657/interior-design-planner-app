@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Header.css";
 import { useLocation } from "react-router-dom";
 import MainNav from "./MainNav";
-import Button from "./../../Button";
+import Button from "../../common/Button";
 
 export default function Header() {
   const path = useLocation().pathname;

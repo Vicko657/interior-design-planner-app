@@ -1,7 +1,7 @@
 import React from "react";
 import "./SideNav.css";
 import { NavLink } from "react-router-dom";
-import SVG from "../../../components/SVG";
+import SVG from "../../common/SVG";
 
 export default function SideNav() {
   return (

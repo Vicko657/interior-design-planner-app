@@ -1,5 +1,4 @@
 import React from "react";
-import SVG from "../../../components/SVG";
 import "./ProfileIcon.css";
 import designers from "../../../data/designer";
 export default function ProfileIcon() {

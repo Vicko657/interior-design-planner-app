@@ -1,7 +1,7 @@
 import React from "react";
 import "./Projects.css";
 import ProjectList from "./ProjectList";
-import Button from "../../../components/Button";
+import Button from "../../../components/common/Button";
 import projects from "../../../data/projects.js";
 
 export default function Projects() {

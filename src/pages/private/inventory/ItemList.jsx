@@ -1,7 +1,6 @@
 import React from "react";
-import "../../../components/Table.css";
 import ItemRow from "./ItemRow";
-import Table from "../../../components/Table";
+import Table from "../../../components/common/Table";
 
 export default function ItemList({ rooms }) {
   const headers = [

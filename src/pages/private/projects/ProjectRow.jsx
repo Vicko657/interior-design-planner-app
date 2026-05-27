@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../components/Table.css";
+import "../../../components/common/Table.css";
 import { useNavigate } from "react-router-dom";
 
 export default function ProjectRow({ project }) {

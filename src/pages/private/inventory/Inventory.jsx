@@ -1,7 +1,7 @@
 import React from "react";
 import ItemList from "./ItemList";
 import "./Inventory.css";
-import Button from "../../../components/Button";
+import Button from "../../../components/common/Button";
 import rooms from "../../../data/rooms.js";
 
 export default function Inventory() {

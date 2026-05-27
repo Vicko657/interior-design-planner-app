@@ -1,7 +1,6 @@
 import React from "react";
-import "../../../components/Table.css";
 import ClientRow from "./ClientRow";
-import Table from "../../../components/Table";
+import Table from "../../../components/common/Table";
 
 export default function ClientList({ clients }) {
   const headers = [

@@ -1,7 +1,7 @@
 import React from "react";
 import ClientList from "./ClientList";
 import "./Clients.css";
-import Button from "../../../components/Button";
+import Button from "../../../components/common/Button";
 import clients from "../../../data/clients.js";
 
 export default function Clients() {

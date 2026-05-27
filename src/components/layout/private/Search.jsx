@@ -1,5 +1,5 @@
 import React from "react";
-import SVG from "../../../components/SVG";
+import SVG from "../../common/SVG";
 import "./Search.css";
 export default function Search() {
   return (

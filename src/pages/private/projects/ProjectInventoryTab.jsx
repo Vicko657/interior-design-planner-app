@@ -1,7 +1,7 @@
 import React from "react";
-import "../../../components/Table.css";
+import "../../../components/common/Table.css";
 import "../inventory/Inventory.css";
-import Table from "../../../components/Table";
+import Table from "../../../components/common/Table";
 import { useNavigate } from "react-router-dom";
 
 export default function ProjectInventoryTab({ items }) {

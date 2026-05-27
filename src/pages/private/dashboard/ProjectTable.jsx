@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProjectTable.css";
 import ProjectDeadlineRow from "./ProjectDeadlineRow";
-import Table from "../../../components/Table";
+import Table from "../../../components/common/Table";
 
 export default function ProjectTable({ projects }) {
   const headers = ["Name", "Status", "End Date"];

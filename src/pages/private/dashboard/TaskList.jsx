@@ -1,7 +1,7 @@
 import React from "react";
 import "./TaskList.css";
 import DesignerTaskRow from "./DesignerTaskRow";
-import Table from "../../../components/Table";
+import Table from "../../../components/common/Table";
 export default function TaskList({ rooms }) {
   const headers = ["Task", "Completed", "Project"];
   return (

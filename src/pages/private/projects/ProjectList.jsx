@@ -1,7 +1,7 @@
 import React from "react";
-import "../../../components/Table.css";
+import "../../../components/common/Table.css";
 import ProjectRow from "./ProjectRow";
-import Table from "../../../components/Table";
+import Table from "../../../components/common/Table";
 
 export default function ProjectList({ projects }) {
   const headers = [

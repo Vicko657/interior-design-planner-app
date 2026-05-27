@@ -1,6 +1,6 @@
 import React from "react";
 import "./Rooms.css";
-import Button from "../../../components/Button";
+import Button from "../../../components/common/Button";
 import Card from "react-bootstrap/Card";
 import rooms from "../../../data/rooms.js";
 
