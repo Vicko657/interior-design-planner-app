@@ -1,5 +1,6 @@
 import React from "react";
 import "../public/About.css";
+import Button from "../../components/common/Button";
 
 export default function About() {
   return (
@@ -199,9 +200,7 @@ export default function About() {
           <h3 className="display-4">FAQs</h3>
         </div>
         <div className="col-sm-2 p-lg-5 justify-content-end">
-          <button className="arrow">
-            <img src="imgs/arrow-white.svg"></img>
-          </button>
+          <Button page="/" colour="white-btn" text="FAQS" arrow="true"></Button>
         </div>
       </div>
     </>
