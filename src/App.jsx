@@ -8,18 +8,18 @@ import SignIn from "./pages/public/SignIn";
 import SignUp from "./pages/public/SignUp";
 import User from "./pages/private/User";
 import Dashboard from "./pages/private/Dashboard";
-import Projects from "./pages/private/Projects";
-import Rooms from "./pages/private/Rooms";
+import Projects from "./pages/private/projects/Projects";
+import Rooms from "./pages/private/rooms/Rooms";
 import Archived from "./pages/private/Archived";
 import Calendar from "./pages/private/Calendar";
 import Tasks from "./pages/private/Tasks";
 import Files from "./pages/private/Files";
-import Clients from "./pages/private/Clients";
+import Clients from "./pages/private/clients/Clients";
 import Inventory from "./pages/private/Inventory";
 import Inbox from "./pages/private/Inbox";
 import MainLayout from "./components/MainLayout";
-import ProjectDetails from "./pages/private/ProjectDetails";
-import ClientDetails from "./pages/private/ClientDetails";
+import ProjectDetails from "./pages/private/projects/ProjectDetails";
+import ClientDetails from "./pages/private/clients/ClientDetails";
 
 export default function App() {
   return (
