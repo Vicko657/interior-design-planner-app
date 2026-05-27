@@ -1,8 +1,8 @@
 import React from "react";
 import "./Rooms.css";
-import Button from "../../components/Button";
+import Button from "../../../components/Button";
 import Card from "react-bootstrap/Card";
-import rooms from "../../data/rooms.js";
+import rooms from "../../../data/rooms.js";
 
 export default function Room() {
   return (
