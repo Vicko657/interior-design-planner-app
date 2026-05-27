@@ -1,8 +1,8 @@
 import React from "react";
 import "./Projects.css";
-import ProjectList from "./components/ProjectList";
-import Button from "../../components/Button";
-import projects from "../../data/projects.js";
+import ProjectList from "./ProjectList";
+import Button from "../../../components/Button";
+import projects from "../../../data/projects.js";
 
 export default function Projects() {
   return (

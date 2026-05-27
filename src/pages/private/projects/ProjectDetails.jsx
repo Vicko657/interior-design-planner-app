@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./ProjectDetails.css";
-import projects from "../../data/projects";
-import rooms from "../../data/rooms";
+import projects from "../../../data/projects";
+import rooms from "../../../data/rooms";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import TaskTab from "./TaskTab";
-import InventoryTab from "./InventoryTab";
+import TaskTab from "../../private/TaskTab";
+import InventoryTab from "../InventoryTab";
 
 export default function ProjectDetails() {
   const params = useParams();
