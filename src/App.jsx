@@ -4,22 +4,22 @@ import "./App.css";
 import Home from "./pages/public/Home";
 import About from "./pages/public/About";
 import TheViews from "./pages/public/TheViews";
-import SignIn from "./pages/public/SignIn";
-import SignUp from "./pages/public/SignUp";
-import User from "./pages/private/User";
-import Dashboard from "./pages/private/Dashboard";
-import Projects from "./pages/private/Projects";
-import Rooms from "./pages/private/Rooms";
-import Archived from "./pages/private/Archived";
-import Calendar from "./pages/private/Calendar";
-import Tasks from "./pages/private/Tasks";
-import Files from "./pages/private/Files";
-import Clients from "./pages/private/Clients";
-import Inventory from "./pages/private/Inventory";
-import Inbox from "./pages/private/Inbox";
-import MainLayout from "./components/MainLayout";
-import ProjectDetails from "./pages/private/ProjectDetails";
-import ClientDetails from "./pages/private/ClientDetails";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import PrivateLayout from "./components/layout/PrivateLayout";
+import Dashboard from "./pages/private/dashboard/Dashboard";
+import Projects from "./pages/private/projects/Projects";
+import Rooms from "./pages/private/rooms/Rooms";
+import Archived from "./pages/private/projects/ProjectArchive";
+import Calendar from "./pages/private/calendar/Calendar";
+import Tasks from "./pages/private/tasks/Tasks";
+import Files from "./pages/private/files/Files";
+import Clients from "./pages/private/clients/Clients";
+import Inventory from "./pages/private/inventory/Inventory";
+import Inbox from "./pages/private/inbox/Inbox";
+import PublicLayout from "./components/layout/PublicLayout";
+import ProjectDetails from "./pages/private/projects/ProjectDetails";
+import ClientDetails from "./pages/private/clients/ClientDetails";
 
 export default function App() {
   return (
@@ -28,17 +28,17 @@ export default function App() {
       <div className="container-fluid p-0 m-0 App">
         {/*-- ReactRouter logged out */}
         <Routes>
-          <Route element={<MainLayout />}>
+          <Route element={<PublicLayout />}>
             <Route path="home" element={<Home />}></Route>
             <Route path="/" element={<Navigate replace to="home" />}></Route>
             <Route path="about" element={<About />}></Route>
             <Route path="theviews" element={<TheViews />}></Route>
-            <Route path="signin" element={<SignIn />}></Route>
-            <Route path="signup" element={<SignUp />}></Route>
+            <Route path="login" element={<Login />}></Route>
+            <Route path="register" element={<Register />}></Route>
           </Route>
 
           {/*-- ReactRouter logged in */}
-          <Route path="user" element={<User />}>
+          <Route path="user" element={<PrivateLayout />}>
             <Route path="dashboard" element={<Dashboard />}></Route>
             <Route path="projects" element={<Projects />}></Route>
             <Route

@@ -1,6 +1,6 @@
 import React from "react";
 import "../public/TheViews.css";
-import Button from "../../components/Button";
+import Button from "../../components/common/Button";
 
 export default function TheViews() {
   return (
