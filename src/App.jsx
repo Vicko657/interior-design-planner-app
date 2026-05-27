@@ -7,14 +7,14 @@ import TheViews from "./pages/public/TheViews";
 import SignIn from "./pages/public/SignIn";
 import SignUp from "./pages/public/SignUp";
 import User from "./pages/private/User";
-import Overview from "./pages/private/OverView";
-import Projects from "./pages/private/projects";
-import Rooms from "./pages/private/rooms";
+import Dashboard from "./pages/private/Dashboard";
+import Projects from "./pages/private/Projects";
+import Rooms from "./pages/private/Rooms";
 import Archived from "./pages/private/Archived";
 import Calendar from "./pages/private/Calendar";
 import Tasks from "./pages/private/Tasks";
 import Files from "./pages/private/Files";
-import Clients from "./pages/private/clients";
+import Clients from "./pages/private/Clients";
 import Inventory from "./pages/private/Inventory";
 import Inbox from "./pages/private/Inbox";
 import MainLayout from "./components/MainLayout";
@@ -39,7 +39,7 @@ export default function App() {
 
           {/*-- ReactRouter logged in */}
           <Route path="user" element={<User />}>
-            <Route path="overview" element={<Overview />}></Route>
+            <Route path="dashboard" element={<Dashboard />}></Route>
             <Route path="projects" element={<Projects />}></Route>
             <Route
               path="projects/:projectId"
