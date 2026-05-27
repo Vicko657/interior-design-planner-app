@@ -4,8 +4,8 @@ import "./App.css";
 import Home from "./pages/public/Home";
 import About from "./pages/public/About";
 import TheViews from "./pages/public/TheViews";
-import SignIn from "./pages/public/SignIn";
-import SignUp from "./pages/public/SignUp";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 import PrivateLayout from "./components/layout/PrivateLayout";
 import Dashboard from "./pages/private/dashboard/Dashboard";
 import Projects from "./pages/private/projects/Projects";
@@ -33,8 +33,8 @@ export default function App() {
             <Route path="/" element={<Navigate replace to="home" />}></Route>
             <Route path="about" element={<About />}></Route>
             <Route path="theviews" element={<TheViews />}></Route>
-            <Route path="signin" element={<SignIn />}></Route>
-            <Route path="signup" element={<SignUp />}></Route>
+            <Route path="login" element={<Login />}></Route>
+            <Route path="register" element={<Register />}></Route>
           </Route>
 
           {/*-- ReactRouter logged in */}

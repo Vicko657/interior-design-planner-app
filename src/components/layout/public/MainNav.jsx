@@ -9,7 +9,7 @@ export default function MainNav() {
 
   return (
     <nav
-      className={`${location === "theviews" || location === "signin" || location === "signup" ? "dark" : "light"} navbar main-nav navbar-expand-lg p-2 `}
+      className={`${location === "theviews" || location === "login" || location === "register" ? "dark" : "light"} navbar main-nav navbar-expand-lg p-2 `}
     >
       <div className="container-fluid">
         <a className="navbar-brand navlogo logo" href="/">
@@ -66,12 +66,12 @@ export default function MainNav() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="signin">
-                  SIGN IN
+                <NavLink className="nav-link" to="login">
+                  LOG IN
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/signup">
+                <NavLink className="nav-link" to="register">
                   SIGN UP
                 </NavLink>
               </li>
