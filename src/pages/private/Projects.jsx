@@ -4,7 +4,7 @@ import ProjectList from "./components/ProjectList";
 import Button from "../../components/Button";
 import projects from "../../data/projects.js";
 
-export default function Project() {
+export default function Projects() {
   return (
     <>
       <div className="container-fluid users-projects w-100 p-4">
