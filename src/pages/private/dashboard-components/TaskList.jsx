@@ -1,18 +1,28 @@
 import React from "react";
 import "./TaskList.css";
-export default function TaskList() {
+import DesignerTaskRow from "./DesignerTaskRow";
+import Table from "../../../components/Table";
+export default function TaskList({ rooms }) {
+  const headers = ["Task", "Completed", "Project"];
   return (
     <>
       <div className="user-tasks card p-3 h-100">
         <div className="card-body d-flex flex-column">
           <div className="card-header p-0">
-            <h5 className="card-title">Todays Tasks</h5>
+            <h5 className="card-title">Recent Tasks</h5>
           </div>
-          <ul className="list-group list-group-flush mt-auto">
-            <li className="list-group-item"> </li>
-            <li className="list-group-item"></li>
-            <li className="list-group-item"> </li>
-          </ul>
+          <Table
+            rows={
+              rooms.length > 0 ? (
+                rooms.map((room, index) => (
+                  <DesignerTaskRow key={index} tasks={room} />
+                ))
+              ) : (
+                <p>No tasks found</p>
+              )
+            }
+            headers={headers}
+          />
         </div>
       </div>
     </>
