@@ -1,0 +1,13 @@
+.users-tasks {
+  color: #33101c;
+  font-size: 12px;
+  font-weight: 400;
+}
+.task-project {
+  font-size: 12px !important;
+  border: 1px solide #33101c;
+}
+
+.users-tasks .page-title {
+  color: #33101c;
+}

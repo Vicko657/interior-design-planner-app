@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 export default function Button({ colour, text, page, cn, arrow }) {
   if (arrow === "true") {
     return (
-      <Link className="ps-0" to={"/" + page}>
-        <button className={colour || cn}>
+      <Link className="ps-0 pe-0" to={"/" + page}>
+        <button className={`${colour} ${cn}`}>
           {text}
-          <span className="ms-2">
+          <span className="ms-2 me-2">
             <svg
               id="Layer_1"
               xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ export default function Button({ colour, text, page, cn, arrow }) {
   } else {
     return (
       <div className="d-grid">
-        <button type="submit" className={colour || cn}>
+        <button type="submit" className={`${colour} ${cn}`}>
           {text}
         </button>
       </div>

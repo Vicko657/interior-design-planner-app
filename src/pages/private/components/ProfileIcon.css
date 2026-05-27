@@ -1,0 +1,76 @@
+.topbar-profile {
+  border: 0.2px solid #33101c;
+  border-bottom: none;
+  border-top: none;
+  min-height: 80px;
+  width: 80px;
+  padding: 12px;
+}
+
+.topbar-profile img {
+  width: 55px;
+}
+
+.dropdown {
+  background: transparent;
+}
+
+button:focus {
+  outline: auto;
+}
+
+.dropdown-menu {
+  background-color: #33101c;
+  border-radius: 0px;
+  border: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  top: 100%;
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu > li > a {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+}
+
+.dropdown-menu hr {
+  color: #d8cfb6;
+}
+
+.dropdown-item {
+  background-color: transparent !important;
+}
+
+.user-name {
+  font-family: PPEditorial;
+  text-transform: capitalize;
+  color: #d8cfb6;
+  letter-spacing: 0px;
+  font-size: 22px;
+}
+
+.user-name:hover {
+  color: #d8cfb6;
+}
+
+.user-role {
+  font-size: 10px;
+  color: #d8cfb6;
+}
+
+.user-role:hover {
+  color: #d8cfb6;
+}
+
+.topbar-profile:focus {
+  border: 0.2px solid #33101c !important;
+}
+
+.dropdown-menu > li > a:hover {
+  text-decoration: underline;
+  background-color: transparent !important;
+}

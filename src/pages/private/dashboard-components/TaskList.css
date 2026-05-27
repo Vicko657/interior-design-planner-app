@@ -1,0 +1,16 @@
+.user-tasks {
+  color: #33101c;
+  background: white;
+}
+
+.user-tasks .list-group {
+  border: none;
+}
+
+.user-tasks .list-group li {
+  padding: 10px;
+}
+.user-tasks .list-group-item {
+  border: none !important;
+  font-size: 12px !important;
+}

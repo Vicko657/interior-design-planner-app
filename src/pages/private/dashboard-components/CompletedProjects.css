@@ -1,0 +1,13 @@
+.user-completed-projects {
+  border: 0.2px solid #33101c !important;
+  color: #33101c;
+}
+
+.user-completed-projects .card-title {
+  font-size: 14px;
+}
+
+.project-completed {
+  font-size: 40px;
+  color: #33101c;
+}

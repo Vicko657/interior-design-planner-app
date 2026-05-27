@@ -1,0 +1,14 @@
+.user-active-projects {
+  background-color: #33101c !important;
+  color: #f3eee6;
+  border-radius: 20;
+}
+
+.user-active-projects .card-title {
+  font-size: 14px;
+}
+
+.project-active {
+  font-size: 120px;
+  color: #f3eee6;
+}

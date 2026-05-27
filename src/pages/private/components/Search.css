@@ -1,0 +1,24 @@
+.user-search {
+  border: 0.2px solid #33101c;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #33101c !important;
+  min-width: 350px;
+}
+
+.search-btn svg {
+  height: 32px;
+  margin-left: 0px;
+}
+
+input .user-search {
+  min-width: 500px;
+}
+
+.search-btn {
+  background-color: transparent;
+}
+
+input:focus {
+  box-shadow: none !important;
+}
