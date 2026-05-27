@@ -1,7 +1,9 @@
 import React from "react";
 import SVG from "../../../components/SVG";
 import "./ProfileIcon.css";
+import designers from "../../../data/designer";
 export default function ProfileIcon() {
+  const designer = designers;
   return (
     <div className="nav-item dropdown m-0 p-0">
       <button
@@ -31,7 +33,7 @@ export default function ProfileIcon() {
           <div className="p-1">
             <li>
               <p className="dropdown-item user-name mb-auto ps-2">
-                Victoria Olusegun
+                {designer.fullName}
               </p>
             </li>
             <li>
