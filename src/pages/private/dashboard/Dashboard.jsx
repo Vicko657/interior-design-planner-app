@@ -1,15 +1,15 @@
 import React from "react";
 import "./Dashboard.css";
-import ProjectTable from "./dashboard-components/ProjectTable";
-import TotalProjects from "./dashboard-components/TotalProjects";
-import TaskList from "./dashboard-components/TaskList";
-import CompletedProjects from "./dashboard-components/CompletedProjects";
-import ActiveProjects from "./dashboard-components/ActiveProjects";
-import Reminders from "./dashboard-components/Reminders";
-import TotalBudget from "./dashboard-components/TotalBudget";
-import designers from "../../data/designer";
-import projects from "../../data/projects";
-import rooms from "../../data/rooms";
+import ProjectTable from "./ProjectTable";
+import TotalProjects from "./TotalProjects";
+import TaskList from "./TaskList";
+import CompletedProjects from "./CompletedProjects";
+import ActiveProjects from "./ActiveProjects";
+import Reminders from ".//Reminders";
+import TotalBudget from "./TotalBudget";
+import designers from "../../../data/designer";
+import projects from "../../../data/projects";
+import rooms from "../../../data/rooms";
 
 export default function Dashboard() {
   const designer = designers;
