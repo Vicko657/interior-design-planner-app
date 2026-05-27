@@ -6,18 +6,18 @@ import About from "./pages/public/About";
 import TheViews from "./pages/public/TheViews";
 import SignIn from "./pages/public/SignIn";
 import SignUp from "./pages/public/SignUp";
-import User from "./pages/private/User";
+import PrivateLayout from "./components/layout/PrivateLayout";
 import Dashboard from "./pages/private/dashboard/Dashboard";
 import Projects from "./pages/private/projects/Projects";
 import Rooms from "./pages/private/rooms/Rooms";
 import Archived from "./pages/private/projects/ProjectArchive";
-import Calendar from "./pages/private/Calendar";
+import Calendar from "./pages/private/calendar/Calendar";
 import Tasks from "./pages/private/tasks/Tasks";
-import Files from "./pages/private/Files";
+import Files from "./pages/private/files/Files";
 import Clients from "./pages/private/clients/Clients";
 import Inventory from "./pages/private/inventory/Inventory";
-import Inbox from "./pages/private/Inbox";
-import MainLayout from "./components/MainLayout";
+import Inbox from "./pages/private/inbox/Inbox";
+import PublicLayout from "./components/layout/PublicLayout";
 import ProjectDetails from "./pages/private/projects/ProjectDetails";
 import ClientDetails from "./pages/private/clients/ClientDetails";
 
@@ -28,7 +28,7 @@ export default function App() {
       <div className="container-fluid p-0 m-0 App">
         {/*-- ReactRouter logged out */}
         <Routes>
-          <Route element={<MainLayout />}>
+          <Route element={<PublicLayout />}>
             <Route path="home" element={<Home />}></Route>
             <Route path="/" element={<Navigate replace to="home" />}></Route>
             <Route path="about" element={<About />}></Route>
@@ -38,7 +38,7 @@ export default function App() {
           </Route>
 
           {/*-- ReactRouter logged in */}
-          <Route path="user" element={<User />}>
+          <Route path="user" element={<PrivateLayout />}>
             <Route path="dashboard" element={<Dashboard />}></Route>
             <Route path="projects" element={<Projects />}></Route>
             <Route
