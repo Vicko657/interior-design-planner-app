@@ -14,11 +14,11 @@ export default function SideNav() {
 
       <div className="sidebar-body">
         <ul className="nav nav-pills nav-stacked flex-column mb-auto pt-3 pb-3">
-          <small className="mb-1">DASHBOARD</small>
+          <small className="mb-1">OVERVIEW</small>
           <li className="">
-            <NavLink className="nav-link side-link" to="overview">
+            <NavLink className="nav-link side-link" to="dashboard">
               <SVG viewbox="0 0 20 20" path="overview-icon" cn="me-3 bi" />
-              OVERVIEW <span className="sr-only"></span>
+              DASHBOARD <span className="sr-only"></span>
             </NavLink>
           </li>
           <small className="pt-4 mb-1">PROJECTS</small>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Overview.css";
+import "./Dashboard.css";
 import ProjectTable from "./dashboard-components/ProjectTable";
 import TotalProjects from "./dashboard-components/TotalProjects";
 import TaskList from "./dashboard-components/TaskList";
@@ -11,7 +11,7 @@ import designers from "../../data/designer";
 import projects from "../../data/projects";
 import rooms from "../../data/rooms";
 
-export default function Overview() {
+export default function Dashboard() {
   const designer = designers;
   const project = projects;
   return (
