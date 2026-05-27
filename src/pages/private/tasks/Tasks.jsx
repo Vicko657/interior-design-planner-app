@@ -1,7 +1,7 @@
 import React from "react";
-import TaskList from "./components/TaskList";
-import Button from "../../components/Button";
-import rooms from "../../data/rooms.js";
+import TaskList from "./TaskList";
+import Button from "../../../components/Button";
+import rooms from "../../../data/rooms.js";
 
 export default function Tasks() {
   return (

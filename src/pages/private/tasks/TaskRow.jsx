@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../components/Table.css";
-import "../Tasks.css";
+import "./Tasks.css";
 import { useNavigate } from "react-router-dom";
 
 export default function TaskRow({ task }) {
