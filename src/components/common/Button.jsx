@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
 
-export default function Button({ colour, text, page, cn, arrow }) {
+export default function Button({
+  colour,
+  text,
+  page,
+  cn,
+  arrow,
+  disabled,
+  type,
+  btnfunction,
+}) {
   if (arrow === "true") {
     return (
       <Link className="ps-0 pe-0" to={"/" + page}>
@@ -31,7 +40,12 @@ export default function Button({ colour, text, page, cn, arrow }) {
   } else {
     return (
       <div className="d-grid">
-        <button type="submit" className={`${colour} ${cn}`}>
+        <button
+          type={type}
+          onClick={btnfunction}
+          className={`${colour} ${cn}`}
+          disabled={disabled}
+        >
           {text}
         </button>
       </div>

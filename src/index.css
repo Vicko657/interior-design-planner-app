@@ -214,6 +214,11 @@ a.register {
   border-bottom-width: var(--bs-border-width);
 }
 
+.text-warning {
+  font-size: 12px !important;
+  color: #b21414 !important;
+}
+
 @media (max-width: 1500px) {
   h1 {
     font-size: 82px;

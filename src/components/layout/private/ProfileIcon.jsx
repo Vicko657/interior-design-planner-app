@@ -1,8 +1,22 @@
 import React from "react";
 import "./ProfileIcon.css";
 import designers from "../../../data/designer";
+import Button from "../../common/Button";
+import { useAuth } from "../../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
 export default function ProfileIcon() {
   const designer = designers;
+
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  // Logs out user and navigates back to homepage
+  const logoutUser = () => {
+    logout();
+    navigate("/home");
+  };
+
   return (
     <div className="nav-item dropdown m-0 p-0">
       <button
@@ -51,7 +65,15 @@ export default function ProfileIcon() {
         </li>
         <hr />
         <li>
-          <a className="dropdown-item">Log Out</a>
+          <a className="dropdown-item p-1">
+            <Button
+              type="submit"
+              colour="red-btn p-1"
+              text="LOG OUT"
+              arrow="false"
+              btnfunction={logoutUser}
+            ></Button>
+          </a>
         </li>
       </ul>
     </div>
