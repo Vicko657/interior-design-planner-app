@@ -41,7 +41,8 @@ export const AuthProvider = ({ children }) => {
         };
       }
     } catch (error) {
-      console.error("Failed to load from localStorage:", error);
+      localStorage.removeItem("jwtToken");
+      localStorage.removeItem("user");
     }
     return {
       jwtToken: null,
@@ -80,7 +81,6 @@ export const AuthProvider = ({ children }) => {
         },
       });
     } catch (err) {
-      console.log(err);
       throw err;
     }
   };
@@ -95,7 +95,6 @@ export const AuthProvider = ({ children }) => {
     try {
       await api.post("/api/auth/register", userData);
     } catch (err) {
-      console.log(err.response);
       throw err;
     }
   };
