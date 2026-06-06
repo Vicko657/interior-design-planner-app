@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import "./Register.css";
 import Button from "../../components/common/Button";
 import { useAuth } from "../../context/AuthContext";
@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 export default function Register() {
   const navigate = useNavigate();
   const { registerUser } = useAuth();
+  const [apiError, setApiError] = useState(null);
   const {
     register,
     formState: { errors, isSubmitting },
@@ -17,15 +18,23 @@ export default function Register() {
 
   const onSubmit = async (data) => {
     try {
-      setError(null);
+      setApiError(null);
       const {terms, ...userData} = data;
       await registerUser(userData);
       navigate("/login");
     } catch (err) {
+
       const apiErrors = err.response?.data;
-      Object.keys(apiErrors).forEach((field) => {
+
+      if (apiErrors && typeof apiErrors === 'object'){
+        Object.keys(apiErrors).forEach((field) => {
         setError(field, { type: "server", message: apiErrors[field] });
-      });
+      })
+      } else {
+          setApiError(apiErrors || 'Registration failed');
+      }
+
+      
     }
   };
 
@@ -37,9 +46,9 @@ export default function Register() {
             <div className="card-body m-5">
               <h2 className="pb-lg-5 pb-4 ">Register</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
-                {errors.root && (
+                {apiError && (
                   <div className="alert alert-danger">
-                    {errors.root.message}
+                    {apiError}
                   </div>
                 )}
                 <div className="mb-1">
