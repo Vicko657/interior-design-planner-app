@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import Button from "../../components/common/Button";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const {
+    register,
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    setError,
+  } = useForm();
+
+  const [apiError, setApiError] = useState(null);
+
+  const onSubmit = async (credentials) => {
+    try {
+      setApiError(null);
+      const { remember, ...userCredentials } = credentials;
+      await login(userCredentials);
+      navigate("/user");
+    } catch (err) {
+      const apiErrors = err.response?.data;
+      setApiError(apiErrors || "Login failed");
+    }
+  };
+
   return (
     <>
       <div className="login-textimage d-flex col-12 row p-0 m-0">
@@ -10,49 +36,66 @@ export default function Login() {
           <div className="card w-100 m-lg-5">
             <div className="card-body m-5">
               <h2 className="pb-lg-5 pb-4">Log In</h2>
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                {apiError && (
+                  <div className="alert alert-danger text-warning">
+                    {apiError}
+                  </div>
+                )}
                 <div className="mb-1">
                   <input
-                    type="email"
+                    {...register("username")}
+                    type="text"
                     className="login-form form-control w-100"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="ENTER EMAIL"
+                    aria-describedby="usernameError"
+                    placeholder="USERNAME"
+                    autoComplete="username"
                   />
                 </div>
+
                 <div className="mb-1 pt-2">
                   <input
+                    {...register("password")}
                     type="password"
                     className="login-form form-control"
-                    id="exampleInputPassword1"
                     placeholder="PASSWORD"
+                    autoComplete="current-password"
+                    aria-describedby="passwordHelp"
                   />
                 </div>
+
                 <div className="form-check pt-3 pb-3">
                   <input
+                    {...register("remember")}
                     type="checkbox"
                     className="form-check-input"
-                    id="exampleCheck1"
                   />
-                  <label className="form-check-label" htmlFor="exampleCheck1">
-                    Remember me
-                  </label>
+                  <label className="form-check-label">Remember Me</label>
+                  {errors.remember && (
+                    <small className="text-warning text-sm">
+                      {errors.remember.message}
+                    </small>
+                  )}
                 </div>
 
                 <Button
                   colour="red-btn login-btn"
-                  text="CREATE YOUR ACCOUNT"
+                  text={isSubmitting ? "Authenticating..." : "LOGIN"}
                   arrow="false"
-                ></Button>
-
-                <hr></hr>
-
-                <Button
-                  colour="outline-red-btn "
-                  text=" LOG IN WITH GOOGLE"
-                  arrow="false"
+                  disabled={isSubmitting}
+                  type="submit"
                 ></Button>
               </form>
+
+              <hr></hr>
+
+              <Button
+                colour="outline-red-btn "
+                text=" LOGIN WITH GOOGLE"
+                arrow="false"
+                disabled={null}
+                type="button"
+              ></Button>
             </div>
           </div>
         </div>
