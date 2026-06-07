@@ -1,0 +1,24 @@
+.error {
+  background-color: #33101c;
+  color: bisque;
+}
+
+.error-status {
+  color: #f3eee6;
+  font-weight: 500;
+  font-size: 120px;
+}
+
+.error-image {
+  background-image: url(/imgs/error.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+}
+
+@media (max-width: 600px) {
+  .signup-img {
+    background-position: bottom;
+    min-height: 400px;
+  }
+}
