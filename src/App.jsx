@@ -20,6 +20,7 @@ import Inbox from "./pages/private/inbox/Inbox";
 import PublicLayout from "./components/layout/PublicLayout";
 import ProjectDetails from "./pages/private/projects/ProjectDetails";
 import ClientDetails from "./pages/private/clients/ClientDetails";
+import Error from "./pages/public/Error";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="theviews" element={<TheViews />}></Route>
             <Route path="login" element={<Login />}></Route>
             <Route path="register" element={<Register />}></Route>
+            <Route path="*" element={<Error />}></Route>
           </Route>
 
           {/*-- ReactRouter logged in */}
