@@ -1,6 +1,6 @@
 .header {
   padding-top: 50px;
-  background-color: #f3eee6;
+  background-color: #33101c;
 }
 
 .header.home {
@@ -24,6 +24,14 @@
 .header.theviews {
   background-color: #f3eee6;
   height: 500px;
+}
+
+.header.login {
+  background-color: #f3eee6;
+}
+
+.header.register {
+  background-color: #f3eee6;
 }
 
 .header-content {
