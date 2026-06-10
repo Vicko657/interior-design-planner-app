@@ -22,7 +22,7 @@ api.interceptors.response.use(
     const isAuthEndpoint = error.config?.url?.includes("/api/auth/");
 
     if (error.response?.status === 401 && !isAuthEndpoint) {
-      localStorage.removeItem("token");
+      localStorage.removeItem("jwtToken");
       window.location.href = "/login";
     }
 
