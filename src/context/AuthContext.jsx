@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const jwtToken = localStorage.getItem("jwtToken");
       const user = localStorage.getItem("user");
-      if (jwtToken && user) {
+      if (jwtToken) {
         return {
           jwtToken,
           user: JSON.parse(user),
@@ -53,31 +53,25 @@ export const AuthProvider = ({ children }) => {
 
   const [authState, dispatch] = useReducer(authReducer, initialAuthState);
 
-  useEffect(() => {
-    try {
-      if (authState.isAuthenticated) {
-        localStorage.setItem("jwtToken", authState.jwtToken);
-        localStorage.setItem("user", JSON.stringify(authState.user));
-      } else {
-        localStorage.removeItem("jwtToken");
-        localStorage.removeItem("user");
-      }
-    } catch (error) {
-      console.error("Failed to save to localStorage", error);
-    }
-  }, [authState]);
-
   // User api calls:
 
   // Login
   const login = async (credentials) => {
     try {
       const response = await api.post("/api/auth/login", credentials);
+      const token = response.data.jwtToken;
+      const user = {
+        username: credentials.username,
+      };
+
+      localStorage.setItem("jwtToken", token);
+      localStorage.setItem("user", JSON.stringify(user));
+
       dispatch({
         type: LOGIN_SUCCESS,
         payload: {
-          jwtToken: response.data.token,
-          user: { username: credentials.username },
+          jwtToken: token,
+          user,
         },
       });
     } catch (err) {
@@ -87,6 +81,8 @@ export const AuthProvider = ({ children }) => {
 
   // Logout
   const logout = () => {
+    localStorage.removeItem("jwtToken");
+    localStorage.removeItem("user");
     dispatch({ type: LOGOUT });
   };
 
