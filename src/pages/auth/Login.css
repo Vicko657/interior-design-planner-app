@@ -6,6 +6,10 @@
   min-height: 600px;
 }
 
+.login-fp {
+  color: #33101c !important;
+}
+
 @media (max-width: 600px) {
   .login-img {
     min-height: 300px;

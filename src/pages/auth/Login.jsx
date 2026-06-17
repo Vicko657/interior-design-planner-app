@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import Button from "../../components/common/Button";
 import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 export default function Login() {
@@ -20,12 +20,18 @@ export default function Login() {
   const onSubmit = async (credentials) => {
     try {
       setApiError(null);
-      const { remember, ...userCredentials } = credentials;
-      await login(userCredentials);
+      await login(credentials);
       navigate("/user");
     } catch (err) {
       const apiErrors = err.response?.data;
-      setApiError(apiErrors || "Login failed");
+
+      if (apiErrors && typeof apiErrors === "object") {
+        Object.keys(apiErrors).forEach((field) => {
+          setError(field, { type: "server", message: apiErrors[field] });
+        });
+      } else {
+        setApiError(apiErrors || "Login failed");
+      }
     }
   };
 
@@ -51,9 +57,14 @@ export default function Login() {
                     placeholder="USERNAME"
                     autoComplete="username"
                   />
+                  {errors.username && (
+                    <small className="text-warning text-sm">
+                      {errors.username.message}
+                    </small>
+                  )}
                 </div>
 
-                <div className="mb-1 pt-2">
+                <div className="mb-3 pt-2">
                   <input
                     {...register("password")}
                     type="password"
@@ -62,18 +73,9 @@ export default function Login() {
                     autoComplete="current-password"
                     aria-describedby="passwordHelp"
                   />
-                </div>
-
-                <div className="form-check pt-3 pb-3">
-                  <input
-                    {...register("remember")}
-                    type="checkbox"
-                    className="form-check-input"
-                  />
-                  <label className="form-check-label">Remember Me</label>
-                  {errors.remember && (
+                  {errors.password && (
                     <small className="text-warning text-sm">
-                      {errors.remember.message}
+                      {errors.password.message}
                     </small>
                   )}
                 </div>
@@ -86,6 +88,10 @@ export default function Login() {
                   type="submit"
                 ></Button>
               </form>
+
+              <div className="pt-3 pb-1">
+                <Link className="login-fp p-0">Forgot password?</Link>
+              </div>
 
               <hr></hr>
 
