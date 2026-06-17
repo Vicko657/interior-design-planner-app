@@ -25,7 +25,14 @@ export default function Login() {
       navigate("/user");
     } catch (err) {
       const apiErrors = err.response?.data;
-      setApiError(apiErrors || "Login failed");
+
+      if (apiErrors && typeof apiErrors === "object") {
+        Object.keys(apiErrors).forEach((field) => {
+          setError(field, { type: "server", message: apiErrors[field] });
+        });
+      } else {
+        setApiError(apiErrors || "Login failed");
+      }
     }
   };
 
@@ -51,6 +58,11 @@ export default function Login() {
                     placeholder="USERNAME"
                     autoComplete="username"
                   />
+                  {errors.username && (
+                    <small className="text-warning text-sm">
+                      {errors.username.message}
+                    </small>
+                  )}
                 </div>
 
                 <div className="mb-1 pt-2">
@@ -62,6 +74,11 @@ export default function Login() {
                     autoComplete="current-password"
                     aria-describedby="passwordHelp"
                   />
+                  {errors.password && (
+                    <small className="text-warning text-sm">
+                      {errors.password.message}
+                    </small>
+                  )}
                 </div>
 
                 <div className="form-check pt-3 pb-3">
