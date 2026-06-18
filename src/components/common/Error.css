@@ -1,0 +1,7 @@
+.error {
+  height: stretch;
+  background-image: url(/imgs/error.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+}
