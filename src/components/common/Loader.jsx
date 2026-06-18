@@ -4,11 +4,7 @@ import "./Loader.css";
 export default function Loader() {
   return (
     <div className="d-flex justify-content-center align-items-center loader">
-      <div>
-        <h3>
-          <span>Loading...</span>
-        </h3>
-      </div>
+      <h3>Loading...</h3>
     </div>
   );
 }
