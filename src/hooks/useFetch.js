@@ -13,7 +13,6 @@ const useFetch = (url, dependencies = []) => {
         const response = await url();
         setData(response);
       } catch (err) {
-        console.log(err);
         const errors = err.response?.data;
         setError(errors || "Loading failed");
       } finally {
