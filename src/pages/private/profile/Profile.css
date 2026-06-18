@@ -34,3 +34,15 @@
   font-size: 12px;
   font-weight: 400;
 }
+
+@media (max-width: 1200px) {
+  .users-profile .user-profile-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .users-profile .user-profile-img {
+    height: 60px;
+  }
+}
