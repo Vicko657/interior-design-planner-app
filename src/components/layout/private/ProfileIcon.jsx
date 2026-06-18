@@ -70,7 +70,9 @@ export default function ProfileIcon() {
         </div>
         <hr className="m-0" />
         <li>
-          <Link className="dropdown-item p-3 ps-4">Profile</Link>
+          <Link className="dropdown-item p-3 ps-4" to="profile">
+            Profile
+          </Link>
         </li>
         <hr className="m-0" />
         <li>
