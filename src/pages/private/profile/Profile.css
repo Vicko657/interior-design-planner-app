@@ -1,0 +1,48 @@
+.users-profile {
+  background-color: #33101c;
+  border-left: 1px solid #d8cfb6;
+}
+
+.users-profile label {
+  color: #d8cfb6;
+  opacity: 0.4;
+}
+
+.users-profile hr {
+  border-color: #d8cfb6;
+}
+
+.users-profile textarea {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  border-color: #d8cfb6;
+  border-radius: 3px;
+  color: #d8cfb6;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.users-profile input {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  color: #d8cfb6;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-color: #d8cfb6;
+  border-radius: 3px;
+}
+
+.users-profile p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+  .users-profile .user-profile-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .users-profile .user-profile-img {
+    height: 60px;
+  }
+}

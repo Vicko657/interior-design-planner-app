@@ -1,14 +1,13 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import "./ProfileIcon.css";
-import designers from "../../../data/designer";
+import designerService from "../../../api/services/designerService";
 import Button from "../../common/Button";
 import { useAuth } from "../../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ProfileIcon() {
-  const designer = designers;
-
   const { logout } = useAuth();
+  const [profileData, setProfileData] = useState(true);
   const navigate = useNavigate();
 
   // Logs out user and navigates back to homepage
@@ -16,6 +15,19 @@ export default function ProfileIcon() {
     logout();
     navigate("/home");
   };
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const data = await designerService.get();
+        setProfileData(data);
+      } catch (err) {
+        const apiErrors = err.response?.data;
+        return apiErrors;
+      }
+    };
+    fetchProfile();
+  }, []);
 
   return (
     <div className="nav-item dropdown m-0 p-0">
@@ -32,10 +44,10 @@ export default function ProfileIcon() {
         />
       </button>
       <ul
-        className="dropdown-menu dropdown-menu-end p-3 shadow-lg m-0"
+        className="dropdown-menu dropdown-menu-end shadow-lg m-0 p-0"
         aria-labelledby="dropdownMenu"
       >
-        <div className="d-flex column align-items-center justify-content-center">
+        <div className="d-flex column align-items-center justify-content-center p-3">
           <div className="col-3 p-1">
             <img
               className="user-profile-img"
@@ -43,10 +55,10 @@ export default function ProfileIcon() {
               alt=""
             />
           </div>
-          <div className="p-1">
+          <div className="p-1 ps-2 text-start">
             <li>
               <p className="dropdown-item user-name mb-auto ps-2">
-                {designer.fullName}
+                {profileData?.name}
               </p>
             </li>
             <li>
@@ -56,21 +68,25 @@ export default function ProfileIcon() {
             </li>
           </div>
         </div>
-        <hr />
+        <hr className="m-0" />
         <li>
-          <a className="dropdown-item">Account Details</a>
+          <Link className="dropdown-item p-3 ps-4" to="profile">
+            Profile
+          </Link>
         </li>
+        <hr className="m-0" />
         <li>
-          <a className="dropdown-item">Settings</a>
+          <Link className="dropdown-item p-3 ps-4">Settings</Link>
         </li>
-        <hr />
+        <hr className="m-0" />
         <li>
-          <a className="dropdown-item p-1">
+          <a className="dropdown-item">
             <Button
               type="submit"
-              colour="red-btn p-1"
+              colour=""
               text="LOG OUT"
               arrow="false"
+              cn="p-3"
               btnfunction={logoutUser}
             ></Button>
           </a>

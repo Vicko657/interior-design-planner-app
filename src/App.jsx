@@ -21,6 +21,7 @@ import PublicLayout from "./components/layout/PublicLayout";
 import ProjectDetails from "./pages/private/projects/ProjectDetails";
 import ClientDetails from "./pages/private/clients/ClientDetails";
 import Error from "./pages/public/Error";
+import Profile from "./pages/private/profile/Profile";
 
 export default function App() {
   return (
@@ -41,21 +42,23 @@ export default function App() {
 
           {/*-- ReactRouter logged in */}
           <Route path="user" element={<PrivateLayout />}>
+            <Route index element={<Navigate replace to="dashboard" />}></Route>
             <Route path="dashboard" element={<Dashboard />}></Route>
             <Route path="projects" element={<Projects />}></Route>
             <Route
               path="projects/:projectId"
               element={<ProjectDetails />}
             ></Route>
-            <Route path="rooms" element={<Rooms />}></Route>
-            <Route path="archived" element={<Archived />}></Route>
-            <Route path="calendar" element={<Calendar />}></Route>
-            <Route path="tasks" element={<Tasks />}></Route>
-            <Route path="upload" element={<Files />}></Route>
-            <Route path="inventory" element={<Inventory />}></Route>
-            <Route path="clients" element={<Clients />}></Route>
-            <Route path="clients/:clientId" element={<ClientDetails />}></Route>
-            <Route path="inbox" element={<Inbox />}></Route>
+            <Route path="rooms" element={<Rooms />} />
+            <Route path="archived" element={<Archived />} />
+            <Route path="calendar" element={<Calendar />} />
+            <Route path="tasks" element={<Tasks />} />
+            <Route path="upload" element={<Files />} />
+            <Route path="inventory" element={<Inventory />} />
+            <Route path="clients" element={<Clients />} />
+            <Route path="clients/:clientId" element={<ClientDetails />} />
+            <Route path="inbox" element={<Inbox />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
         </Routes>
       </div>

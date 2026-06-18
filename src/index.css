@@ -219,6 +219,13 @@ a.register {
   color: #b21414 !important;
 }
 
+label {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 @media (max-width: 1500px) {
   h1 {
     font-size: 82px;
