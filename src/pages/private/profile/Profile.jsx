@@ -10,7 +10,13 @@ import Error from "../../../components/common/Error";
 export default function Profile() {
   const { data, loading, error } = useFetch(designerService.get);
   const [profileData, setProfileData] = useState(null);
-  const { register } = useForm();
+  const [apiError, setApiError] = useState(null);
+  const {
+    register,
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    setError,
+  } = useForm();
 
   // Fetch designers profile data
   (useEffect(() => {
@@ -19,6 +25,32 @@ export default function Profile() {
     }
   }),
     [data]);
+
+  // Handles updated fields
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProfileData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  // Update designers profile data
+  const onSubmit = async (response) => {
+    try {
+      setApiError(null);
+      await designerService.update(response);
+    } catch (err) {
+      const apiErrors = err.response?.data;
+      if (apiErrors && typeof apiErrors === "object") {
+        Object.keys(apiErrors).forEach((field) => {
+          setError(field, { type: "server", message: apiErrors[field] });
+        });
+      } else {
+        setApiError(apiErrors || "Profile update failed");
+      }
+    }
+  };
 
   if (loading) return <Loader />;
   if (error) return <Error error={error} />;
@@ -41,7 +73,13 @@ export default function Profile() {
             Profile
           </h3>
           <hr className="pb-3"></hr>
-          <form method="PUT" className="row g-3 pt-3">
+          <form
+            method="PUT"
+            className="row g-3 pt-3"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            {apiError && <div className="alert alert-danger">{apiError}</div>}
+
             <div className="col-md-6 mb-1">
               <label htmlFor="firstName" className="form-label">
                 <small>FIRST NAME</small>
@@ -55,7 +93,13 @@ export default function Profile() {
                 id="firstName"
                 name="firstName"
                 value={profileData?.firstName}
+                onChange={handleChange}
               />
+              {errors.firstName && (
+                <small className="text-warning text-sm">
+                  {errors.firstName.message}
+                </small>
+              )}
             </div>
             <div className="col-md-6 mb-1">
               <label htmlFor="lastName" className="form-label">
@@ -70,7 +114,13 @@ export default function Profile() {
                 id="lastName"
                 name="lastName"
                 value={profileData?.lastName}
+                onChange={handleChange}
               />
+              {errors.lastName && (
+                <small className="text-warning text-sm">
+                  {errors.lastName.message}
+                </small>
+              )}
             </div>
             <div className="col-md-6 mb-1">
               <label htmlFor="emailAddress" className="form-label">
@@ -85,7 +135,13 @@ export default function Profile() {
                 id="emailAddress"
                 name="emailAddress"
                 value={profileData?.emailAddress}
+                onChange={handleChange}
               />
+              {errors.emailAddress && (
+                <small className="text-warning text-sm">
+                  {errors.emailAddress.message}
+                </small>
+              )}
             </div>
             <div className="col-md-6 mb-1">
               <label htmlFor="phoneNumber" className="form-label">
@@ -100,7 +156,13 @@ export default function Profile() {
                 id="phoneNumber"
                 name="phoneNumber"
                 value={profileData?.phoneNumber}
+                onChange={handleChange}
               />
+              {errors.phoneNumber && (
+                <small className="text-warning text-sm">
+                  {errors.phoneNumber.message}
+                </small>
+              )}
             </div>
             <div className="mb-1">
               <label htmlFor="bio" className="form-label">
@@ -115,7 +177,13 @@ export default function Profile() {
                 id="bio"
                 name="bio"
                 value={profileData?.bio}
+                onChange={handleChange}
               />
+              {errors.bio && (
+                <small className="text-warning text-sm">
+                  {errors.bio.message}
+                </small>
+              )}
             </div>
             <div className="col-md-6 mb-1">
               <label htmlFor="experience" className="form-label">
@@ -129,7 +197,13 @@ export default function Profile() {
                 id="experience"
                 name="experience"
                 value={profileData?.experience}
+                onChange={handleChange}
               />
+              {errors.experience && (
+                <small className="text-warning text-sm">
+                  {errors.experience.message}
+                </small>
+              )}
             </div>
             <div className="col-md-6 mb-1 pb-3">
               <label htmlFor="location" className="form-label">
@@ -143,13 +217,20 @@ export default function Profile() {
                 id="location"
                 name="location"
                 value={profileData?.location}
+                onChange={handleChange}
               />
+              {errors.location && (
+                <small className="text-warning text-sm">
+                  {errors.location.message}
+                </small>
+              )}
             </div>
             <Button
               cn="col-lg-4 col-12 rounded-pill "
               colour="white-btn"
-              text={"UPDATE PROFILE"}
+              text={isSubmitting ? "Updating..." : "UPDATE PROFILE"}
               arrow="false"
+              disabled={isSubmitting}
               type="submit"
             ></Button>
           </form>
