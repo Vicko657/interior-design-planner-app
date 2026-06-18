@@ -23,6 +23,9 @@ button:focus {
   background-color: #33101c;
   border-radius: 0px;
   border: none;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .dropdown:hover .dropdown-menu {
@@ -71,6 +74,13 @@ button:focus {
 }
 
 .dropdown-menu > li > a:hover {
-  text-decoration: underline;
+  background-color: #220b13 !important;
+}
+.dropdown-menu > li > a > div > button {
+  background-color: transparent !important;
+  color: #d8cfb6;
+  font-size: 12px;
+}
+.dropdown-menu > li > a > div > button:hover {
   background-color: transparent !important;
 }
