@@ -16,3 +16,24 @@ button:focus :active {
   outline: none;
   box-shadow: none !important;
 }
+
+.offcanvas {
+  border: 1px solid #f3eee6;
+  border-right: 1px solid #f3eee6 !important;
+}
+
+.user-offcanvas {
+  background-color: #33101c;
+}
+
+.user-logo {
+  width: 80px;
+}
+
+.topbar-menu .navline {
+  border-bottom: 1px solid #33101c;
+}
+
+.user-offcanvas .offcanvas-header {
+  border-bottom: 1px solid #f3eee6;
+}
