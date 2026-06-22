@@ -9,6 +9,14 @@ const clientService = {
       throw err;
     }
   },
+  get: async () => {
+    try {
+      const response = await api.get("/api/clients");
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default clientService;
