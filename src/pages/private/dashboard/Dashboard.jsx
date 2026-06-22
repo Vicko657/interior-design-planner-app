@@ -31,16 +31,15 @@ export default function Dashboard() {
       <div className="container-fluid users-dashboard w-100 p-4">
         <h2>Welcome {dashboardData?.name},</h2>
         <p className="ms-2">Your view of your projects, tasks and schedule.</p>
+
         <div className="row g-2 row-cols-1 pt-4">
-          <div className="col-md-3">
+          <div className="col-lg-3 col-md-4">
             <ActiveProjects active={dashboardData?.activeProjects} />
           </div>
-          <div className="col-md-6">
-            <ProjectTable projects={dashboardData?.projectProgress} />
-          </div>
-          <div className="col-md-3 ">
+
+          <div className="col-lg-3 col-md-8 ">
             <div className="row row-cols-1 h-100">
-              <div className="col">
+              <div className="col ">
                 <TotalProjects total={dashboardData?.totalProjects} />
               </div>
               <div className="col mt-2">
@@ -50,15 +49,18 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+          <div className="col-lg-6">
+            <ProjectTable projects={dashboardData?.projectProgress} />
+          </div>
         </div>
         <div className="row row-cols-1 g-2 pt-2">
-          <div className="col-sm-3">
+          <div className="col-lg-3">
             <Reminders />
           </div>
-          <div className="col-sm-3">
+          <div className="col-lg-3">
             <TotalBudget />
           </div>
-          <div className="col-sm-6">
+          <div className="col-lg-6">
             <TaskList rooms={dashboardData?.recentTasks} />
           </div>
         </div>

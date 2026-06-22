@@ -12,3 +12,12 @@
   font-size: 120px;
   color: #f3eee6;
 }
+
+@media (max-width: 1200px) {
+  .project-active {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+}
