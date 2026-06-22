@@ -40,10 +40,6 @@
   color: rgba(243, 238, 230, 0.6) !important;
 }
 
-.sidebar-body svg {
-  height: 23px;
-}
-
 .sidebar-body a {
   font-size: 13px !important;
 }
@@ -62,4 +58,10 @@
 .nav > li > a:focus,
 .nav > li > a:hover {
   color: #f3eee6 !important;
+}
+
+.icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0 !important;
 }
