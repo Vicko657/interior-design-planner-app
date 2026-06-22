@@ -17,6 +17,14 @@ const clientService = {
       throw err;
     }
   },
+  update: async (clientData) => {
+    try {
+      const response = await api.put("/api/clients", clientData);
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default clientService;
