@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import "./ClientDetails.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -8,15 +8,16 @@ import projects from "../../../data/projects";
 
 export default function ClientDetails() {
   const params = useParams();
-  const client = clients.find((c) => c.fullName === params.clientId);
-  const project = projects.find((p) => p.clientName === client.fullName);
-  const totalProjects = project.id.length;
+  const location = useLocation();
+  console.log(location);
+  const client = location.state?.client;
+
   return (
     <div className="container-fluid users-clients w-100">
       <div className="header client-header row row-cols-1 pt-1">
         <div className="p-lg-5 col-md-6">
           <p>Client Name</p>
-          <h3 className="text-left">{client.fullName}</h3>
+          <h3 className="text-left">{client?.fullName}</h3>
         </div>
         <div className="p-lg-5 col-md-4 mt-auto mb-0 me-2">
           <div className="d-flex ">
@@ -25,8 +26,8 @@ export default function ClientDetails() {
               <p className="date m-1">Email Address</p>
             </div>
             <div className="col-md-3 text-end">
-              <p className="date client-details m-1">{client.phoneNumber}</p>
-              <p className="date client-details m-1">{client.emailAddress}</p>
+              <p className="date client-details m-1">{client?.phoneNumber}</p>
+              <p className="date client-details m-1">{client?.emailAddress}</p>
             </div>
           </div>
         </div>
@@ -37,7 +38,7 @@ export default function ClientDetails() {
           <div className="client-notes card h-100 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Notes</h5>
-              <p className="description mb-auto">{client.notes}</p>
+              <p className="description mb-auto">{client?.notes}</p>
             </div>
           </div>
         </div>
@@ -45,7 +46,7 @@ export default function ClientDetails() {
           <div className="clients-projects card h-100 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Total Projects</h5>
-              <h6 className="mb-1 text-end">{client.totalProjects}</h6>
+              <h6 className="mb-1 text-end">{client?.totalProjects}</h6>
             </div>
           </div>
         </div>
@@ -56,7 +57,7 @@ export default function ClientDetails() {
                 <div className="card-body d-flex ">
                   <div>
                     <h5 className="card-title mb-2">Total Budget</h5>
-                    <h6>£{project.budget}</h6>
+                    <h6>£</h6>
                   </div>
                 </div>
               </div>

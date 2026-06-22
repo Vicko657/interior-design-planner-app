@@ -6,7 +6,9 @@ export default function ClientRow({ client }) {
   const navigate = useNavigate();
   return (
     <tr
-      onClick={() => navigate(`${client.fullName}`)}
+      onClick={() =>
+        navigate(`${client.fullName}`, { state: { client: client } })
+      }
       style={{ cursor: "pointer" }}
     >
       <th scope="row">{client.fullName}</th>
