@@ -54,10 +54,10 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="row row-cols-1 g-2 pt-2">
-          <div className="col-lg-6">
-            <TotalBudget />
+          <div className="col-lg-4">
+            <TotalBudget budgets={dashboardData?.budget} />
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-8">
             <TaskList rooms={dashboardData?.recentTasks} />
           </div>
         </div>
