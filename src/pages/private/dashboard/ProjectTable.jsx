@@ -11,15 +11,9 @@ export default function ProjectTable({ projects }) {
         <div className="card-body">
           <h5 className="card-title">Project Progress</h5>
           <Table
-            rows={
-              projects.length > 0 ? (
-                projects.map((project) => (
-                  <ProjectDeadlineRow key={project.id} project={project} />
-                ))
-              ) : (
-                <p>No projects found</p>
-              )
-            }
+            rows={projects?.map((project) => (
+              <ProjectDeadlineRow key={project.projectName} project={project} />
+            ))}
             headers={headers}
           />
         </div>

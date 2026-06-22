@@ -1,22 +1,22 @@
 import React from "react";
 import "./TotalBudget.css";
 import Button from "../../../components/common/Button";
-export default function TotalBudget() {
+import Table from "../../../components/common/Table";
+import BudgetRow from "./BudgetRow";
+
+export default function TotalBudget({ budgets }) {
+  const headers = ["Client Name", "Budget"];
   return (
     <>
-      <div className="user-meeting card h-100 p-3">
-        <div className="card-body d-flex flex-column">
-          <h5 className="card-title mb-4">Budget Used</h5>
-
-          <h6 className="card-subtitle budget-total  text-start mb-auto">
-            £5,000
-          </h6>
-          <Button
-            page="user/list"
-            colour="outline-red-btn"
-            arrow="true"
-            cn="rounded-pill d-flex align-items-end mt-2 ms-auto p-2"
-          ></Button>
+      <div className="user-budget user-meeting p-3 card h-100">
+        <div className="card-body">
+          <h5 className="card-title">Budget Used</h5>
+          <Table
+            rows={budgets?.map((budget) => (
+              <BudgetRow key={budget.clientName} budget={budget} />
+            ))}
+            headers={headers}
+          />
         </div>
       </div>
     </>
