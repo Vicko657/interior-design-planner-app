@@ -17,6 +17,14 @@ const designerService = {
       throw err;
     }
   },
+  getDashboard: async () => {
+    try {
+      const response = await api.get("/api/designer/dashboard");
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default designerService;
