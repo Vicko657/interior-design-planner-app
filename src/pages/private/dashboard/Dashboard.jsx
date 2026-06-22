@@ -7,17 +7,12 @@ import CompletedProjects from "./CompletedProjects";
 import ActiveProjects from "./ActiveProjects";
 import Reminders from ".//Reminders";
 import TotalBudget from "./TotalBudget";
-import designers from "../../../data/designer";
-import projects from "../../../data/projects";
-import rooms from "../../../data/rooms";
 import designerService from "../../../api/services/designerService";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/common/Loader";
 import Error from "../../../components/common/Error";
 
 export default function Dashboard() {
-  const designer = designers;
-  const project = projects;
   const { data, loading, error } = useFetch(designerService.getDashboard);
   const [dashboardData, setDashboardData] = useState(null);
 
