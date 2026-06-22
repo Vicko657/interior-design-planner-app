@@ -4,7 +4,14 @@ import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [svgr(), react()],
+  plugins: [
+    react(),
+    svgr({
+      svgrOptions: {
+        plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
+      },
+    }),
+  ],
   server: {
     port: 5173,
     strictPort: true,
