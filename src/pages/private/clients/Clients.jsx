@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import ClientList from "./ClientList";
 import "./Clients.css";
 import Button from "../../../components/common/Button";
@@ -6,6 +6,9 @@ import clients from "../../../data/clients.js";
 import Modal from "react-bootstrap/Modal";
 import { useForm } from "react-hook-form";
 import clientService from "../../../api/services/clientService";
+import useFetch from "../../../hooks/useFetch";
+import Loader from "../../../components/common/Loader";
+import Error from "../../../components/common/Error";
 
 export default function Clients() {
   const [show, setShow] = useState(false);
@@ -20,13 +23,23 @@ export default function Clients() {
     handleSubmit,
     setError,
   } = useForm();
+  const { data, loading, error } = useFetch(clientService.get);
+  const [clientData, setClientData] = useState(null);
+
+  // Fetch clients data
+  (useEffect(() => {
+    if (data) {
+      setClientData(data);
+    }
+  }),
+    [data]);
 
   // Create new client with data
-  const onSubmit = async (data) => {
+  const onSubmit = async (response) => {
     try {
       setApiError(null);
-      await clientService.post(data);
-      reset({ ...data });
+      await clientService.post(response);
+      reset({ ...response });
     } catch (err) {
       const apiErrors = err.response?.data;
       if (apiErrors && typeof apiErrors === "object") {
@@ -38,6 +51,10 @@ export default function Clients() {
       }
     }
   };
+
+  if (loading) return <Loader />;
+  if (error) return <Error error={error} />;
+
   return (
     <>
       <div className="container-fluid users-clients w-100 p-4">
@@ -183,7 +200,7 @@ export default function Clients() {
         </div>
         <div className="row g-2 row-cols-1 pt-4">
           <div className="col-12">
-            <ClientList clients={clients} />
+            <ClientList clients={clientData?.content} />
           </div>
           <div className="col-md-6"></div>
         </div>
