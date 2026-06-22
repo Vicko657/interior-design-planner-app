@@ -54,10 +54,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="row row-cols-1 g-2 pt-2">
-          <div className="col-lg-3">
-            <Reminders />
-          </div>
-          <div className="col-lg-3">
+          <div className="col-lg-6">
             <TotalBudget />
           </div>
           <div className="col-lg-6">
