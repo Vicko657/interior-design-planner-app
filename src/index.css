@@ -115,8 +115,11 @@ table {
   margin-bottom: 0px !important;
   --bs-border-color: #ada58f87;
   letter-spacing: 0.9px;
-  text-transform: uppercase;
   --bs-table-bg: none !important;
+}
+
+thead {
+  text-transform: uppercase;
 }
 
 th {
