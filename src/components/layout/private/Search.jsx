@@ -25,7 +25,7 @@ export default function Search() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <SVG viewbox="0 0 28 30" path="search-icon" cn=" bi" />
+          <SVG viewbox="0 0 28 30" path="search" cn=" bi" />
         </button>
       </form>
     </>
