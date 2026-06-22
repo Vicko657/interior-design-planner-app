@@ -2,7 +2,6 @@ import { React, useState, useEffect } from "react";
 import ClientList from "./ClientList";
 import "./Clients.css";
 import Button from "../../../components/common/Button";
-import clients from "../../../data/clients.js";
 import Modal from "react-bootstrap/Modal";
 import { useForm } from "react-hook-form";
 import clientService from "../../../api/services/clientService";

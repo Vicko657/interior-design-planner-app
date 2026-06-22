@@ -3,13 +3,10 @@ import { useParams, useLocation } from "react-router-dom";
 import "./ClientDetails.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import clients from "../../../data/clients";
-import projects from "../../../data/projects";
 
 export default function ClientDetails() {
   const params = useParams();
   const location = useLocation();
-  console.log(location);
   const client = location.state?.client;
 
   return (
