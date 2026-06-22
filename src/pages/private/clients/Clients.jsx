@@ -3,16 +3,170 @@ import ClientList from "./ClientList";
 import "./Clients.css";
 import Button from "../../../components/common/Button";
 import clients from "../../../data/clients.js";
-import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import { useForm } from "react-hook-form";
+import clientService from "../../../api/services/clientService";
 
 export default function Clients() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [apiError, setApiError] = useState(null);
+  const {
+    register,
+    reset,
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    setError,
+  } = useForm();
+
+  // Create new client with data
+  const onSubmit = async (data) => {
+    try {
+      setApiError(null);
+      await clientService.post(data);
+      reset({ ...data });
+    } catch (err) {
+      const apiErrors = err.response?.data;
+      if (apiErrors && typeof apiErrors === "object") {
+        Object.keys(apiErrors).forEach((field) => {
+          setError(field, { type: "server", message: apiErrors[field] });
+        });
+      } else {
+        setApiError(apiErrors || "Client creation failed");
+      }
+    }
+  };
   return (
     <>
       <div className="container-fluid users-clients w-100 p-4">
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <h4 className="p-0 m-0 modal-title">New Client</h4>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <form className="newClient-form" onSubmit={handleSubmit(onSubmit)}>
+              {apiError && <div className="alert alert-danger">{apiError}</div>}
+              <div className="mb-1">
+                <label htmlFor="firstName" className="form-label">
+                  <small>First name</small>
+                </label>
+                <input
+                  {...register("firstName")}
+                  type="text"
+                  className="signup-form form-control"
+                  autoComplete="given-name"
+                  aria-describedby="firstNameError"
+                  name="firstName"
+                />
+                {errors.firstName && (
+                  <small className="text-warning text-sm">
+                    {errors.firstName.message}
+                  </small>
+                )}
+              </div>
+              <div className="mb-1 pt-2">
+                <label htmlFor="lastName" className="form-label">
+                  Last Name
+                </label>
+                <input
+                  {...register("lastName")}
+                  type="text"
+                  className="signup-form form-control"
+                  autoComplete="family-name"
+                  aria-describedby="lastNameError"
+                  name="lastName"
+                />
+                {errors.lastName && (
+                  <small className="text-warning text-sm">
+                    {errors.lastName.message}
+                  </small>
+                )}
+              </div>
+              <div className="mb-1 pt-2">
+                <label htmlFor="emailAddress" className="form-label">
+                  Email Address
+                </label>
+                <input
+                  {...register("emailAddress")}
+                  type="email"
+                  className="signup-form form-control"
+                  aria-describedby="emailError"
+                  autoComplete="email"
+                  name="emailAddress"
+                />
+                {errors.emailAddress && (
+                  <small className="text-warning text-sm">
+                    {errors.emailAddress.message}
+                  </small>
+                )}
+              </div>
+              <div className="mb-1 pt-2">
+                <label htmlFor="phoneNumber" className="form-label">
+                  Phone Number
+                </label>
+                <input
+                  {...register("phoneNumber")}
+                  type="text"
+                  aria-describedby="phoneNumberError"
+                  className="signup-form form-control"
+                  autoComplete="mobile"
+                  name="phoneNumber"
+                />
+                {errors.phoneNumber && (
+                  <small className="text-warning text-sm">
+                    {errors.phoneNumber.message}
+                  </small>
+                )}
+              </div>
+              <div className="mb-1 pt-2">
+                <label htmlFor="address" className="form-label">
+                  Address
+                </label>
+                <input
+                  {...register("address")}
+                  type="text"
+                  className="signup-form form-control"
+                  aria-describedby="addressError"
+                  autoComplete="address"
+                  name="address"
+                />
+                {errors.address && (
+                  <small className="text-warning text-sm">
+                    {errors.address.message}
+                  </small>
+                )}
+              </div>
+              <div className="mb-1 pt-2">
+                <label htmlFor="notes" className="form-label">
+                  Notes
+                </label>
+                <textarea
+                  {...register("notes")}
+                  type="text"
+                  className="signup-form form-control"
+                  name="notes"
+                />
+                {errors.notes && (
+                  <small className="text-warning text-sm">
+                    {errors.notes.message}
+                  </small>
+                )}
+              </div>
+              <Button
+                colour="red-btn login-btn"
+                text={isSubmitting ? "Saving..." : "Save"}
+                arrow="false"
+                disabled={isSubmitting}
+                type="submit"
+                cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2 mt-2"
+              ></Button>
+            </form>
+          </Modal.Body>
+        </Modal>
         <div className="row g-2 row-cols-1 pt-4">
           <div className="col-8 ps-4">
             <h3 className="page-title">Clients</h3>
@@ -33,92 +187,6 @@ export default function Clients() {
           </div>
           <div className="col-md-6"></div>
         </div>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>New Client</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label>First Name</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
-                  autoFocus
-                />
-              </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
-                  autoFocus
-                />
-              </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
-                  autoFocus
-                />
-              </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label>Phone Number</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
-                  autoFocus
-                />
-              </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label>Address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
-                  autoFocus
-                />
-              </Form.Group>
-
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-              >
-                <Form.Label>Notes</Form.Label>
-                <Form.Control as="textarea" rows={3} />
-              </Form.Group>
-            </Form>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button
-              variant="secondary"
-              btnfunction={handleClose}
-              text="Close"
-              cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2"
-            ></Button>
-            <Button
-              variant="primary"
-              btnfunction={handleClose}
-              text="Save"
-              cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2"
-            ></Button>
-          </Modal.Footer>
-        </Modal>
       </div>
     </>
   );
