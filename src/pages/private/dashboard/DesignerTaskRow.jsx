@@ -16,9 +16,9 @@ export default function DesignerTaskRow({ tasks }) {
 
       <td>
         <span
-          className={`${task.completed === "yes" ? "completed" : "not-completed"} rounded-pill`}
+          className={`${task.isCompleted === true ? "completed" : "not-completed"} rounded-pill`}
         >
-          {task.completed}
+          {task.isCompleted}
         </span>
       </td>
 

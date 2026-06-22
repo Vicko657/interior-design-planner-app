@@ -12,15 +12,9 @@ export default function TaskList({ rooms }) {
             <h5 className="card-title">Recent Tasks</h5>
           </div>
           <Table
-            rows={
-              rooms.length > 0 ? (
-                rooms.map((room, index) => (
-                  <DesignerTaskRow key={index} tasks={room} />
-                ))
-              ) : (
-                <p>No tasks found</p>
-              )
-            }
+            rows={rooms?.map((room, index) => (
+              <DesignerTaskRow key={index} tasks={room} />
+            ))}
             headers={headers}
           />
         </div>

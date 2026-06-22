@@ -13,7 +13,7 @@ export default function ProjectDeadlineRow({ project }) {
       <td>
         <span className="status rounded-pill">{project.status}</span>
       </td>
-      <td>{project.dueDate}</td>
+      <td>{project.date}</td>
     </tr>
   );
 }
