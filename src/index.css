@@ -226,6 +226,20 @@ label {
   letter-spacing: 1px;
 }
 
+.modal-title {
+  color: #33101c;
+}
+
+.modal {
+  --bs-modal-bg: #f3eee6 !important;
+  --bs-modal-header-border-color: #33101c54;
+}
+
+.newClient-form label {
+  color: #33101c;
+  opacity: 0.6;
+}
+
 @media (max-width: 1500px) {
   h1 {
     font-size: 82px;
