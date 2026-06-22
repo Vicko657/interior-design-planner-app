@@ -3,6 +3,7 @@ import { useParams, useLocation } from "react-router-dom";
 import "./ClientDetails.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import Button from "../../../components/common/Button";
 
 export default function ClientDetails() {
   const params = useParams();
@@ -11,21 +12,35 @@ export default function ClientDetails() {
 
   return (
     <div className="container-fluid users-clients w-100">
-      <div className="header client-header row row-cols-1 pt-1">
-        <div className="p-lg-5 col-md-6">
+      <div className="header client-header row row-cols-1 p-4">
+        <div className="p-4 pb-md-4 pb-3 col-md-6 col-12">
           <p>Client Name</p>
           <h3 className="text-left">{client?.fullName}</h3>
-        </div>
-        <div className="p-lg-5 col-md-4 mt-auto mb-0 me-2">
-          <div className="d-flex ">
-            <div className="col-md-9">
-              <p className="date m-1">Phone Number</p>
-              <p className="date m-1">Email Address</p>
+          <div className="d-flex mt-5">
+            <div>
+              <p className="date m-1">Phone Number:</p>
+              <p className="date m-1">Email Address:</p>
             </div>
-            <div className="col-md-3 text-end">
+            <div className="text-start">
               <p className="date client-details m-1">{client?.phoneNumber}</p>
               <p className="date client-details m-1">{client?.emailAddress}</p>
             </div>
+          </div>
+        </div>
+        <div className="d-flex justify-content-md-end align-items-end justify-content-start pt-md-4 p-4 pt-0 col-md-6 col-12 mb-auto">
+          <div>
+            <Button
+              colour="outline-btn"
+              cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2 me-2"
+              text="EDIT CLIENT"
+            ></Button>
+          </div>
+          <div>
+            <Button
+              colour="outline-btn"
+              cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2"
+              text="ADD PROJECT"
+            ></Button>
           </div>
         </div>
       </div>
