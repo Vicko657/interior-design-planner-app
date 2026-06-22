@@ -37,3 +37,8 @@ button:focus :active {
 .user-offcanvas .offcanvas-header {
   border-bottom: 1px solid #f3eee6;
 }
+
+.offcanvas-body {
+  height: 100vh;
+  overflow-y: auto;
+}
