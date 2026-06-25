@@ -1,16 +1,23 @@
-# React + Vite
+# View (Interior Design Planner App) 🛋️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React frontend for the [Interior Design Planner API](https://github.com/Vicko657/interior-design-planner-api), deployed live on Netlify. Full Stack integration with the backend API in progress.
 
-Currently, two official plugins are available:
+## 💡 Live Application
+- Frontend: https://viewinterior.netlify.app
+- Backend: [Live API](https://interior-design-planner.up.railway.app/) | [GitHub](https://github.com/Vicko657/interior-design-planner-api)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🗂️ Features
 
-## React Compiler
+- **Designer Registration:** Create an account to access the platform.
+- **Designer Login:** Secure authentication via JWT.
+- **Dashboard:** View personlised dashboard on login.
+- **Profile:** View and manage your profile.
+- Full backend integration in progress - connecting to existing REST endpoints with JWT authentication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+**Languages**: ![Javascript](https://img.shields.io/badge/Javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Frameworks**: ![React](https://img.shields.io/badge/React-007396?style=flat-square&logo=react&logoColor=#61DAFB)
+
+**Deployment**: ![Netlify](https://img.shields.io/badge/Netlify-0B0D0E?style=flat-square&logo=netlify&logoColor=#00C7B7)
