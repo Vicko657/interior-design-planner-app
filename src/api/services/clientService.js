@@ -17,9 +17,9 @@ const clientService = {
       throw err;
     }
   },
-  update: async (clientData) => {
+  update: async (clientData, id) => {
     try {
-      const response = await api.put("/api/clients", clientData);
+      const response = await api.put(`/api/clients/${id}`, clientData);
       return response.data;
     } catch (err) {
       throw err;
