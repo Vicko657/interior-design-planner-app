@@ -17,6 +17,14 @@ const clientService = {
       throw err;
     }
   },
+  getById: async (id) => {
+    try {
+      const response = await api.get(`/api/clients/${id}`);
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
   update: async (clientData, id) => {
     try {
       const response = await api.put(`/api/clients/${id}`, clientData);
