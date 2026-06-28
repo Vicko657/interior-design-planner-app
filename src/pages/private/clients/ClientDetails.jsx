@@ -4,6 +4,7 @@ import "./ClientDetails.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Button from "../../../components/common/Button";
+import EditClient from "./EditClient";
 import clientService from "../../../api/services/clientService";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/common/Loader";
@@ -17,6 +18,7 @@ export default function ClientDetails() {
     () => clientService.getById(client?.id),
     [client?.id],
   );
+  const [modalShow, setModalShow] = useState(false);
 
   if (loading) return <Loader />;
   if (error) return <Error error={error} />;
@@ -44,7 +46,14 @@ export default function ClientDetails() {
               colour="outline-btn"
               cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2 me-2"
               text="EDIT CLIENT"
+              btnfunction={() => setModalShow(true)}
             ></Button>
+            <EditClient
+              id={client?.id}
+              showModal={modalShow}
+              onHide={() => setModalShow(false)}
+              data={data}
+            />
           </div>
           <div>
             <Button
