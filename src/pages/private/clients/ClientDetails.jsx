@@ -1,14 +1,25 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import "./ClientDetails.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Button from "../../../components/common/Button";
+import clientService from "../../../api/services/clientService";
+import useFetch from "../../../hooks/useFetch";
+import Loader from "../../../components/common/Loader";
+import Error from "../../../components/common/Error";
 
 export default function ClientDetails() {
   const params = useParams();
   const location = useLocation();
   const client = location.state?.client;
+  const { data, loading, error } = useFetch(
+    () => clientService.getById(client?.id),
+    [client?.id],
+  );
+
+  if (loading) return <Loader />;
+  if (error) return <Error error={error} />;
 
   return (
     <div className="container-fluid users-clients w-100">
@@ -22,8 +33,8 @@ export default function ClientDetails() {
               <p className="date m-1">Email Address:</p>
             </div>
             <div className="text-start">
-              <p className="date client-details m-1">{client?.phoneNumber}</p>
-              <p className="date client-details m-1">{client?.emailAddress}</p>
+              <p className="date client-details m-1">{data?.phoneNumber}</p>
+              <p className="date client-details m-1">{data?.emailAddress}</p>
             </div>
           </div>
         </div>
@@ -50,7 +61,7 @@ export default function ClientDetails() {
           <div className="client-notes card h-100 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Notes</h5>
-              <p className="description mb-auto">{client?.notes}</p>
+              <p className="description mb-auto">{data?.notes}</p>
             </div>
           </div>
         </div>
@@ -58,7 +69,7 @@ export default function ClientDetails() {
           <div className="clients-projects card h-100 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Total Projects</h5>
-              <h6 className="mb-1 text-end">{client?.totalProjects}</h6>
+              <h6 className="mb-1 text-end">{data?.totalProjects}</h6>
             </div>
           </div>
         </div>
