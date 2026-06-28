@@ -6,7 +6,9 @@ export default function ProjectRow({ project }) {
   const navigate = useNavigate();
   return (
     <tr
-      onClick={() => navigate(`${project.projectName}`)}
+      onClick={() =>
+        navigate(`${project.projectName}`, { state: { project: project } })
+      }
       style={{ cursor: "pointer" }}
     >
       <th scope="row">{project.projectName}</th>
