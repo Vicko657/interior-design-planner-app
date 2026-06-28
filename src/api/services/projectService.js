@@ -17,6 +17,14 @@ const projectService = {
       throw err;
     }
   },
+  getById: async (id) => {
+    try {
+      const response = await api.get(`/api/projects/${id}`);
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default projectService;
