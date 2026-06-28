@@ -9,9 +9,9 @@ const projectService = {
       throw err;
     }
   },
-  post: async (clientId) => {
+  post: async (projectData, clientId) => {
     try {
-      const response = await api.post(`/api/projects/${clientId}`);
+      const response = await api.post(`/api/projects/${clientId}`, projectData);
       return response.data;
     } catch (err) {
       throw err;
