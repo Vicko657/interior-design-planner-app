@@ -1,16 +1,28 @@
-import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
 import "./ProjectDetails.css";
-import projects from "../../../data/projects";
 import rooms from "../../../data/rooms";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import TaskTab from "./ProjectTaskTab";
 import InventoryTab from "./ProjectInventoryTab";
+import projectService from "../../../api/services/projectService";
+import useFetch from "../../../hooks/useFetch";
+import Loader from "../../../components/common/Loader";
+import Error from "../../../components/common/Error";
 
 export default function ProjectDetails() {
   const params = useParams();
-  const project = projects.find((p) => p.projectName === params.projectId);
+  const location = useLocation();
+  const project = location.state?.project;
+  const { data, loading, error } = useFetch(
+    () => projectService.getById(project?.id),
+    [project?.id],
+  );
+  const [modalShow, setModalShow] = useState(false);
+
+  if (loading) return <Loader />;
+  if (error) return <Error error={error} />;
   const room = rooms.find((r) => r.project === project.projectName);
 
   return (
