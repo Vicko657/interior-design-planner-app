@@ -1,33 +1,66 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import { React, useState, useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
 import "./ClientDetails.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import clients from "../../../data/clients";
-import projects from "../../../data/projects";
+import Button from "../../../components/common/Button";
+import EditClient from "./EditClient";
+import clientService from "../../../api/services/clientService";
+import useFetch from "../../../hooks/useFetch";
+import Loader from "../../../components/common/Loader";
+import Error from "../../../components/common/Error";
 
 export default function ClientDetails() {
   const params = useParams();
-  const client = clients.find((c) => c.fullName === params.clientId);
-  const project = projects.find((p) => p.clientName === client.fullName);
-  const totalProjects = project.id.length;
+  const location = useLocation();
+  const client = location.state?.client;
+  const { data, loading, error } = useFetch(
+    () => clientService.getById(client?.id),
+    [client?.id],
+  );
+  const [modalShow, setModalShow] = useState(false);
+
+  if (loading) return <Loader />;
+  if (error) return <Error error={error} />;
+
   return (
     <div className="container-fluid users-clients w-100">
-      <div className="header client-header row row-cols-1 pt-1">
-        <div className="p-lg-5 col-md-6">
+      <div className="header client-header row row-cols-1 p-4">
+        <div className="p-4 pb-md-4 pb-3 col-md-6 col-12">
           <p>Client Name</p>
-          <h3 className="text-left">{client.fullName}</h3>
+          <h3 className="text-left">{client?.fullName}</h3>
+          <div className="d-flex mt-5">
+            <div>
+              <p className="date m-1">Phone Number:</p>
+              <p className="date m-1">Email Address:</p>
+            </div>
+            <div className="text-start">
+              <p className="date client-details m-1">{data?.phoneNumber}</p>
+              <p className="date client-details m-1">{data?.emailAddress}</p>
+            </div>
+          </div>
         </div>
-        <div className="p-lg-5 col-md-4 mt-auto mb-0 me-2">
-          <div className="d-flex ">
-            <div className="col-md-9">
-              <p className="date m-1">Phone Number</p>
-              <p className="date m-1">Email Address</p>
-            </div>
-            <div className="col-md-3 text-end">
-              <p className="date client-details m-1">{client.phoneNumber}</p>
-              <p className="date client-details m-1">{client.emailAddress}</p>
-            </div>
+        <div className="d-flex justify-content-md-end align-items-end justify-content-start pt-md-4 p-4 pt-0 col-md-6 col-12 mb-auto">
+          <div>
+            <Button
+              colour="outline-btn"
+              cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2 me-2"
+              text="EDIT CLIENT"
+              btnfunction={() => setModalShow(true)}
+            ></Button>
+            <EditClient
+              id={client?.id}
+              showModal={modalShow}
+              onHide={() => setModalShow(false)}
+              data={data}
+            />
+          </div>
+          <div>
+            <Button
+              colour="outline-btn"
+              cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2"
+              text="ADD PROJECT"
+            ></Button>
           </div>
         </div>
       </div>
@@ -37,7 +70,7 @@ export default function ClientDetails() {
           <div className="client-notes card h-100 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Notes</h5>
-              <p className="description mb-auto">{client.notes}</p>
+              <p className="description mb-auto">{data?.notes}</p>
             </div>
           </div>
         </div>
@@ -45,7 +78,7 @@ export default function ClientDetails() {
           <div className="clients-projects card h-100 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Total Projects</h5>
-              <h6 className="mb-1 text-end">{client.totalProjects}</h6>
+              <h6 className="mb-1 text-end">{data?.totalProjects}</h6>
             </div>
           </div>
         </div>
@@ -56,7 +89,7 @@ export default function ClientDetails() {
                 <div className="card-body d-flex ">
                   <div>
                     <h5 className="card-title mb-2">Total Budget</h5>
-                    <h6>£{project.budget}</h6>
+                    <h6>£</h6>
                   </div>
                 </div>
               </div>

@@ -115,8 +115,11 @@ table {
   margin-bottom: 0px !important;
   --bs-border-color: #ada58f87;
   letter-spacing: 0.9px;
-  text-transform: uppercase;
   --bs-table-bg: none !important;
+}
+
+thead {
+  text-transform: uppercase;
 }
 
 th {
@@ -224,6 +227,20 @@ label {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.modal-title {
+  color: #33101c;
+}
+
+.modal {
+  --bs-modal-bg: #f3eee6 !important;
+  --bs-modal-header-border-color: #33101c54;
+}
+
+.newClient-form label {
+  color: #33101c;
+  opacity: 0.6;
 }
 
 @media (max-width: 1500px) {

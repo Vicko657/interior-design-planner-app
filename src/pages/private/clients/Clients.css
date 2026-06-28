@@ -5,3 +5,18 @@
   font-size: 12px;
   font-weight: 400;
 }
+
+.newClient-form input {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  color: #33101c;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+.newClient-form textarea {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  color: #33101c;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-radius: 3px;
+}

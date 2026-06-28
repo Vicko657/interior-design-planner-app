@@ -17,15 +17,9 @@ export default function ClientList({ clients }) {
       <div className="user-table card h-100">
         <div className="card-body">
           <Table
-            rows={
-              clients.length > 0 ? (
-                clients.map((client) => (
-                  <ClientRow key={client.id} client={client} />
-                ))
-              ) : (
-                <p>No clients found</p>
-              )
-            }
+            rows={clients?.map((client) => (
+              <ClientRow key={client.id} client={client} />
+            ))}
             headers={headers}
           />
         </div>

@@ -14,6 +14,7 @@
 .client-details {
   opacity: 1 !important;
   font-size: 18px !important;
+  text-transform: initial;
 }
 
 .client-notes {
@@ -23,6 +24,7 @@
 
 .client-notes p {
   color: #33101c !important;
+  font-size: 14px !important;
 }
 
 .clients-projects {
@@ -44,7 +46,8 @@
 }
 
 .date {
-  font-size: 12px !important;
+  font-size: 14px !important;
+  text-transform: initial;
 }
 
 .dimensions p {
@@ -76,4 +79,9 @@
 .project-client h6 {
   color: #33101c !important;
   font-size: 28px !important;
+}
+@media (max-width: 1200px) {
+  .client-header h3 {
+    font-size: 42px;
+  }
 }
