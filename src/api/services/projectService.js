@@ -25,6 +25,14 @@ const projectService = {
       throw err;
     }
   },
+  put: async (projectData, id) => {
+    try {
+      const response = await api.put(`/api/projects/${id}`, projectData);
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default projectService;
