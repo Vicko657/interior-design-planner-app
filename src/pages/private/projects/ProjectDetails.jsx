@@ -29,6 +29,25 @@ export default function ProjectDetails() {
   if (error) return <Error error={error} />;
   const room = rooms.find((r) => r.project === project.projectName);
 
+  let roomButton = (
+    <Button
+      colour="outline-btn"
+      cn="rounded-pill p-3 pt-2 pb-2 me-2 "
+      text="ADD ROOM"
+      btnfunction={() => setModalRoomShow(true)}
+    ></Button>
+  );
+
+  if (data?.room != null) {
+    roomButton = (
+      <Button
+        colour="outline-btn"
+        cn="rounded-pill p-3 pt-2 pb-2 me-2 "
+        text="UPDATE ROOM"
+      ></Button>
+    );
+  }
+
   return (
     <div className="container-fluid users-projects w-100">
       <div className="header project-header row row-cols-1 p-4">
@@ -81,7 +100,7 @@ export default function ProjectDetails() {
           <div className="project-room card h-100 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Room Type</h5>
-              <h6 className="mb-1">{project.type}</h6>
+              <h6 className="mb-1">{data?.room}</h6>
               <hr></hr>
               <div className="d-flex dimensions mb-4">
                 <div className="col-md-8">
@@ -97,12 +116,7 @@ export default function ProjectDetails() {
                   <p className="m-1">{room.unit}</p>
                 </div>
               </div>
-              <Button
-                colour="outline-btn"
-                cn="rounded-pill p-3 pt-2 pb-2 me-2 "
-                text="ADD ROOM"
-                btnfunction={() => setModalRoomShow(true)}
-              ></Button>
+              {roomButton}
               <AddRoom
                 project={project}
                 showModal={modalRoomShow}
