@@ -12,6 +12,7 @@ import Loader from "../../../components/common/Loader";
 import Error from "../../../components/common/Error";
 import Button from "../../../components/common/Button";
 import EditProject from "./EditProject";
+import AddRoom from "./AddRoom";
 
 export default function ProjectDetails() {
   const params = useParams();
@@ -22,6 +23,7 @@ export default function ProjectDetails() {
     [project?.id],
   );
   const [modalShow, setModalShow] = useState(false);
+  const [modalRoomShow, setModalRoomShow] = useState(false);
 
   if (loading) return <Loader />;
   if (error) return <Error error={error} />;
@@ -81,7 +83,7 @@ export default function ProjectDetails() {
               <h5 className="card-title mb-3">Room Type</h5>
               <h6 className="mb-1">{project.type}</h6>
               <hr></hr>
-              <div className="d-flex dimensions">
+              <div className="d-flex dimensions mb-4">
                 <div className="col-md-8">
                   <p className="m-1">Height</p>
                   <p className="m-1">Length</p>
@@ -95,6 +97,18 @@ export default function ProjectDetails() {
                   <p className="m-1">{room.unit}</p>
                 </div>
               </div>
+              <Button
+                colour="outline-btn"
+                cn="rounded-pill p-3 pt-2 pb-2 me-2 "
+                text="ADD ROOM"
+                btnfunction={() => setModalRoomShow(true)}
+              ></Button>
+              <AddRoom
+                project={project}
+                showModal={modalRoomShow}
+                onHide={() => setModalRoomShow(false)}
+                data={data}
+              />
             </div>
           </div>
         </div>
