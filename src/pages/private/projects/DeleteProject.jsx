@@ -16,12 +16,11 @@ export default function DeleteProject({ id }) {
   };
   return (
     <Button
-      colour=""
       text={"Delete"}
       arrow="false"
       btnfunction={handleDelete}
       type="submit"
-      cn=""
+      cn="delete-btn"
     ></Button>
   );
 }
