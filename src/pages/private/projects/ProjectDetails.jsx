@@ -27,14 +27,16 @@ export default function ProjectDetails() {
 
   return (
     <div className="container-fluid users-projects w-100">
-      <div className="header project-header row row-cols-1 pt-1">
-        <div className="p-lg-5 col-md-8">
+      <div className="header project-header row row-cols-1 p-4">
+        <div className="p-4 pb-md-4 pb-3 col-md-6 col-12">
           <p>Project Name</p>
           <h3 className="text-left">{project.projectName}</h3>
         </div>
-        <div className="p-lg-5 col-md-4 mt-auto mb-0">
-          <p className="mb-2">Status</p>
-          <p className="project-status">{project.status}</p>
+        <div className="d-flex justify-content-md-end align-items-end justify-content-start pt-md-4 p-4 pt-0 col-md-6 col-12 mb-auto">
+          <div className="text-start">
+            <p className="mb-2">Status</p>
+            <p className="project-status">{project.status}</p>
+          </div>
         </div>
       </div>
 
@@ -44,13 +46,13 @@ export default function ProjectDetails() {
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Description</h5>
               <p className="description mb-auto">{project.description}</p>
-              <div className="d-flex ">
-                <div className="col-md-9">
-                  <p className="date m-1">Start Date</p>
-                  <p className="date m-1">Due Date</p>
+              <div className="d-flex pt-md-0 pt-3">
+                <div className="col-md-5">
+                  <p className="date m-1 ms-0">Start Date:</p>
+                  <p className="date m-1 ms-0">Due Date:</p>
                 </div>
-                <div className="col-md-3 text-end">
-                  <p className="date m-1">{project.startDate}</p>
+                <div className="text-start">
+                  <p className="date m-1 ">{project.startDate}</p>
                   <p className="date m-1">{project.dueDate}</p>
                 </div>
               </div>
@@ -70,7 +72,7 @@ export default function ProjectDetails() {
                   <p className="m-1">Width</p>
                   <p className="m-1">Unit</p>
                 </div>
-                <div className="col-md-4 text-end">
+                <div className="col-md-4 col-10 text-end">
                   <p className="m-1">{room.height}</p>
                   <p className="m-1">{room.length}</p>
                   <p className="m-1">{room.width}</p>
@@ -84,14 +86,15 @@ export default function ProjectDetails() {
           <div className="row row-cols-1 h-100">
             <div className="col">
               <div className="project-budget p-3 card h-100 pb-0">
-                <div className="card-body d-flex ">
-                  <div className="col-md-6">
+                <div className="card-body d-flex">
+                  <div className="col-md-6 me-auto">
                     <h5 className="card-title mb-2">Budget</h5>
-                    <h6 className="">£{project.budget}</h6>
+                    <h6 className="budget">£{project.budget}</h6>
                   </div>
+
                   <div className="col-md-6">
                     <h5 className="card-title mb-2">Remaining Budget</h5>
-                    <h6 className="">£{project.budget}</h6>
+                    <h6 className="budget">£{project.budget}</h6>
                   </div>
                 </div>
               </div>
@@ -99,9 +102,7 @@ export default function ProjectDetails() {
             <div className="col mt-2">
               <div className="project-client p-3 card h-100">
                 <div className="card-body d-flex">
-                  <h5 className="card-title me-auto text-start">
-                    Collaborators
-                  </h5>
+                  <h5 className="card-title me-auto text-start">Client</h5>
                   <h6 className=" mt-auto mb-0">{project.clientName}</h6>
                 </div>
               </div>
