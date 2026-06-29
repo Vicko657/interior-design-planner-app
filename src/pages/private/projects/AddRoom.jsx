@@ -10,16 +10,16 @@ import Error from "../../../components/common/Error";
 
 export default function AddRoom({ project, showModal, onHide }) {
   const roomType = [
-    { id: "HALLWAY", status: "Hallway" },
-    { id: "BATHROOM", status: "Bathroom" },
-    { id: "LIVING_ROOM", status: "Living Room" },
-    { id: "KITCHEN", status: "Kitchen" },
-    { id: "DINING_ROOM", status: "Dining Room" },
-    { id: "UTILITY_ROOM", status: "Utility Room" },
-    { id: "BEDROOM", status: "Bedroom" },
-    { id: "CONSERVETORY", status: "Conservetory" },
-    { id: "BASEMENT", status: "Basement" },
-    { id: "LOFT", status: "Loft" },
+    { id: "HALLWAY", type: "Hallway" },
+    { id: "BATHROOM", type: "Bathroom" },
+    { id: "LIVING_ROOM", type: "Living Room" },
+    { id: "KITCHEN", type: "Kitchen" },
+    { id: "DINING_ROOM", type: "Dining Room" },
+    { id: "UTILITY_ROOM", type: "Utility Room" },
+    { id: "BEDROOM", type: "Bedroom" },
+    { id: "CONSERVETORY", type: "Conservetory" },
+    { id: "BASEMENT", type: "Basement" },
+    { id: "LOFT", type: "Loft" },
   ];
   const units = [
     { id: "m", unit: "Meters" },
