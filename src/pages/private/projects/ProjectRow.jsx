@@ -1,6 +1,7 @@
 import React from "react";
 import "../../../components/common/Table.css";
 import { useNavigate } from "react-router-dom";
+import DeleteProject from "./DeleteProject";
 
 export default function ProjectRow({ project }) {
   const navigate = useNavigate();
@@ -21,6 +22,9 @@ export default function ProjectRow({ project }) {
       <td>{project.clientName}</td>
       <td>{project.startDate}</td>
       <td>{project.dueDate}</td>
+      <td onClick={(e) => e.stopPropagation()}>
+        <DeleteProject id={project.id} />
+      </td>
     </tr>
   );
 }
