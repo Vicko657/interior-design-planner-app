@@ -59,7 +59,7 @@ export default function AddRoom({ project, showModal, onHide }) {
       <Modal.Header closeButton>
         <Modal.Title>
           <h4 className="p-0 m-0 modal-title">
-            Add Room Details for {project?.name}
+            Add Room Details for {project?.projectName}
           </h4>
         </Modal.Title>
       </Modal.Header>
