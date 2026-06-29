@@ -9,6 +9,7 @@ import clientService from "../../../api/services/clientService";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/common/Loader";
 import Error from "../../../components/common/Error";
+import AddClientProject from "./AddClientProject";
 
 export default function ClientDetails() {
   const params = useParams();
@@ -19,6 +20,7 @@ export default function ClientDetails() {
     [client?.id],
   );
   const [modalShow, setModalShow] = useState(false);
+  const [modalProjectShow, setModalProjectShow] = useState(false);
 
   if (loading) return <Loader />;
   if (error) return <Error error={error} />;
@@ -60,7 +62,13 @@ export default function ClientDetails() {
               colour="outline-btn"
               cn="rounded-pill d-flex align-items-end ms-auto p-3 pt-2 pb-2"
               text="ADD PROJECT"
+              btnfunction={() => setModalProjectShow(true)}
             ></Button>
+            <AddClientProject
+              client={client}
+              showModal={modalProjectShow}
+              onHide={() => setModalProjectShow(false)}
+            />
           </div>
         </div>
       </div>
