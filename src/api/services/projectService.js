@@ -33,6 +33,14 @@ const projectService = {
       throw err;
     }
   },
+  delete: async (id) => {
+    try {
+      const response = await api.delete(`/api/projects/${id}`);
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default projectService;
