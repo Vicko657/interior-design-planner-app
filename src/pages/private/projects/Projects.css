@@ -35,3 +35,25 @@
   font-size: 14px;
   border-radius: 3px;
 }
+.newRoom-form input {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  color: #33101c;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+.newRoom-form textarea {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  color: #33101c;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.newRoom-form select {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  color: #33101c;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-radius: 3px;
+}
