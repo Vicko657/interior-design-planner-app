@@ -9,6 +9,14 @@ const roomService = {
       throw err;
     }
   },
+  getById: async (id) => {
+    try {
+      const response = await api.get(`/api/rooms/${id}`);
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default roomService;
