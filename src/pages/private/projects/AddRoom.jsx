@@ -25,7 +25,7 @@ export default function AddRoom({ project, showModal, onHide }) {
     { id: "m", unit: "Meters" },
     { id: "cm", unit: "Centimeters" },
     { id: "in.", unit: "Inches" },
-    { id: "ft", status: "Feet" },
+    { id: "ft", unit: "Feet" },
   ];
   const [apiError, setApiError] = useState(null);
   const {
