@@ -37,7 +37,6 @@ export default function EditClient({ id, showModal, onHide, data }) {
       await clientService.update(response, id);
       onHide();
     } catch (err) {
-      console.log(err);
       const apiErrors = err.response?.data;
       if (apiErrors && typeof apiErrors === "object") {
         Object.keys(apiErrors).forEach((field) => {

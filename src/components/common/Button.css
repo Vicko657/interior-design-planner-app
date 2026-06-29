@@ -95,3 +95,13 @@ svg {
   color: #33101c;
   background-color: transparent;
 }
+
+.delete-btn {
+  letter-spacing: 1px;
+  color: #33101c;
+  background: transparent;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+}

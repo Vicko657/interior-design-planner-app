@@ -14,6 +14,7 @@
 .project-status {
   opacity: 1 !important;
   font-size: 18px !important;
+  text-transform: initial;
 }
 
 .project-description {
@@ -23,6 +24,8 @@
 
 .project-description p {
   color: #33101c !important;
+  text-transform: initial;
+  letter-spacing: 0.5px;
 }
 
 .project-room {
@@ -44,12 +47,14 @@
 }
 
 .date {
-  font-size: 12px !important;
+  letter-spacing: 0.5px;
 }
 
-.dimensions p {
-  font-size: 12px !important;
+.project-room .dimensions p {
+  font-size: 14px !important;
   color: #f3eee6 !important;
+  text-transform: initial;
+  letter-spacing: 0.5px;
 }
 
 .project-room hr {
@@ -81,4 +86,18 @@
 .project-client h6 {
   color: #33101c !important;
   font-size: 28px !important;
+}
+
+@media (max-width: 1200px) {
+  .project-header h3 {
+    font-size: 42px;
+  }
+
+  .project-budget h6 {
+    font-size: 28px !important;
+  }
+
+  .project-description .description {
+    font-size: 14px !important;
+  }
 }
