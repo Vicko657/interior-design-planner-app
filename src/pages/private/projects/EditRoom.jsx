@@ -32,6 +32,7 @@ export default function EditRoom({ id, showModal, onHide, data }) {
     formState: { errors, isSubmitting },
     handleSubmit,
     setError,
+    setValue,
   } = useForm({
     defaultValues: {
       type: "",
@@ -46,6 +47,7 @@ export default function EditRoom({ id, showModal, onHide, data }) {
   useEffect(() => {
     if (data) {
       reset(data);
+      setValue("type", data?.room);
     }
   }, [data, reset]);
 
