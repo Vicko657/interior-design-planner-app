@@ -94,7 +94,7 @@ export default function ProjectDetails() {
             </div>
           </div>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-4">
           <div className="project-room card h-0 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Room Type</h5>
@@ -130,10 +130,10 @@ export default function ProjectDetails() {
             </div>
           </div>
         </div>
-        <div className="col-md-5">
+        <div className="col-md-4">
           <div className="row row-cols-1 h-100">
             <div className="col">
-              <div className="project-budget p-3 card h-100 pb-0">
+              <div className="project-budget p-3 card h-60 pb-0">
                 <div className="card-body d-flex">
                   <div className="col-md-6 me-auto">
                     <h5 className="card-title mb-2">Budget</h5>
@@ -148,10 +148,29 @@ export default function ProjectDetails() {
               </div>
             </div>
             <div className="col mt-2">
-              <div className="project-client p-3 card h-100">
+              <div className="project-client p-3 card h-60">
                 <div className="card-body d-flex">
                   <h5 className="card-title me-auto text-start">Client</h5>
                   <h6 className=" mt-auto mb-0">{data?.clientName}</h6>
+                </div>
+              </div>
+            </div>
+            <div className="col mt-2">
+              <div className="project-admin  card h-40">
+                <div className="card-body d-flex">
+                  <h5 className="card-title me-auto text-start">
+                    Action Items
+                  </h5>
+                  <Button
+                    colour="outline-red-btn"
+                    cn="rounded-pill p-3 pt-1 pb-1 me-2"
+                    text="ADD TASK"
+                  ></Button>
+                  <Button
+                    colour="outline-red-btn"
+                    cn="rounded-pill p-3 pt-1 pb-1"
+                    text="ADD ITEM"
+                  ></Button>
                 </div>
               </div>
             </div>
