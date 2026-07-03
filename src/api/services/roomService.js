@@ -17,6 +17,14 @@ const roomService = {
       throw err;
     }
   },
+  put: async (roomData, id) => {
+    try {
+      const response = await api.put(`/api/rooms/${id}`, roomData);
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default roomService;
