@@ -5,6 +5,12 @@ import DeleteProject from "./DeleteProject";
 
 export default function ProjectRow({ project }) {
   const navigate = useNavigate();
+
+  let roomType = <span className="room-type rounded-pill">{project.room}</span>;
+
+  if (project.room == null) {
+    roomType = <span></span>;
+  }
   return (
     <tr
       onClick={() =>
@@ -16,9 +22,7 @@ export default function ProjectRow({ project }) {
       <td>
         <span className="status rounded-pill">{project.status}</span>
       </td>
-      <td>
-        <span className="room-type rounded-pill">{project.type}</span>
-      </td>
+      <td>{roomType}</td>
       <td>{project.clientName}</td>
       <td>{project.startDate}</td>
       <td>{project.dueDate}</td>
