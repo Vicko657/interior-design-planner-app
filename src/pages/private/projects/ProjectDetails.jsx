@@ -8,6 +8,7 @@ import Error from "../../../components/common/Error";
 import Button from "../../../components/common/Button";
 import EditProject from "./EditProject";
 import AddRoom from "./AddRoom";
+import EditRoom from "./EditRoom";
 import ProjectTabs from "./ProjectTabs";
 
 export default function ProjectDetails() {
@@ -20,6 +21,7 @@ export default function ProjectDetails() {
   );
   const [modalShow, setModalShow] = useState(false);
   const [modalRoomShow, setModalRoomShow] = useState(false);
+  const [modalRoomUpdateShow, setModalRoomUpdateShow] = useState(false);
 
   if (loading) return <Loader />;
   if (error) return <Error error={error} />;
@@ -39,6 +41,7 @@ export default function ProjectDetails() {
         colour="outline-btn"
         cn="rounded-pill p-3 pt-2 pb-2 me-2 "
         text="UPDATE ROOM"
+        btnfunction={() => setModalRoomUpdateShow(true)}
       ></Button>
     );
   }
@@ -116,6 +119,12 @@ export default function ProjectDetails() {
                 project={project}
                 showModal={modalRoomShow}
                 onHide={() => setModalRoomShow(false)}
+                data={data}
+              />
+              <EditRoom
+                id={data?.roomId}
+                showModal={modalRoomUpdateShow}
+                onHide={() => setModalRoomUpdateShow(false)}
                 data={data}
               />
             </div>
