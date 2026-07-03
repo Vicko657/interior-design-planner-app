@@ -35,7 +35,9 @@ export default function ProjectDetails() {
     ></Button>
   );
 
-  if (data?.room !== null) {
+  let roomDetails = <></>;
+
+  if (data?.roomId !== null) {
     roomButton = (
       <Button
         colour="outline-btn"
@@ -43,6 +45,28 @@ export default function ProjectDetails() {
         text="UPDATE ROOM"
         btnfunction={() => setModalRoomUpdateShow(true)}
       ></Button>
+    );
+
+    roomDetails = (
+      <div>
+        <h5 className="card-title mb-3">Room Type</h5>
+        <h6 className="mb-1">{data?.room}</h6>
+        <hr></hr>
+        <div className="d-flex dimensions mb-4">
+          <div className="col-md-8">
+            <p className="m-1">Height</p>
+            <p className="m-1">Length</p>
+            <p className="m-1">Width</p>
+            <p className="m-1">Unit</p>
+          </div>
+          <div className="col-md-4 col-10 text-end">
+            <p className="m-1">{data?.height}</p>
+            <p className="m-1">{data?.length}</p>
+            <p className="m-1">{data?.width}</p>
+            <p className="m-1">{data?.unit}</p>
+          </div>
+        </div>
+      </div>
     );
   }
 
@@ -95,25 +119,9 @@ export default function ProjectDetails() {
           </div>
         </div>
         <div className="col-md-4">
-          <div className="project-room card h-0 p-3">
+          <div className="project-room card p-3">
             <div className="card-body d-flex flex-column">
-              <h5 className="card-title mb-3">Room Type</h5>
-              <h6 className="mb-1">{data?.room}</h6>
-              <hr></hr>
-              <div className="d-flex dimensions mb-4">
-                <div className="col-md-8">
-                  <p className="m-1">Height</p>
-                  <p className="m-1">Length</p>
-                  <p className="m-1">Width</p>
-                  <p className="m-1">Unit</p>
-                </div>
-                <div className="col-md-4 col-10 text-end">
-                  <p className="m-1">{data?.height}</p>
-                  <p className="m-1">{data?.length}</p>
-                  <p className="m-1">{data?.width}</p>
-                  <p className="m-1">{data?.unit}</p>
-                </div>
-              </div>
+              {roomDetails}
               {roomButton}
               <AddRoom
                 project={project}
