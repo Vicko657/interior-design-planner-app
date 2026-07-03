@@ -3,20 +3,38 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import TaskTab from "./ProjectTaskTab";
 import InventoryTab from "./ProjectInventoryTab";
+import roomService from "../../../api/services/roomService";
+import useFetch from "../../../hooks/useFetch";
+import Loader from "../../../components/common/Loader";
+import Error from "../../../components/common/Error";
 
 export default function ProjectTabs({ room }) {
-  let tasks = <TaskTab room={data?.roomId} />;
+  let tasks = <p>No tasks found</p>;
+  let items = <p>No items found</p>;
 
-  if (data?.roomId === null) {
-    tasks = <p>No tasks found</p>;
+  if (room === null) {
+    tasks;
+    items;
+  } else {
+    const { data, loading, error } = useFetch(
+      () => roomService.getById(room),
+      [room],
+    );
+
+    if (loading) return <Loader />;
+    if (error) return <Error error={error} />;
+
+    tasks = <TaskTab tasks={data?.checklist} />;
+    items = <InventoryTab items={data?.inventory} />;
   }
+
   return (
     <Tabs defaultActiveKey="profile" id="fill-tab-example" className="p-0" fill>
       <Tab eventKey="tasks" title="Tasks">
         {tasks}
       </Tab>
       <Tab eventKey="inventory" title="Inventory">
-        <InventoryTab items={data?.roomId} />
+        {items}
       </Tab>
       <Tab eventKey="meetings" title="Meetings" disabled>
         <p>Meetings</p>
