@@ -33,7 +33,7 @@ export default function ProjectDetails() {
     ></Button>
   );
 
-  if (data?.room != null) {
+  if (data?.room !== null) {
     roomButton = (
       <Button
         colour="outline-btn"
