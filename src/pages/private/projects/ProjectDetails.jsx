@@ -19,7 +19,7 @@ export default function ProjectDetails() {
   const location = useLocation();
   const project = location.state?.project;
   const { data, loading, error } = useFetch(
-    () => projectService.getById(project?.id),
+    () => projectService.getSummary(project?.id),
     [project?.id],
   );
   const [modalShow, setModalShow] = useState(false);
@@ -53,12 +53,12 @@ export default function ProjectDetails() {
       <div className="header project-header row row-cols-1 p-4">
         <div className="p-4 pb-md-4 pb-5 col-md-6 col-12">
           <p>Project Name</p>
-          <h3 className="text-left">{project.projectName}</h3>
+          <h3 className="text-left">{data?.projectName}</h3>
         </div>
         <div className="d-flex justify-content-md-end align-items-end justify-content-start pt-md-4 p-4 pt-0 col-md-6 col-12 mb-auto">
           <div className="me-md-5 me-auto">
             <p className="mb-2">Status</p>
-            <p className="project-status">{project.status}</p>
+            <p className="project-status">{data?.status}</p>
           </div>
           <div className="mb-auto">
             <Button
@@ -82,22 +82,22 @@ export default function ProjectDetails() {
           <div className="project-description card h-100 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Description</h5>
-              <p className="description mb-auto">{project.description}</p>
+              <p className="description mb-auto">{data?.description}</p>
               <div className="d-flex pt-md-0 pt-3">
                 <div className="col-md-5">
                   <p className="date m-1 ms-0">Start Date:</p>
                   <p className="date m-1 ms-0">Due Date:</p>
                 </div>
                 <div className="text-start">
-                  <p className="date m-1 ">{project.startDate}</p>
-                  <p className="date m-1">{project.dueDate}</p>
+                  <p className="date m-1 ">{data?.startDate}</p>
+                  <p className="date m-1">{data?.dueDate}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="col-md-3">
-          <div className="project-room card h-100 p-3">
+          <div className="project-room card h-0 p-3">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title mb-3">Room Type</h5>
               <h6 className="mb-1">{data?.room}</h6>
@@ -110,10 +110,10 @@ export default function ProjectDetails() {
                   <p className="m-1">Unit</p>
                 </div>
                 <div className="col-md-4 col-10 text-end">
-                  <p className="m-1">{room.height}</p>
-                  <p className="m-1">{room.length}</p>
-                  <p className="m-1">{room.width}</p>
-                  <p className="m-1">{room.unit}</p>
+                  <p className="m-1">{data?.height}</p>
+                  <p className="m-1">{data?.length}</p>
+                  <p className="m-1">{data?.width}</p>
+                  <p className="m-1">{data?.unit}</p>
                 </div>
               </div>
               {roomButton}
@@ -133,12 +133,12 @@ export default function ProjectDetails() {
                 <div className="card-body d-flex">
                   <div className="col-md-6 me-auto">
                     <h5 className="card-title mb-2">Budget</h5>
-                    <h6 className="budget">£{project.budget}</h6>
+                    <h6 className="budget">£{data?.budget}</h6>
                   </div>
 
                   <div className="col-md-6">
                     <h5 className="card-title mb-2">Remaining Budget</h5>
-                    <h6 className="budget">£{project.budget}</h6>
+                    <h6 className="budget">£{data?.remainingBudget}</h6>
                   </div>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function ProjectDetails() {
               <div className="project-client p-3 card h-100">
                 <div className="card-body d-flex">
                   <h5 className="card-title me-auto text-start">Client</h5>
-                  <h6 className=" mt-auto mb-0">{project.clientName}</h6>
+                  <h6 className=" mt-auto mb-0">{data?.clientName}</h6>
                 </div>
               </div>
             </div>
