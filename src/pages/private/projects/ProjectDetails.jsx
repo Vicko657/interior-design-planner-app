@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import "./ProjectDetails.css";
-import rooms from "../../../data/rooms";
 import projectService from "../../../api/services/projectService";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/common/Loader";
@@ -24,7 +23,6 @@ export default function ProjectDetails() {
 
   if (loading) return <Loader />;
   if (error) return <Error error={error} />;
-  const room = rooms.find((r) => r.project === project.projectName);
 
   let roomButton = (
     <Button
