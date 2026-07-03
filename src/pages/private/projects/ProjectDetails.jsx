@@ -38,6 +38,8 @@ export default function ProjectDetails() {
     ></Button>
   );
 
+  let tasks = <TaskTab room={data?.roomId} />;
+
   if (data?.room != null) {
     roomButton = (
       <Button
@@ -46,6 +48,10 @@ export default function ProjectDetails() {
         text="UPDATE ROOM"
       ></Button>
     );
+  }
+
+  if (data?.roomId === null) {
+    tasks = <p>No tasks found</p>;
   }
 
   return (
@@ -163,7 +169,7 @@ export default function ProjectDetails() {
           fill
         >
           <Tab eventKey="tasks" title="Tasks">
-            <TaskTab tasks={room.checklist} />
+            {tasks}
           </Tab>
           <Tab eventKey="inventory" title="Inventory">
             <InventoryTab items={room.inventory} />
