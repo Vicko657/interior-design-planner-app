@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import "./ProjectDetails.css";
 import rooms from "../../../data/rooms";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
-import TaskTab from "./ProjectTaskTab";
-import InventoryTab from "./ProjectInventoryTab";
 import projectService from "../../../api/services/projectService";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/common/Loader";
@@ -13,6 +9,7 @@ import Error from "../../../components/common/Error";
 import Button from "../../../components/common/Button";
 import EditProject from "./EditProject";
 import AddRoom from "./AddRoom";
+import ProjectTabs from "./ProjectTabs";
 
 export default function ProjectDetails() {
   const params = useParams();
@@ -38,8 +35,6 @@ export default function ProjectDetails() {
     ></Button>
   );
 
-  let tasks = <TaskTab room={data?.roomId} />;
-
   if (data?.room != null) {
     roomButton = (
       <Button
@@ -48,10 +43,6 @@ export default function ProjectDetails() {
         text="UPDATE ROOM"
       ></Button>
     );
-  }
-
-  if (data?.roomId === null) {
-    tasks = <p>No tasks found</p>;
   }
 
   return (
@@ -162,28 +153,7 @@ export default function ProjectDetails() {
       </div>
 
       <div className="project-tabs row g-2 row-cols-1 p-3 pt-4">
-        <Tabs
-          defaultActiveKey="profile"
-          id="fill-tab-example"
-          className="p-0"
-          fill
-        >
-          <Tab eventKey="tasks" title="Tasks">
-            {tasks}
-          </Tab>
-          <Tab eventKey="inventory" title="Inventory">
-            <InventoryTab items={room.inventory} />
-          </Tab>
-          <Tab eventKey="meetings" title="Meetings" disabled>
-            <p>Meetings</p>
-          </Tab>
-          <Tab eventKey="gallery" title="Gallery" disabled>
-            <p>Gallery</p>
-          </Tab>
-          <Tab eventKey="files" title="Files" disabled>
-            <p>Files</p>
-          </Tab>
-        </Tabs>
+        <ProjectTabs room={data?.roomId} />
       </div>
     </div>
   );
