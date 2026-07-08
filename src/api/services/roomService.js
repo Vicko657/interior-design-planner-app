@@ -25,6 +25,16 @@ const roomService = {
       throw err;
     }
   },
+  getByType: async (type) => {
+    try {
+      const response = await api.get(`/api/rooms/type`, {
+        params: { type: type },
+      });
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default roomService;
