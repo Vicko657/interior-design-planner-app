@@ -35,3 +35,14 @@
 .room-categories .card-link {
   text-decoration: underline;
 }
+
+.room-categories .card-img-left {
+  width: auto;
+  height: 110px;
+}
+
+.room-categories p {
+  color: #33101c;
+  text-transform: inherit;
+  font-size: 14px;
+}
