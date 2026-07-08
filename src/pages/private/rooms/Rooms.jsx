@@ -9,6 +9,7 @@ import Collapse from "react-bootstrap/Collapse";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/common/Loader";
 import Error from "../../../components/common/Error";
+import Select from "../../../components/common/Select";
 
 export default function Room() {
   const [roomOption, setRoomOption] = useState(null);
@@ -44,33 +45,58 @@ export default function Room() {
           style={{ width: "100%" }}
         >
           {roomType.map((room) => (
-            <Card
-              key={room.id}
-              className="m-1"
-              onClick={() => {
-                if (open && open !== room.id) {
-                  setOpen(null);
-                  setTimeout(() => {
+            <>
+              <Card
+                key={room.id}
+                className="m-1 d-lg-block d-none"
+                onClick={() => {
+                  if (open && open !== room.id) {
+                    setOpen(null);
+                    setTimeout(() => {
+                      setOpen(room.id);
+                      setRoomOption(room.id);
+                    }, 100);
+                  } else {
                     setOpen(room.id);
                     setRoomOption(room.id);
-                  }, 100);
-                } else {
-                  setOpen(room.id);
-                  setRoomOption(room.id);
-                }
-              }}
-              style={{
-                width: "13rem",
-              }}
-            >
-              <Card.Body className="p-4">
-                <Card.Title>{room.type}</Card.Title>
-                <Card.Subtitle className="mt-2">
-                  {room.description}
-                </Card.Subtitle>
-              </Card.Body>
-            </Card>
+                  }
+                }}
+                style={{
+                  width: "13rem",
+                }}
+              >
+                <Card.Body className="p-lg-4 p-2">
+                  <Card.Title>{room.type}</Card.Title>
+                  <Card.Subtitle className="mt-2">
+                    {room.description}
+                  </Card.Subtitle>
+                </Card.Body>
+              </Card>
+            </>
           ))}
+          <Select
+            optionName="null"
+            aria-label="StatusError"
+            register={null}
+            name="type"
+            data={roomType}
+            selectKey={"id"}
+            value={"id"}
+            select={"room type"}
+            cn="d-lg-none d-block rooms-select"
+            onChange={(selected) => {
+              if (open && open !== selected) {
+                setOpen(null);
+                setTimeout(() => {
+                  setOpen(selected);
+                  setRoomOption(selected);
+                }, 100);
+              } else {
+                setOpen(selected);
+                setRoomOption(selected);
+              }
+            }}
+          />
           <hr className="mt-4"></hr>
           <div className="room-categories row g-2 row-cols-1  ">
             <Collapse in={open === roomOption}>
@@ -81,10 +107,7 @@ export default function Room() {
                   </>
                   {data?.content.length > 0 ? (
                     data?.content.map((type) => (
-                      <Card
-                        className="rooms m-1 flex-row"
-                        style={{ width: "40%" }}
-                      >
+                      <Card className="rooms m-1 flex-row w-40">
                         <Card.Img
                           variant="left"
                           className="p-4"
