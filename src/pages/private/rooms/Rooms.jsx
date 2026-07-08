@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Rooms.css";
 import Button from "../../../components/common/Button";
 import Card from "react-bootstrap/Card";
 import roomType from "../../../util/roomType.js";
 roomType;
+import roomService from "../../../api/services/roomService";
+import Collapse from "react-bootstrap/Collapse";
+import useFetch from "../../../hooks/useFetch";
+import Loader from "../../../components/common/Loader";
+import Error from "../../../components/common/Error";
 
 export default function Room() {
+  const [roomOption, setRoomOption] = useState(null);
+  const [open, setOpen] = useState(null);
+
+  const { data, loading, error } = useFetch(
+    () => roomService.getByType(roomOption),
+    [roomOption],
+    roomOption,
+  );
+
+  if (loading) return <Loader />;
+  if (error) return <Error error={error} />;
+
   return (
     <>
       <div className="container-fluid users-rooms w-100 p-4">
@@ -30,6 +47,18 @@ export default function Room() {
             <Card
               key={room.id}
               className="m-1"
+              onClick={() => {
+                if (open && open !== room.id) {
+                  setOpen(null);
+                  setTimeout(() => {
+                    setOpen(room.id);
+                    setRoomOption(room.id);
+                  }, 100);
+                } else {
+                  setOpen(room.id);
+                  setRoomOption(room.id);
+                }
+              }}
               style={{
                 width: "13rem",
               }}
@@ -43,7 +72,46 @@ export default function Room() {
             </Card>
           ))}
           <hr className="mt-4"></hr>
-          <div className="room-categories row g-2 row-cols-1  "></div>
+          <div className="room-categories row g-2 row-cols-1  ">
+            <Collapse in={open === roomOption}>
+              {roomOption !== null ? (
+                <div id="collapse-text">
+                  <>
+                    <p>{data?.content.length} rooms found</p>
+                  </>
+                  {data?.content.length > 0 ? (
+                    data?.content.map((type) => (
+                      <Card
+                        className="rooms m-1 flex-row"
+                        style={{ width: "40%" }}
+                      >
+                        <Card.Img
+                          variant="left"
+                          className="p-4"
+                          src="/imgs/room-icon.svg"
+                        />
+                        <Card.Body className="p-4 ps-1">
+                          <Card.Title>{type.projectName}</Card.Title>
+                          <Card.Subtitle className="mt-2">
+                            {roomOption}
+                          </Card.Subtitle>
+
+                          <Card.Subtitle className="mt-2">
+                            L: {type.length} {type.unit} | H: {type.height}{" "}
+                            {type.unit} | W: {type.width} {type.unit}
+                          </Card.Subtitle>
+                        </Card.Body>
+                      </Card>
+                    ))
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ) : (
+                <></>
+              )}
+            </Collapse>
+          </div>
         </div>
       </div>
     </>
