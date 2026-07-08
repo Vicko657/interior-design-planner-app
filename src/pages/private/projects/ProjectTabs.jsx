@@ -12,18 +12,16 @@ export default function ProjectTabs({ room }) {
   let tasks = <p>No tasks found</p>;
   let items = <p>No items found</p>;
 
-  if (room === null) {
-    tasks;
-    items;
-  } else {
-    const { data, loading, error } = useFetch(
-      () => roomService.getById(room),
-      [room],
-    );
+  const { data, loading, error } = useFetch(
+    () => roomService.getById(room),
+    [room],
+    room,
+  );
 
-    if (loading) return <Loader />;
-    if (error) return <Error error={error} />;
+  if (loading) return <Loader />;
+  if (error) return <Error error={error} />;
 
+  if (room !== null) {
     tasks = <TaskTab tasks={data?.checklist} />;
     items = <InventoryTab items={data?.inventory} />;
   }
