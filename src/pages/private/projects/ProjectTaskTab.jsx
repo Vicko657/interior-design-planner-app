@@ -4,6 +4,7 @@ import Table from "../../../components/common/Table";
 import { useNavigate } from "react-router-dom";
 import EditTask from "../tasks/EditTask";
 import Button from "../../../components/common/Button";
+import DeleteTask from "../tasks/DeleteTask";
 
 export default function ProjectTaskTab({ tasks, room }) {
   const navigate = useNavigate();
@@ -44,6 +45,9 @@ export default function ProjectTaskTab({ tasks, room }) {
                   onHide={() => setModalShow(false)}
                   response={task}
                 />
+              </td>
+              <td onClick={(e) => e.stopPropagation()}>
+                <DeleteTask id={room} index={index} />
               </td>
             </tr>
           ))}
