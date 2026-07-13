@@ -7,5 +7,16 @@ const taskService = {
       throw err;
     }
   },
+  put: async (taskData, roomId, index) => {
+    try {
+      const response = await api.patch(
+        `/api/rooms/${roomId}/task/${index}`,
+        taskData,
+      );
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 export default taskService;
