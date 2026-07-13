@@ -75,13 +75,13 @@ export default function Room() {
             </>
           ))}
           <Select
-            optionName="null"
+            optionName={null}
             aria-label="StatusError"
             register={null}
             name="type"
             data={roomType}
             selectKey={"id"}
-            value={"id"}
+            value={"type"}
             select={"room type"}
             cn="d-lg-none d-block rooms-select"
             onChange={(selected) => {
