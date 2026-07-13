@@ -25,9 +25,9 @@ export default function ProjectInventoryTab({ items }) {
               <td>£{item.price}</td>
               <td>
                 <span
-                  className={`${item.ordered === "yes" ? "completed" : "not-completed"} rounded-pill`}
+                  className={`${item.ordered === true ? "completed" : "not-completed"} rounded-pill`}
                 >
-                  {item.ordered}
+                  {item.ordered === true ? "YES" : "NO"}
                 </span>
               </td>
               <td href="/">edit</td>
