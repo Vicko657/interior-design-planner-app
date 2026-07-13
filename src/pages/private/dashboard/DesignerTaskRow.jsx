@@ -3,33 +3,31 @@ import "../../../components/common/Table.css";
 import "../tasks/Tasks.css";
 import { useNavigate } from "react-router-dom";
 
-export default function DesignerTaskRow({ tasks }) {
+export default function DesignerTaskRow({ tasks, key }) {
   const navigate = useNavigate();
-  const totalTasks = tasks.checklist.length;
-  return tasks.checklist.map((task, index) => (
+  const totalTasks = tasks.length;
+  return (
     <tr
-      key={index}
+      key={key}
       onClick={() => navigate(`project/${tasks.project}`)}
       style={{ cursor: "pointer" }}
     >
-      <th scope="row">{task.taskName}</th>
+      <th scope="row">{tasks.taskName}</th>
 
       <td>
         <span
-          className={`${task.isCompleted === true ? "completed" : "not-completed"} rounded-pill`}
+          className={`${tasks.isCompleted === true ? "completed" : "not-completed"} rounded-pill`}
         >
-          {task.isCompleted}
+          {tasks.isCompleted}
         </span>
       </td>
 
-      {index === 0 && (
-        <td
-          className="p-2 task-project text-center project-category"
-          rowSpan={totalTasks}
-        >
-          <span className="rounded-pill project-category">{tasks.project}</span>
-        </td>
-      )}
+      <td
+        className="p-2 task-project text-center project-category"
+        rowSpan={totalTasks}
+      >
+        <span className="rounded-pill project-category">{tasks.project}</span>
+      </td>
     </tr>
-  ));
+  );
 }
