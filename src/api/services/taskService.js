@@ -1,3 +1,4 @@
+import api from "../AxiosConfig";
 const taskService = {
   post: async (taskData, roomId) => {
     try {
@@ -15,6 +16,7 @@ const taskService = {
       );
       return response.data;
     } catch (err) {
+      console.log(err);
       throw err;
     }
   },
