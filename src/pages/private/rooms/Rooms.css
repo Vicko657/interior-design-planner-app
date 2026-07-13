@@ -3,25 +3,54 @@
 }
 
 .room-categories .card {
-  background: #33101c !important;
-  color: #d3d3d3;
-  border: none !important;
+  background: transparent !important;
+  color: #33101c;
+  border: 1px solid #33101c3b !important;
+  cursor: pointer;
+}
+
+.room-categories .card:hover {
+  background: #d8cfb68c !important;
+}
+
+.room-categories .card:active {
+  background: #d8cfb68c !important;
 }
 
 .room-categories .card-title {
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 2px;
   font-weight: 300;
+  text-transform: inherit;
+  letter-spacing: 1px;
 }
 
 .room-categories .card-subtitle {
-  font-size: 80px;
-  font-family: PPEditorial;
+  font-size: 12px;
   font-weight: 300;
-  color: #d3d3d3;
+  color: #33101c;
   opacity: 0.3;
 }
 
 .room-categories .card-link {
   text-decoration: underline;
+}
+
+.room-categories .card-img-left {
+  width: auto;
+  height: 110px;
+}
+
+.room-categories p {
+  color: #33101c;
+  text-transform: inherit;
+  font-size: 14px;
+}
+
+.rooms-select {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  color: #33101c;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-radius: 3px;
 }

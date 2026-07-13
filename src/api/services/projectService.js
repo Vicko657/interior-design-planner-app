@@ -41,6 +41,14 @@ const projectService = {
       throw err;
     }
   },
+  getSummary: async (id) => {
+    try {
+      const response = await api.get(`/api/projects/${id}/summary`);
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 
 export default projectService;
