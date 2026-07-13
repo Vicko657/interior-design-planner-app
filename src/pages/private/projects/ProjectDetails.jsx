@@ -165,7 +165,7 @@ export default function ProjectDetails() {
               </div>
             </div>
             <div className="col mt-2">
-              <ActionItems />
+              <ActionItems room={data?.roomId} />
             </div>
           </div>
         </div>

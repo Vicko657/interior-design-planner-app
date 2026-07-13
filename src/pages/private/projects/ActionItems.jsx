@@ -1,6 +1,9 @@
+import React, { useState } from "react";
 import Button from "../../../components/common/Button";
+import AddTask from "../tasks/AddTask";
 
-export default function ActionItems() {
+export default function ActionItems({ room }) {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <div className="project-admin card h-40 dropdown">
       <div className="card-body d-flex pb-0">
@@ -16,7 +19,13 @@ export default function ActionItems() {
                 colour="outline-red-btn"
                 cn="rounded-pill p-3 pt-1 pb-1"
                 text="ADD TASK"
+                btnfunction={() => setModalShow(true)}
               ></Button>
+              <AddTask
+                id={room}
+                showModal={modalShow}
+                onHide={() => setModalShow(false)}
+              />
             </a>
           </li>
           <hr className="m-0" />
