@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Button from "../../../components/common/Button";
 import AddTask from "../tasks/AddTask";
+import AddItem from "../inventory/AddItem";
 
 export default function ActionItems({ room }) {
   const [modalShow, setModalShow] = useState(false);
+  const [itemModalShow, setItemModalShow] = useState(false);
   return (
     <div className="project-admin card h-40 dropdown">
       <div className="card-body d-flex pb-0">
@@ -35,7 +37,13 @@ export default function ActionItems({ room }) {
                 colour="outline-red-btn"
                 cn="rounded-pill p-3 pt-1 pb-1"
                 text="ADD ITEM"
+                btnfunction={() => setItemModalShow(true)}
               ></Button>
+              <AddItem
+                id={room}
+                showModal={itemModalShow}
+                onHide={() => setItemModalShow(false)}
+              />
             </a>
           </li>
         </ul>
