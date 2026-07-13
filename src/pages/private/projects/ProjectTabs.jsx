@@ -22,7 +22,7 @@ export default function ProjectTabs({ room }) {
   if (error) return <Error error={error} />;
 
   if (room !== null) {
-    tasks = <TaskTab tasks={data?.checklist} />;
+    tasks = <TaskTab tasks={data?.checklist} room={room} />;
     items = <InventoryTab items={data?.inventory} />;
   }
 
