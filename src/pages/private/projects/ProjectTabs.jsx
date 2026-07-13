@@ -23,7 +23,7 @@ export default function ProjectTabs({ room }) {
 
   if (room !== null) {
     tasks = <TaskTab tasks={data?.checklist} room={room} />;
-    items = <InventoryTab items={data?.inventory} />;
+    items = <InventoryTab items={data?.inventory} room={room} />;
   }
 
   return (
