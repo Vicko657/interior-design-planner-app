@@ -20,5 +20,14 @@ const taskService = {
       throw err;
     }
   },
+  delete: async (roomId, index) => {
+    try {
+      const response = await api.delete(`/api/rooms/${roomId}/task/${index}`);
+      return response.data;
+    } catch (err) {
+      console.log(err);
+      throw err;
+    }
+  },
 };
 export default taskService;
