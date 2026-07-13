@@ -16,6 +16,7 @@ export default function Select({
   };
 
   if (optionName !== null && register !== null) {
+    // For form options
     return (
       <select
         {...register(optionName)}
@@ -23,7 +24,7 @@ export default function Select({
         value={selected}
         onChange={handleChange}
       >
-        <option>{"Select " + `${select}`}</option>
+        <option value=" ">{"Select " + `${select}`}</option>
         {data?.map((response) => (
           <option key={response[selectKey]} value={response[selectKey]}>
             {response[value]}
@@ -32,13 +33,20 @@ export default function Select({
       </select>
     );
   } else {
+    // For general page options
     return (
       <select
         className={`form-select form-control ${cn}`}
         value={selected}
-        onChange={(e) => onChange(event.target.value)}
+        onChange={(event) => {
+          if (event.target.value !== " ") {
+            onChange(event.target.value, setSelected(event.target.value));
+          } else {
+            onChange(null, setSelected(select));
+          }
+        }}
       >
-        <option>{"Select " + `${select}`}</option>
+        <option value=" ">{"Select " + `${select}`}</option>
         {data?.map((response) => (
           <option key={response[selectKey]} value={response[selectKey]}>
             {response[value]}
