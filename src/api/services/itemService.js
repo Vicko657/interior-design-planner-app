@@ -22,5 +22,15 @@ const itemService = {
       throw err;
     }
   },
+  delete: async (roomId, index) => {
+    try {
+      const response = await api.delete(
+        `/api/rooms/${roomId}/inventory/${index}`,
+      );
+      return response.data;
+    } catch (err) {
+      throw err;
+    }
+  },
 };
 export default itemService;
