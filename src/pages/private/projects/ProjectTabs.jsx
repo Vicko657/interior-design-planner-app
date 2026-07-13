@@ -22,8 +22,8 @@ export default function ProjectTabs({ room }) {
   if (error) return <Error error={error} />;
 
   if (room !== null) {
-    tasks = <TaskTab tasks={data?.checklist} />;
-    items = <InventoryTab items={data?.inventory} />;
+    tasks = <TaskTab tasks={data?.checklist} room={room} />;
+    items = <InventoryTab items={data?.inventory} room={room} />;
   }
 
   return (

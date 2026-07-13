@@ -88,6 +88,10 @@
   font-size: 28px !important;
 }
 
+.project-admin {
+  cursor: pointer;
+}
+
 @media (max-width: 1200px) {
   .project-header h3 {
     font-size: 42px;

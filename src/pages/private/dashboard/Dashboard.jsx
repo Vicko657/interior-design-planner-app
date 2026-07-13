@@ -58,7 +58,7 @@ export default function Dashboard() {
             <TotalBudget budgets={dashboardData?.budget} />
           </div>
           <div className="col-lg-8">
-            <TaskList rooms={dashboardData?.recentTasks} />
+            <TaskList tasks={dashboardData?.recentTasks} />
           </div>
         </div>
       </div>

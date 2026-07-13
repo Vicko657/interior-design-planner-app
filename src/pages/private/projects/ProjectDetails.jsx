@@ -10,6 +10,7 @@ import EditProject from "./EditProject";
 import AddRoom from "./AddRoom";
 import EditRoom from "./EditRoom";
 import ProjectTabs from "./ProjectTabs";
+import ActionItems from "./ActionItems";
 
 export default function ProjectDetails() {
   const params = useParams();
@@ -164,23 +165,7 @@ export default function ProjectDetails() {
               </div>
             </div>
             <div className="col mt-2">
-              <div className="project-admin  card h-40">
-                <div className="card-body d-flex">
-                  <h5 className="card-title me-auto text-start">
-                    Action Items
-                  </h5>
-                  <Button
-                    colour="outline-red-btn"
-                    cn="rounded-pill p-3 pt-1 pb-1 me-2"
-                    text="ADD TASK"
-                  ></Button>
-                  <Button
-                    colour="outline-red-btn"
-                    cn="rounded-pill p-3 pt-1 pb-1"
-                    text="ADD ITEM"
-                  ></Button>
-                </div>
-              </div>
+              <ActionItems room={data?.roomId} />
             </div>
           </div>
         </div>

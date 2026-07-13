@@ -3,13 +3,12 @@ import "../../../components/common/Table.css";
 import "../tasks/Tasks.css";
 import { useNavigate } from "react-router-dom";
 
-export default function DesignerTaskRow({ tasks }) {
+export default function DesignerTaskRow({ task }) {
   const navigate = useNavigate();
-  const totalTasks = tasks.checklist.length;
-  return tasks.checklist.map((task, index) => (
+  const totalTasks = length;
+  return (
     <tr
-      key={index}
-      onClick={() => navigate(`project/${tasks.project}`)}
+      onClick={() => navigate(`project/${task.project}`)}
       style={{ cursor: "pointer" }}
     >
       <th scope="row">{task.taskName}</th>
@@ -18,18 +17,13 @@ export default function DesignerTaskRow({ tasks }) {
         <span
           className={`${task.isCompleted === true ? "completed" : "not-completed"} rounded-pill`}
         >
-          {task.isCompleted}
+          {task.isCompleted === true ? "YES" : "NO"}
         </span>
       </td>
 
-      {index === 0 && (
-        <td
-          className="p-2 task-project text-center project-category"
-          rowSpan={totalTasks}
-        >
-          <span className="rounded-pill project-category">{tasks.project}</span>
-        </td>
-      )}
+      <td className="p-2 task-project text-center project-category">
+        <span className="rounded-pill project-category">{task.project}</span>
+      </td>
     </tr>
-  ));
+  );
 }
