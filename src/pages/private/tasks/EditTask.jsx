@@ -1,4 +1,4 @@
-import { React, useState, useRef } from "react";
+import { React, useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useForm, Controller } from "react-hook-form";
 import Button from "../../../components/common/Button";
@@ -27,13 +27,19 @@ export default function EditTask({ id, showModal, onHide, response, index }) {
     },
   });
 
+  // Fetch task data
+  useEffect(() => {
+    if (response) {
+      reset(response);
+    }
+  }, [response, reset]);
+
   // Update existing task
   const onSubmit = async (data) => {
     try {
       setApiError(null);
       await taskService.put(data, id, index);
       reset({ ...data });
-      onHide();
     } catch (err) {
       const apiErrors = err.response?.data;
       if (apiErrors && typeof apiErrors === "object") {
@@ -118,17 +124,17 @@ export default function EditTask({ id, showModal, onHide, response, index }) {
               </small>
             )}
           </div>
-          <div className="mb-1 pt-2">
+          <div className="col-md-5 mb-1 pt-5">
             <label htmlFor="completed" className="form-label">
               Task Completed?
             </label>
-            <textarea
+
+            <input
               {...register("completed")}
               type="checkbox"
-              className="signup-form form-control"
+              className="signup-form ms-2"
               aria-describedby="completedError"
               name="completed"
-              defaultChecked
             />
             {errors.completed && (
               <small className="text-warning text-sm">
@@ -139,7 +145,7 @@ export default function EditTask({ id, showModal, onHide, response, index }) {
 
           <Button
             colour="red-btn login-btn"
-            text={isSubmitting ? "Saving..." : "Save"}
+            text={isSubmitting ? "Updating..." : "Save"}
             arrow="false"
             disabled={isSubmitting}
             type="submit"
