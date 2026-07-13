@@ -5,6 +5,7 @@ import Table from "../../../components/common/Table";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../components/common/Button";
 import EditItem from "../inventory/EditItem";
+import DeleteItem from "../inventory/DeleteItem";
 
 export default function ProjectInventoryTab({ items, room }) {
   const navigate = useNavigate();
@@ -52,6 +53,9 @@ export default function ProjectInventoryTab({ items, room }) {
                   onHide={() => setModalShow(false)}
                   response={item}
                 />
+              </td>
+              <td onClick={(e) => e.stopPropagation()}>
+                <DeleteItem id={room} index={index} />
               </td>
             </tr>
           ))}
