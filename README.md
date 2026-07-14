@@ -10,8 +10,10 @@ React frontend for the [Interior Design Planner API](https://github.com/Vicko657
 
 - **Designer Registration:** Create an account to access the platform.
 - **Designer Login:** Secure authentication via JWT.
-- **Dashboard:** View personlised dashboard on login.
+- **Dashboard:** View personalised dashboard on login.
 - **Profile:** View and manage your profile.
+- **Clients:** Create, view and manage your clients.
+- **Projects:** Create, view and manage your client's projects with rooms specifications, tasks and inventories.
 - Full backend integration in progress - connecting to existing REST endpoints with JWT authentication
 
 ## Tech Stack
