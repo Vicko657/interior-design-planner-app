@@ -10,18 +10,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import Select from "../../../components/common/Select";
 import Loader from "../../../components/common/Loader";
 import Error from "../../../components/common/Error";
+import projectStatus from "../../../util/projectStatus.js";
 
 export default function AddProject({ showModal, onHide }) {
   const { data, loading, error } = useFetch(clientService.get);
   const [clientData, setClientData] = useState(null);
-  const statuses = [
-    { id: "PLANNING", status: "Planning" },
-    { id: "ACTIVE", status: "Active" },
-    { id: "ON_HOLD", status: "On Hold" },
-    { id: "COMPLETED", status: "Completed" },
-    { id: "CANCELLED", status: "Cancelled" },
-    { id: "ARCHIVED", status: "Archived" },
-  ];
   const [apiError, setApiError] = useState(null);
   const {
     register,
@@ -118,7 +111,7 @@ export default function AddProject({ showModal, onHide }) {
               register={register}
               aria-label="StatusError"
               name="status"
-              data={statuses}
+              data={projectStatus}
               selectKey={"id"}
               value={"status"}
               select={"status"}
