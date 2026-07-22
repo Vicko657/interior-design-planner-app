@@ -11,6 +11,7 @@ import AddRoom from "./AddRoom";
 import EditRoom from "./EditRoom";
 import ProjectTabs from "./ProjectTabs";
 import ActionItems from "./ActionItems";
+import rooms from "../../../util/roomType.js";
 
 export default function ProjectDetails() {
   const params = useParams();
@@ -20,6 +21,7 @@ export default function ProjectDetails() {
     () => projectService.getSummary(project?.id),
     [project?.id],
   );
+  const room = rooms.find((r) => r.id === data?.room);
   const [modalShow, setModalShow] = useState(false);
   const [modalRoomShow, setModalRoomShow] = useState(false);
   const [modalRoomUpdateShow, setModalRoomUpdateShow] = useState(false);
@@ -51,7 +53,7 @@ export default function ProjectDetails() {
     roomDetails = (
       <div>
         <h5 className="card-title mb-3">Room Type</h5>
-        <h6 className="mb-1">{data?.room}</h6>
+        <h6 className="mb-1">{room?.type}</h6>
         <hr></hr>
         <div className="d-flex dimensions mb-4">
           <div className="col-md-8">
