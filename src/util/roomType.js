@@ -35,8 +35,8 @@ const roomType = [
     description: "Private sleeping and rest area",
   },
   {
-    id: "CONSERVETORY",
-    type: "Conservetory",
+    id: "CONSERVATORY",
+    type: "Conservatory",
     description: "Glass enclosed garden room",
   },
   {
