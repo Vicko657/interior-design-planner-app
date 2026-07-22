@@ -9,14 +9,9 @@ import Loader from "../../../components/common/Loader";
 import Error from "../../../components/common/Error";
 import roomType from "../../../util/roomType.js";
 roomType;
+import units from "../../../util/units.js";
 
 export default function AddRoom({ project, showModal, onHide }) {
-  const units = [
-    { id: "m", unit: "Meters" },
-    { id: "cm", unit: "Centimeters" },
-    { id: "in.", unit: "Inches" },
-    { id: "ft", unit: "Feet" },
-  ];
   const [apiError, setApiError] = useState(null);
   const {
     register,
