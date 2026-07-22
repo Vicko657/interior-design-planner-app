@@ -11,6 +11,8 @@ import AddRoom from "./AddRoom";
 import EditRoom from "./EditRoom";
 import ProjectTabs from "./ProjectTabs";
 import ActionItems from "./ActionItems";
+import rooms from "../../../util/roomType.js";
+import projectStatus from "../../../util/projectStatus.js";
 
 export default function ProjectDetails() {
   const params = useParams();
@@ -20,6 +22,8 @@ export default function ProjectDetails() {
     () => projectService.getSummary(project?.id),
     [project?.id],
   );
+  const room = rooms.find((r) => r.id === data?.room);
+  const status = projectStatus.find((s) => s.id === data?.status);
   const [modalShow, setModalShow] = useState(false);
   const [modalRoomShow, setModalRoomShow] = useState(false);
   const [modalRoomUpdateShow, setModalRoomUpdateShow] = useState(false);
@@ -51,7 +55,7 @@ export default function ProjectDetails() {
     roomDetails = (
       <div>
         <h5 className="card-title mb-3">Room Type</h5>
-        <h6 className="mb-1">{data?.room}</h6>
+        <h6 className="mb-1">{room?.type}</h6>
         <hr></hr>
         <div className="d-flex dimensions mb-4">
           <div className="col-md-8">
@@ -81,7 +85,7 @@ export default function ProjectDetails() {
         <div className="d-flex justify-content-md-end align-items-end justify-content-start pt-md-4 p-4 pt-0 col-md-6 col-12 mb-auto">
           <div className="me-md-5 me-auto">
             <p className="mb-2">Status</p>
-            <p className="project-status">{data?.status}</p>
+            <p className="project-status">{status?.status}</p>
           </div>
           <div className="mb-auto">
             <Button

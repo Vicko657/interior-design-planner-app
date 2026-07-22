@@ -6,17 +6,10 @@ import projectService from "../../../api/services/projectService";
 import Select from "../../../components/common/Select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import projectStatus from "../../../util/projectStatus.js";
 
 export default function EditProject({ id, showModal, onHide, data }) {
   const [apiError, setApiError] = useState(null);
-  const statuses = [
-    { id: "PLANNING", status: "Planning" },
-    { id: "ACTIVE", status: "Active" },
-    { id: "ON_HOLD", status: "On Hold" },
-    { id: "COMPLETED", status: "Completed" },
-    { id: "CANCELLED", status: "Cancelled" },
-    { id: "ARCHIVED", status: "Archived" },
-  ];
   const {
     register,
     control,
@@ -102,7 +95,7 @@ export default function EditProject({ id, showModal, onHide, data }) {
               register={register}
               aria-label="StatusError"
               name="status"
-              data={statuses}
+              data={projectStatus}
               selectKey={"id"}
               value={"status"}
               select={"status"}

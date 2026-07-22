@@ -7,26 +7,11 @@ import useFetch from "../../../hooks/useFetch";
 import Select from "../../../components/common/Select";
 import Loader from "../../../components/common/Loader";
 import Error from "../../../components/common/Error";
+import roomType from "../../../util/roomType.js";
+roomType;
+import units from "../../../util/units.js";
 
 export default function AddRoom({ project, showModal, onHide }) {
-  const roomType = [
-    { id: "HALLWAY", type: "Hallway" },
-    { id: "BATHROOM", type: "Bathroom" },
-    { id: "LIVING_ROOM", type: "Living Room" },
-    { id: "KITCHEN", type: "Kitchen" },
-    { id: "DINING_ROOM", type: "Dining Room" },
-    { id: "UTILITY_ROOM", type: "Utility Room" },
-    { id: "BEDROOM", type: "Bedroom" },
-    { id: "CONSERVETORY", type: "Conservetory" },
-    { id: "BASEMENT", type: "Basement" },
-    { id: "LOFT", type: "Loft" },
-  ];
-  const units = [
-    { id: "m", unit: "Meters" },
-    { id: "cm", unit: "Centimeters" },
-    { id: "in.", unit: "Inches" },
-    { id: "ft", unit: "Feet" },
-  ];
   const [apiError, setApiError] = useState(null);
   const {
     register,

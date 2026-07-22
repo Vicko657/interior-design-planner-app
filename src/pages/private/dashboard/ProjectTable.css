@@ -15,12 +15,47 @@
 }
 
 .status {
-  border: 1px solid #33101c;
-  background: #33101c;
   color: #d8cfb6;
   padding: 3px 6px;
   font-size: 10px;
   font-weight: 300;
+  text-transform: uppercase;
+}
+
+.status-planning {
+  border: 0.2px solid #737881;
+  background: #dadee3;
+  color: #737881;
+}
+
+.status-active {
+  border: 0.2px solid #4c70a3;
+  background: #dcebfd;
+  color: #4c70a3;
+}
+
+.status-on_hold {
+  border: 0.2px solid #c2785b;
+  background: #fdead7;
+  color: #c2785b;
+}
+
+.status-completed {
+  border: 0.2px solid #6fa258;
+  background: #e4f6d9;
+  color: #6fa258;
+}
+
+.status-cancelled {
+  border: 0.2px solid #d35043;
+  background: #ffe6e5;
+  color: #d35043;
+}
+
+.status-archived {
+  border: 0.2px solid #a290d5;
+  background: #eae8fd;
+  color: #a290d5;
 }
 
 .room-type {
@@ -30,6 +65,7 @@
   padding: 3px 6px;
   font-size: 10px;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 .project-category {

@@ -2,15 +2,20 @@ import React from "react";
 import "../../../components/common/Table.css";
 import { useNavigate } from "react-router-dom";
 import DeleteProject from "./DeleteProject";
+import rooms from "../../../util/roomType.js";
+import projectStatus from "../../../util/projectStatus.js";
 
 export default function ProjectRow({ project }) {
   const navigate = useNavigate();
+  const room = rooms.find((r) => r.id === project.room);
+  const status = projectStatus.find((s) => s.id === project.status);
 
-  let roomType = <span className="room-type rounded-pill">{project.room}</span>;
+  let roomType = <span className="room-type rounded-pill">{room?.type}</span>;
 
   if (project.room == null) {
     roomType = <span></span>;
   }
+
   return (
     <tr
       onClick={() =>
@@ -20,7 +25,11 @@ export default function ProjectRow({ project }) {
     >
       <th scope="row">{project.projectName}</th>
       <td>
-        <span className="status rounded-pill">{project.status}</span>
+        <span
+          className={`{status?.id === status?.status ? status-${status?.id.toLowerCase()} : null} status rounded-pill`}
+        >
+          {status?.status}
+        </span>
       </td>
       <td>{roomType}</td>
       <td>{project.clientName}</td>

@@ -4,27 +4,11 @@ import { useForm, Controller } from "react-hook-form";
 import Button from "../../../components/common/Button";
 import roomService from "../../../api/services/roomService";
 import Select from "../../../components/common/Select";
+import roomType from "../../../util/roomType.js";
+import units from "../../../util/units.js";
 
 export default function EditRoom({ id, showModal, onHide, data }) {
   const [apiError, setApiError] = useState(null);
-  const roomType = [
-    { id: "HALLWAY", type: "Hallway" },
-    { id: "BATHROOM", type: "Bathroom" },
-    { id: "LIVING_ROOM", type: "Living Room" },
-    { id: "KITCHEN", type: "Kitchen" },
-    { id: "DINING_ROOM", type: "Dining Room" },
-    { id: "UTILITY_ROOM", type: "Utility Room" },
-    { id: "BEDROOM", type: "Bedroom" },
-    { id: "CONSERVETORY", type: "Conservetory" },
-    { id: "BASEMENT", type: "Basement" },
-    { id: "LOFT", type: "Loft" },
-  ];
-  const units = [
-    { id: "m", unit: "Meters" },
-    { id: "cm", unit: "Centimeters" },
-    { id: "in.", unit: "Inches" },
-    { id: "ft", unit: "Feet" },
-  ];
   const {
     register,
     control,
