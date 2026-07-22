@@ -2,15 +2,18 @@ import React from "react";
 import "../../../components/common/Table.css";
 import { useNavigate } from "react-router-dom";
 import DeleteProject from "./DeleteProject";
+import rooms from "../../../util/roomType.js";
 
 export default function ProjectRow({ project }) {
   const navigate = useNavigate();
+  const room = rooms.find((r) => r.id === project.room);
 
-  let roomType = <span className="room-type rounded-pill">{project.room}</span>;
+  let roomType = <span className="room-type rounded-pill">{room?.type}</span>;
 
   if (project.room == null) {
     roomType = <span></span>;
   }
+
   return (
     <tr
       onClick={() =>
