@@ -5,15 +5,10 @@ import Button from "../../../components/common/Button";
 import roomService from "../../../api/services/roomService";
 import Select from "../../../components/common/Select";
 import roomType from "../../../util/roomType.js";
+import units from "../../../util/units.js";
 
 export default function EditRoom({ id, showModal, onHide, data }) {
   const [apiError, setApiError] = useState(null);
-  const units = [
-    { id: "m", unit: "Meters" },
-    { id: "cm", unit: "Centimeters" },
-    { id: "in.", unit: "Inches" },
-    { id: "ft", unit: "Feet" },
-  ];
   const {
     register,
     control,
