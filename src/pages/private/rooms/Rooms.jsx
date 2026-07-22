@@ -21,6 +21,8 @@ export default function Room() {
     roomOption,
   );
 
+  const room = roomType.find((r) => r.id === roomOption);
+
   if (loading) return <Loader />;
   if (error) return <Error error={error} />;
 
@@ -116,7 +118,7 @@ export default function Room() {
                         <Card.Body className="p-4 ps-1">
                           <Card.Title>{type.projectName}</Card.Title>
                           <Card.Subtitle className="mt-2">
-                            {roomOption}
+                            {room?.type}
                           </Card.Subtitle>
 
                           <Card.Subtitle className="mt-2">
