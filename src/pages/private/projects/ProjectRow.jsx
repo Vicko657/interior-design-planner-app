@@ -25,7 +25,11 @@ export default function ProjectRow({ project }) {
     >
       <th scope="row">{project.projectName}</th>
       <td>
-        <span className="status rounded-pill">{status?.status}</span>
+        <span
+          className={`{status?.id === status?.status ? status-${status?.id.toLowerCase()} : null} status rounded-pill`}
+        >
+          {status?.status}
+        </span>
       </td>
       <td>{roomType}</td>
       <td>{project.clientName}</td>
